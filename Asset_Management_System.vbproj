@@ -95,11 +95,17 @@
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Frm_AssetHome.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Frm_AssetHome.Designer.vb">
+      <DependentUpon>Frm_AssetHome.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_Page.Designer.vb">
+      <DependentUpon>Home_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home_Page.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,8 +125,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_AssetHome.resx">
+      <DependentUpon>Frm_AssetHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_Page.resx">
+      <DependentUpon>Home_Page.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
