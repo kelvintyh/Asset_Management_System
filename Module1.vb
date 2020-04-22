@@ -29,18 +29,20 @@ Module Module1
 
     Public Function GetNextId(table As String) As String
 
+        Dim result As String = ""
         If table.Equals("Asset") Then
             Dim rs = From a In db.Assets
                      Order By a.Id Descending
 
             ' If the table is empty
             If rs.Count = 0 Then
-                Return "A100001"
+                result = "A100001"
             Else
                 Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
-                Return (newid + 1).ToString("A100000")
+                result = (newid + 1).ToString("A100000")
             End If
         End If
+        Return result
     End Function
 
 

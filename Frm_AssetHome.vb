@@ -32,6 +32,7 @@ Public Class Frm_AssetHome
     Public Function UpdateTable()
         Dim db As New AMSDBDataContext()
         dgv.DataSource = db.Assets
+        Return Nothing
     End Function
 
     Public Function UpdateInfo()
@@ -64,6 +65,7 @@ Public Class Frm_AssetHome
             lblLocation.Text = ""
             picAsset.Image = Nothing
         End If
+        Return Nothing
     End Function
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
