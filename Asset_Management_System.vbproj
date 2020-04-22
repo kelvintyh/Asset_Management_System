@@ -95,6 +95,13 @@
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Asset.vb" />
+    <Compile Include="Asset_Module\FrmAssetAdd.Designer.vb">
+      <DependentUpon>FrmAssetAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Asset_Module\FrmAssetAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_AssetHome.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +115,7 @@
     <Compile Include="Home_Page.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -125,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Asset_Module\FrmAssetAdd.resx">
+      <DependentUpon>FrmAssetAdd.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +174,13 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Undo_48px.png" />
+    <None Include="Resources\Save_64px.png" />
+    <None Include="Resources\Picture_96px.png" />
+    <None Include="Resources\Delete_25px.png" />
+    <None Include="Resources\Pencil_25px.png" />
+    <None Include="Resources\Multiply_25px.png" />
+    <None Include="Resources\Plus Math_25px.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -179,5 +197,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
