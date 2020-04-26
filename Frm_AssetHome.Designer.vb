@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_AssetHome
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_AssetHome
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv = New System.Windows.Forms.DataGridView()
@@ -56,12 +56,28 @@ Partial Class Frm_AssetHome
         Me.Label1 = New System.Windows.Forms.Label()
         Me.picAsset = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lblWarrantyExpDate = New System.Windows.Forms.Label()
+        Me.lblWarrantyId = New System.Windows.Forms.Label()
+        Me.lblInvoice = New System.Windows.Forms.Label()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.lblVendor = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lbl21 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.dtpDateOfAcquisition = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.dgvTransactionLog = New System.Windows.Forms.DataGridView()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.dgvBooking = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssetSummaryReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -69,12 +85,14 @@ Partial Class Frm_AssetHome
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.dgvTransactionLog, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         CType(Me.dgvBooking, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -86,20 +104,20 @@ Partial Class Frm_AssetHome
         Me.GroupBox1.Controls.Add(Me.btnDelete)
         Me.GroupBox1.Controls.Add(Me.btnEdit)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 33)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(457, 700)
+        Me.GroupBox1.Size = New System.Drawing.Size(457, 679)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
         '
         'dgv
         '
         Me.dgv.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Location = New System.Drawing.Point(7, 148)
+        Me.dgv.Location = New System.Drawing.Point(7, 138)
         Me.dgv.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.dgv.Name = "dgv"
+        Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.Size = New System.Drawing.Size(444, 461)
@@ -157,12 +175,11 @@ Partial Class Frm_AssetHome
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TabControl1)
-        Me.GroupBox2.Location = New System.Drawing.Point(475, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(475, 33)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(820, 350)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
         '
         'TabControl1
         '
@@ -405,6 +422,18 @@ Partial Class Frm_AssetHome
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lblWarrantyExpDate)
+        Me.TabPage2.Controls.Add(Me.lblWarrantyId)
+        Me.TabPage2.Controls.Add(Me.lblInvoice)
+        Me.TabPage2.Controls.Add(Me.lblPrice)
+        Me.TabPage2.Controls.Add(Me.lblVendor)
+        Me.TabPage2.Controls.Add(Me.Label20)
+        Me.TabPage2.Controls.Add(Me.Label19)
+        Me.TabPage2.Controls.Add(Me.lbl21)
+        Me.TabPage2.Controls.Add(Me.Label17)
+        Me.TabPage2.Controls.Add(Me.Label16)
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Controls.Add(Me.dtpDateOfAcquisition)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -412,6 +441,103 @@ Partial Class Frm_AssetHome
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Purchase info."
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'lblWarrantyExpDate
+        '
+        Me.lblWarrantyExpDate.Location = New System.Drawing.Point(641, 79)
+        Me.lblWarrantyExpDate.Name = "lblWarrantyExpDate"
+        Me.lblWarrantyExpDate.Size = New System.Drawing.Size(137, 17)
+        Me.lblWarrantyExpDate.TabIndex = 25
+        '
+        'lblWarrantyId
+        '
+        Me.lblWarrantyId.Location = New System.Drawing.Point(602, 38)
+        Me.lblWarrantyId.Name = "lblWarrantyId"
+        Me.lblWarrantyId.Size = New System.Drawing.Size(129, 17)
+        Me.lblWarrantyId.TabIndex = 24
+        '
+        'lblInvoice
+        '
+        Me.lblInvoice.Location = New System.Drawing.Point(205, 173)
+        Me.lblInvoice.Name = "lblInvoice"
+        Me.lblInvoice.Size = New System.Drawing.Size(203, 17)
+        Me.lblInvoice.TabIndex = 23
+        '
+        'lblPrice
+        '
+        Me.lblPrice.Location = New System.Drawing.Point(205, 132)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(203, 17)
+        Me.lblPrice.TabIndex = 22
+        '
+        'lblVendor
+        '
+        Me.lblVendor.Location = New System.Drawing.Point(205, 83)
+        Me.lblVendor.Name = "lblVendor"
+        Me.lblVendor.Size = New System.Drawing.Size(203, 17)
+        Me.lblVendor.TabIndex = 21
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(488, 38)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(93, 17)
+        Me.Label20.TabIndex = 20
+        Me.Label20.Text = "Warranty Id : "
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(55, 173)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(138, 17)
+        Me.Label19.TabIndex = 19
+        Me.Label19.Text = "Invoice /Reference : "
+        '
+        'lbl21
+        '
+        Me.lbl21.AutoSize = True
+        Me.lbl21.Location = New System.Drawing.Point(488, 79)
+        Me.lbl21.Name = "lbl21"
+        Me.lbl21.Size = New System.Drawing.Size(147, 17)
+        Me.lbl21.TabIndex = 18
+        Me.lbl21.Text = "Warranty expires on : "
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(55, 132)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(143, 17)
+        Me.Label17.TabIndex = 17
+        Me.Label17.Text = "Value at acquisition : "
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(55, 43)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(137, 17)
+        Me.Label16.TabIndex = 16
+        Me.Label16.Text = "Date of acquisition : "
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(55, 88)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(66, 17)
+        Me.Label15.TabIndex = 15
+        Me.Label15.Text = "Vendor : "
+        '
+        'dtpDateOfAcquisition
+        '
+        Me.dtpDateOfAcquisition.Enabled = False
+        Me.dtpDateOfAcquisition.Location = New System.Drawing.Point(208, 38)
+        Me.dtpDateOfAcquisition.Name = "dtpDateOfAcquisition"
+        Me.dtpDateOfAcquisition.Size = New System.Drawing.Size(261, 22)
+        Me.dtpDateOfAcquisition.TabIndex = 14
         '
         'GroupBox3
         '
@@ -425,16 +551,15 @@ Partial Class Frm_AssetHome
         Me.GroupBox3.Size = New System.Drawing.Size(820, 350)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
         '
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Controls.Add(Me.TabPage4)
-        Me.TabControl2.Location = New System.Drawing.Point(6, 18)
+        Me.TabControl2.Location = New System.Drawing.Point(6, 32)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(804, 329)
+        Me.TabControl2.Size = New System.Drawing.Size(804, 315)
         Me.TabControl2.TabIndex = 0
         '
         'TabPage3
@@ -443,7 +568,7 @@ Partial Class Frm_AssetHome
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(796, 300)
+        Me.TabPage3.Size = New System.Drawing.Size(796, 286)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Transactions log"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -464,7 +589,7 @@ Partial Class Frm_AssetHome
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(796, 300)
+        Me.TabPage4.Size = New System.Drawing.Size(796, 286)
         Me.TabPage4.TabIndex = 1
         Me.TabPage4.Text = "Booking"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -479,6 +604,36 @@ Partial Class Frm_AssetHome
         Me.dgvBooking.Size = New System.Drawing.Size(780, 280)
         Me.dgvBooking.TabIndex = 0
         '
+        'MenuStrip
+        '
+        Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(1312, 28)
+        Me.MenuStrip.TabIndex = 1
+        Me.MenuStrip.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerateToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'GenerateToolStripMenuItem
+        '
+        Me.GenerateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssetSummaryReportToolStripMenuItem})
+        Me.GenerateToolStripMenuItem.Name = "GenerateToolStripMenuItem"
+        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.GenerateToolStripMenuItem.Text = "Generate Report"
+        '
+        'AssetSummaryReportToolStripMenuItem
+        '
+        Me.AssetSummaryReportToolStripMenuItem.Name = "AssetSummaryReportToolStripMenuItem"
+        Me.AssetSummaryReportToolStripMenuItem.Size = New System.Drawing.Size(242, 26)
+        Me.AssetSummaryReportToolStripMenuItem.Text = "Asset Summary Report"
+        '
         'Frm_AssetHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -487,6 +642,8 @@ Partial Class Frm_AssetHome
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip)
+        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Frm_AssetHome"
         Me.Text = "Asset"
         Me.GroupBox1.ResumeLayout(False)
@@ -498,13 +655,18 @@ Partial Class Frm_AssetHome
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         CType(Me.dgvTransactionLog, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         CType(Me.dgvBooking, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -548,4 +710,20 @@ Partial Class Frm_AssetHome
     Friend WithEvents picAsset As PictureBox
     Friend WithEvents dgvTransactionLog As DataGridView
     Friend WithEvents dgvBooking As DataGridView
+    Friend WithEvents lblWarrantyExpDate As Label
+    Friend WithEvents lblWarrantyId As Label
+    Friend WithEvents lblInvoice As Label
+    Friend WithEvents lblPrice As Label
+    Friend WithEvents lblVendor As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents lbl21 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents dtpDateOfAcquisition As DateTimePicker
+    Friend WithEvents MenuStrip As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GenerateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AssetSummaryReportToolStripMenuItem As ToolStripMenuItem
 End Class

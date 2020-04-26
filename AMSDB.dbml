@@ -12,6 +12,39 @@
       <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="[Inventory location]" Member="Inventory_location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="[Date of acquisition]" Member="Date_of_acquisition" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vendor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Value At Acquisition]" Member="Value_At_Acquisition" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Invoice" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WarrantyId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssetType" Member="AssetTypes">
+    <Type Name="AssetType">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InventoryLocation" Member="InventoryLocations">
+    <Type Name="InventoryLocation">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Name ]" Member="Name_" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufacturer" Member="Manufacturers">
+    <Type Name="Manufacturer">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Warranty" Member="Warranties">
+    <Type Name="Warranty">
+      <Column Name="[Warranty Id]" Member="Warranty_Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Warranty Name]" Member="Warranty_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Warranty Type]" Member="Warranty_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Warranty Start]" Member="Warranty_Start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Warranty End]" Member="Warranty_End" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Warranty Status]" Member="Warranty_Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
