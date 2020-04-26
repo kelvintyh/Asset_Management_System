@@ -26,5 +26,11 @@
         <elementListCompartment Id="a5f647be-a72c-4284-8277-1f51b5df7142" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="7a9c79d8-085a-43cf-8506-12090f959a52" absoluteBounds="0.75, 4.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AMSDBDataContext/Warranty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75a1c1eb-bcb6-441e-a34c-04633d681e2e" absoluteBounds="0.76499999999999968, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

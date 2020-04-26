@@ -84,6 +84,19 @@ Module Module1
 
 
         End If
+
+        If table.Equals("Warranty") Then
+            Dim rs = From w In db.Warranties
+                     Order By w.Warranty_Id Descending
+
+            ' If the table is empty
+            If rs.Count = 0 Then
+                Return "W100001"
+            Else
+                Dim newid As Integer = Integer.Parse(rs.First.Warranty_Id.Substring(2, 5))
+                Return (newid + 1).ToString("W100000")
+            End If
+        End If
     End Function
 
     Public Function GetManu()
