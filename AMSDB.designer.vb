@@ -37,6 +37,12 @@ Partial Public Class AMSDBDataContext
     End Sub
   Partial Private Sub DeleteAsset(instance As Asset)
     End Sub
+  Partial Private Sub InsertWarranty(instance As Warranty)
+    End Sub
+  Partial Private Sub UpdateWarranty(instance As Warranty)
+    End Sub
+  Partial Private Sub DeleteWarranty(instance As Warranty)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -67,6 +73,12 @@ Partial Public Class AMSDBDataContext
 	Public ReadOnly Property Assets() As System.Data.Linq.Table(Of Asset)
 		Get
 			Return Me.GetTable(Of Asset)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Warranties() As System.Data.Linq.Table(Of Warranty)
+		Get
+			Return Me.GetTable(Of Warranty)
 		End Get
 	End Property
 End Class
@@ -307,6 +319,177 @@ Partial Public Class Asset
 				Me._Image = value
 				Me.SendPropertyChanged("Image")
 				Me.OnImageChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Warranty")>  _
+Partial Public Class Warranty
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Warranty_Id As String
+	
+	Private _Warranty_Name As String
+	
+	Private _Warranty_Type As String
+	
+	Private _Warranty_Start As System.Nullable(Of Date)
+	
+	Private _Warranty_End As System.Nullable(Of Date)
+	
+	Private _Warranty_Status As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnWarranty_IdChanging(value As String)
+    End Sub
+    Partial Private Sub OnWarranty_IdChanged()
+    End Sub
+    Partial Private Sub OnWarranty_NameChanging(value As String)
+    End Sub
+    Partial Private Sub OnWarranty_NameChanged()
+    End Sub
+    Partial Private Sub OnWarranty_TypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnWarranty_TypeChanged()
+    End Sub
+    Partial Private Sub OnWarranty_StartChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnWarranty_StartChanged()
+    End Sub
+    Partial Private Sub OnWarranty_EndChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnWarranty_EndChanged()
+    End Sub
+    Partial Private Sub OnWarranty_StatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnWarranty_StatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Id]", Storage:="_Warranty_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property Warranty_Id() As String
+		Get
+			Return Me._Warranty_Id
+		End Get
+		Set
+			If (String.Equals(Me._Warranty_Id, value) = false) Then
+				Me.OnWarranty_IdChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_Id = value
+				Me.SendPropertyChanged("Warranty_Id")
+				Me.OnWarranty_IdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Name]", Storage:="_Warranty_Name", DbType:="VarChar(50)")>  _
+	Public Property Warranty_Name() As String
+		Get
+			Return Me._Warranty_Name
+		End Get
+		Set
+			If (String.Equals(Me._Warranty_Name, value) = false) Then
+				Me.OnWarranty_NameChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_Name = value
+				Me.SendPropertyChanged("Warranty_Name")
+				Me.OnWarranty_NameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Type]", Storage:="_Warranty_Type", DbType:="VarChar(50)")>  _
+	Public Property Warranty_Type() As String
+		Get
+			Return Me._Warranty_Type
+		End Get
+		Set
+			If (String.Equals(Me._Warranty_Type, value) = false) Then
+				Me.OnWarranty_TypeChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_Type = value
+				Me.SendPropertyChanged("Warranty_Type")
+				Me.OnWarranty_TypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Start]", Storage:="_Warranty_Start", DbType:="Date")>  _
+	Public Property Warranty_Start() As System.Nullable(Of Date)
+		Get
+			Return Me._Warranty_Start
+		End Get
+		Set
+			If (Me._Warranty_Start.Equals(value) = false) Then
+				Me.OnWarranty_StartChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_Start = value
+				Me.SendPropertyChanged("Warranty_Start")
+				Me.OnWarranty_StartChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty End]", Storage:="_Warranty_End", DbType:="Date")>  _
+	Public Property Warranty_End() As System.Nullable(Of Date)
+		Get
+			Return Me._Warranty_End
+		End Get
+		Set
+			If (Me._Warranty_End.Equals(value) = false) Then
+				Me.OnWarranty_EndChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_End = value
+				Me.SendPropertyChanged("Warranty_End")
+				Me.OnWarranty_EndChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Status]", Storage:="_Warranty_Status", DbType:="VarChar(10)")>  _
+	Public Property Warranty_Status() As String
+		Get
+			Return Me._Warranty_Status
+		End Get
+		Set
+			If (String.Equals(Me._Warranty_Status, value) = false) Then
+				Me.OnWarranty_StatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Warranty_Status = value
+				Me.SendPropertyChanged("Warranty_Status")
+				Me.OnWarranty_StatusChanged
 			End If
 		End Set
 	End Property

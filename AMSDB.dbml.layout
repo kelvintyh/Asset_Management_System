@@ -8,5 +8,11 @@
         <elementListCompartment Id="c139f219-e44b-4780-836b-329d17247f20" absoluteBounds="1.5149999999999997, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="7a9c79d8-085a-43cf-8506-12090f959a52" absoluteBounds="3.75, 1.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AMSDBDataContext/Warranty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75a1c1eb-bcb6-441e-a34c-04633d681e2e" absoluteBounds="3.7649999999999997, 2.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
