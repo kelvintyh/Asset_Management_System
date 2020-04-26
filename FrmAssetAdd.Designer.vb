@@ -24,10 +24,13 @@ Partial Class FrmAssetAdd
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnLocation = New System.Windows.Forms.Button()
+        Me.btnType = New System.Windows.Forms.Button()
+        Me.btnManu = New System.Windows.Forms.Button()
+        Me.dtpDueReturnDate = New System.Windows.Forms.DateTimePicker()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.txtSerial = New System.Windows.Forms.TextBox()
         Me.txtModel = New System.Windows.Forms.TextBox()
-        Me.cal = New System.Windows.Forms.MonthCalendar()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cboLocation = New System.Windows.Forms.ComboBox()
@@ -56,13 +59,26 @@ Partial Class FrmAssetAdd
         Me.Label1 = New System.Windows.Forms.Label()
         Me.picAsset = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtInvoice = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.dtpDateOfAcquisition = New System.Windows.Forms.DateTimePicker()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.picCOT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -77,10 +93,13 @@ Partial Class FrmAssetAdd
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnLocation)
+        Me.TabPage1.Controls.Add(Me.btnType)
+        Me.TabPage1.Controls.Add(Me.btnManu)
+        Me.TabPage1.Controls.Add(Me.dtpDueReturnDate)
         Me.TabPage1.Controls.Add(Me.btnBrowse)
         Me.TabPage1.Controls.Add(Me.txtSerial)
         Me.TabPage1.Controls.Add(Me.txtModel)
-        Me.TabPage1.Controls.Add(Me.cal)
         Me.TabPage1.Controls.Add(Me.Label14)
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.cboLocation)
@@ -109,6 +128,43 @@ Partial Class FrmAssetAdd
         Me.TabPage1.Text = "General info."
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'btnLocation
+        '
+        Me.btnLocation.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_15px
+        Me.btnLocation.Location = New System.Drawing.Point(617, 450)
+        Me.btnLocation.Name = "btnLocation"
+        Me.btnLocation.Size = New System.Drawing.Size(35, 35)
+        Me.btnLocation.TabIndex = 28
+        Me.btnLocation.Tag = "Location"
+        Me.btnLocation.UseVisualStyleBackColor = True
+        '
+        'btnType
+        '
+        Me.btnType.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_15px
+        Me.btnType.Location = New System.Drawing.Point(617, 219)
+        Me.btnType.Name = "btnType"
+        Me.btnType.Size = New System.Drawing.Size(35, 35)
+        Me.btnType.TabIndex = 27
+        Me.btnType.Tag = "Type"
+        Me.btnType.UseVisualStyleBackColor = True
+        '
+        'btnManu
+        '
+        Me.btnManu.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_15px
+        Me.btnManu.Location = New System.Drawing.Point(617, 159)
+        Me.btnManu.Name = "btnManu"
+        Me.btnManu.Size = New System.Drawing.Size(35, 35)
+        Me.btnManu.TabIndex = 26
+        Me.btnManu.Tag = "Manu"
+        Me.btnManu.UseVisualStyleBackColor = True
+        '
+        'dtpDueReturnDate
+        '
+        Me.dtpDueReturnDate.Location = New System.Drawing.Point(796, 111)
+        Me.dtpDueReturnDate.Name = "dtpDueReturnDate"
+        Me.dtpDueReturnDate.Size = New System.Drawing.Size(260, 22)
+        Me.dtpDueReturnDate.TabIndex = 24
+        '
         'btnBrowse
         '
         Me.btnBrowse.Location = New System.Drawing.Point(169, 331)
@@ -132,16 +188,10 @@ Partial Class FrmAssetAdd
         Me.txtModel.Size = New System.Drawing.Size(187, 22)
         Me.txtModel.TabIndex = 21
         '
-        'cal
-        '
-        Me.cal.Location = New System.Drawing.Point(680, 86)
-        Me.cal.Name = "cal"
-        Me.cal.TabIndex = 20
-        '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(677, 48)
+        Me.Label14.Location = New System.Drawing.Point(673, 111)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(127, 17)
         Me.Label14.TabIndex = 19
@@ -150,7 +200,7 @@ Partial Class FrmAssetAdd
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(677, 311)
+        Me.Label10.Location = New System.Drawing.Point(673, 168)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(99, 17)
         Me.Label10.TabIndex = 10
@@ -160,7 +210,6 @@ Partial Class FrmAssetAdd
         '
         Me.cboLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLocation.FormattingEnabled = True
-        Me.cboLocation.Items.AddRange(New Object() {"Unit A-101"})
         Me.cboLocation.Location = New System.Drawing.Point(424, 456)
         Me.cboLocation.Name = "cboLocation"
         Me.cboLocation.Size = New System.Drawing.Size(187, 24)
@@ -181,7 +230,7 @@ Partial Class FrmAssetAdd
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"In Storage", "Checked Out", "Loaned Out", "Out Of Repair"})
-        Me.cboStatus.Location = New System.Drawing.Point(424, 509)
+        Me.cboStatus.Location = New System.Drawing.Point(746, 45)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(187, 24)
         Me.cboStatus.TabIndex = 16
@@ -190,7 +239,6 @@ Partial Class FrmAssetAdd
         '
         Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Items.AddRange(New Object() {"Electronic"})
         Me.cboType.Location = New System.Drawing.Point(424, 225)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(187, 24)
@@ -207,7 +255,6 @@ Partial Class FrmAssetAdd
         '
         Me.cboManu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboManu.FormattingEnabled = True
-        Me.cboManu.Items.AddRange(New Object() {"HP", "Canon"})
         Me.cboManu.Location = New System.Drawing.Point(424, 165)
         Me.cboManu.Name = "cboManu"
         Me.cboManu.Size = New System.Drawing.Size(187, 24)
@@ -230,7 +277,7 @@ Partial Class FrmAssetAdd
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Location = New System.Drawing.Point(680, 331)
+        Me.GroupBox1.Location = New System.Drawing.Point(676, 188)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(427, 232)
         Me.GroupBox1.TabIndex = 11
@@ -307,9 +354,9 @@ Partial Class FrmAssetAdd
         '
         'Label8
         '
-        Me.Label8.Location = New System.Drawing.Point(351, 516)
+        Me.Label8.Location = New System.Drawing.Point(673, 52)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 17)
+        Me.Label8.Size = New System.Drawing.Size(60, 17)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Status : "
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -390,6 +437,7 @@ Partial Class FrmAssetAdd
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -397,6 +445,108 @@ Partial Class FrmAssetAdd
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Purchase info."
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtVendor)
+        Me.GroupBox2.Controls.Add(Me.txtPrice)
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.txtInvoice)
+        Me.GroupBox2.Controls.Add(Me.Label19)
+        Me.GroupBox2.Controls.Add(Me.Label18)
+        Me.GroupBox2.Controls.Add(Me.Label17)
+        Me.GroupBox2.Controls.Add(Me.Label16)
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Controls.Add(Me.dtpDateOfAcquisition)
+        Me.GroupBox2.Location = New System.Drawing.Point(32, 28)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(563, 323)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        '
+        'txtPrice
+        '
+        Me.txtPrice.Location = New System.Drawing.Point(175, 134)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(200, 22)
+        Me.txtPrice.TabIndex = 11
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(22, 224)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(93, 17)
+        Me.Label20.TabIndex = 8
+        Me.Label20.Text = "Warranty Id : "
+        '
+        'txtInvoice
+        '
+        Me.txtInvoice.Location = New System.Drawing.Point(175, 181)
+        Me.txtInvoice.Name = "txtInvoice"
+        Me.txtInvoice.Size = New System.Drawing.Size(200, 22)
+        Me.txtInvoice.TabIndex = 7
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(22, 181)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(138, 17)
+        Me.Label19.TabIndex = 5
+        Me.Label19.Text = "Invoice /Reference : "
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(22, 266)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(147, 17)
+        Me.Label18.TabIndex = 4
+        Me.Label18.Text = "Warranty expires on : "
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(22, 140)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(143, 17)
+        Me.Label17.TabIndex = 3
+        Me.Label17.Text = "Value at acquisition : "
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(22, 51)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(137, 17)
+        Me.Label16.TabIndex = 2
+        Me.Label16.Text = "Date of acquisition : "
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(22, 96)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(66, 17)
+        Me.Label15.TabIndex = 1
+        Me.Label15.Text = "Vendor : "
+        '
+        'dtpDateOfAcquisition
+        '
+        Me.dtpDateOfAcquisition.Location = New System.Drawing.Point(175, 46)
+        Me.dtpDateOfAcquisition.Name = "dtpDateOfAcquisition"
+        Me.dtpDateOfAcquisition.Size = New System.Drawing.Size(262, 22)
+        Me.dtpDateOfAcquisition.TabIndex = 0
+        '
+        'btnBack
+        '
+        Me.btnBack.Image = Global.Asset_Management_System.My.Resources.Resources.Undo_48px
+        Me.btnBack.Location = New System.Drawing.Point(1095, 634)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(70, 50)
+        Me.btnBack.TabIndex = 2
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'btnSave
         '
@@ -407,14 +557,12 @@ Partial Class FrmAssetAdd
         Me.btnSave.TabIndex = 1
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'btnBack
+        'txtVendor
         '
-        Me.btnBack.Image = Global.Asset_Management_System.My.Resources.Resources.Undo_48px
-        Me.btnBack.Location = New System.Drawing.Point(1095, 634)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(70, 50)
-        Me.btnBack.TabIndex = 2
-        Me.btnBack.UseVisualStyleBackColor = True
+        Me.txtVendor.Location = New System.Drawing.Point(175, 90)
+        Me.txtVendor.Name = "txtVendor"
+        Me.txtVendor.Size = New System.Drawing.Size(200, 22)
+        Me.txtVendor.TabIndex = 12
         '
         'FrmAssetAdd
         '
@@ -433,6 +581,9 @@ Partial Class FrmAssetAdd
         Me.GroupBox1.PerformLayout()
         CType(Me.picCOT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -459,7 +610,6 @@ Partial Class FrmAssetAdd
     Friend WithEvents picCOT As PictureBox
     Friend WithEvents txtDesc As TextBox
     Friend WithEvents cboManu As ComboBox
-    Friend WithEvents cal As MonthCalendar
     Friend WithEvents Label14 As Label
     Friend WithEvents cboLocation As ComboBox
     Friend WithEvents cboCondition As ComboBox
@@ -473,4 +623,19 @@ Partial Class FrmAssetAdd
     Friend WithEvents btnBrowse As Button
     Friend WithEvents btnSave As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents dtpDateOfAcquisition As DateTimePicker
+    Friend WithEvents dtpDueReturnDate As DateTimePicker
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtInvoice As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents btnLocation As Button
+    Friend WithEvents btnType As Button
+    Friend WithEvents btnManu As Button
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtVendor As TextBox
 End Class

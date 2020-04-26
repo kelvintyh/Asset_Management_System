@@ -96,10 +96,28 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset.vb" />
-    <Compile Include="Asset_Module\FrmAssetAdd.Designer.vb">
+    <Compile Include="FrmAssetAdd.Designer.vb">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="Asset_Module\FrmAssetAdd.vb">
+    <Compile Include="FrmAssetAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAssetSummaryReport.Designer.vb">
+      <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAssetSummaryReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAssetUpdate.Designer.vb">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAssetUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAssetAddOthers.Designer.vb">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAssetAddOthers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_AssetHome.vb">
@@ -133,8 +151,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Asset_Module\FrmAssetAdd.resx">
+    <EmbeddedResource Include="FrmAssetAdd.resx">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAssetSummaryReport.resx">
+      <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAssetUpdate.resx">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAssetAddOthers.resx">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
@@ -174,6 +201,8 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Pencil_15px.png" />
+    <None Include="Resources\Import_64px.png" />
     <None Include="Resources\Undo_48px.png" />
     <None Include="Resources\Save_64px.png" />
     <None Include="Resources\Picture_96px.png" />
@@ -197,6 +226,8 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Asset_Module\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
