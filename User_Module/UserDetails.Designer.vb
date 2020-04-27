@@ -27,14 +27,14 @@ Partial Class UserDetails
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cboType = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.cboType = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.doc = New System.Drawing.Printing.PrintDocument()
         Me.ppd = New System.Windows.Forms.PrintPreviewDialog()
         Me.TabControl1.SuspendLayout()
@@ -90,6 +90,27 @@ Partial Class UserDetails
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(845, 65)
         Me.Panel1.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Location = New System.Drawing.Point(624, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 23)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "User ID: "
+        '
+        'cboType
+        '
+        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboType.FormattingEnabled = True
+        Me.cboType.Items.AddRange(New Object() {"Type", "Create", "Update", "Delete"})
+        Me.cboType.Location = New System.Drawing.Point(497, 27)
+        Me.cboType.Name = "cboType"
+        Me.cboType.Size = New System.Drawing.Size(121, 21)
+        Me.cboType.TabIndex = 4
         '
         'Label1
         '
@@ -152,31 +173,10 @@ Partial Class UserDetails
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(954, 561)
+        Me.TabPage2.Size = New System.Drawing.Size(851, 530)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'cboType
-        '
-        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboType.FormattingEnabled = True
-        Me.cboType.Items.AddRange(New Object() {"Type", "Create", "Update", "Delete"})
-        Me.cboType.Location = New System.Drawing.Point(497, 27)
-        Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(121, 21)
-        Me.cboType.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(624, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 23)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "User ID: "
         '
         'doc
         '

@@ -8,6 +8,22 @@ Public Class Frm_AssetHome
     Dim db As New AMSDBDataContext()
 
     Private Sub Frm_AssetHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        frm_LoginAdmin.Visible = False
+        Frm_LoginStaff.Visible = False
+
+        'check whether is admin or staff
+        If Not currentUser.Role.ToUpper.Equals("ADMIN") Then
+            For Each item As ToolStripMenuItem In msp.Items
+                If item.Name = "mnuView" Then
+                    For Each i As ToolStripMenuItem In item.DropDownItems
+                        If i.Name = "mnuViewActionHistory" Then
+                            i.Visible = False
+                        End If
+                    Next
+                End If
+            Next
+        End If
         'fill the combo box
         GetManu()
         GetLocation()
@@ -143,7 +159,7 @@ Public Class Frm_AssetHome
         dtpDateOfAcquisition.CustomFormat = "dd/MM/yyyy"
     End Sub
 
-    Private Sub AssetSummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssetSummaryReportToolStripMenuItem.Click
+    Private Sub AssetSummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuFileReportASR.Click
         FrmAssetSummaryReport.ShowDialog()
     End Sub
 
@@ -155,13 +171,17 @@ Public Class Frm_AssetHome
         Frm_TransactionCheckOut.ShowDialog()
     End Sub
 
-    Private Sub WarrantyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WarrantyToolStripMenuItem.Click
-        Frm_WarrantyHome.ShowDialog()
-    End Sub
-
     Private Sub Frm_AssetHome_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         UpdateTable()
         UpdateInfo()
+    End Sub
+
+    Private Sub MnuViewWarranty_Click(sender As Object, e As EventArgs) Handles mnuViewWarranty.Click
+        Frm_WarrantyHome.ShowDialog()
+    End Sub
+
+    Private Sub MnuViewActionHistory_Click(sender As Object, e As EventArgs) Handles mnuViewActionHistory.Click
+        UserDetails.ShowDialog()
     End Sub
 End Class
 
