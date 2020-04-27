@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset.vb" />
+    <Compile Include="splash.Designer.vb">
+      <DependentUpon>splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaction_Module\Module_Transaction.vb" />
     <Compile Include="Asset Module\FrmAssetAdd.Designer.vb">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
@@ -250,8 +256,10 @@
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyAdd.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyHome.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyUpdate.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Home_Page.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.Resources.resources" />
+    <EmbeddedResource Include="splash.resx">
+      <DependentUpon>splash.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction_Module\Frm_CheckedOut_Item_List.resx">
       <DependentUpon>Frm_CheckedOut_Item_List.vb</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +375,8 @@
     <Content Include="obj\Debug\TempPE\AMSDB.designer.vb.dll" />
     <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
     <Content Include="obj\Release\Asset_Management_System.vbproj.FileListAbsolute.txt" />
+    <None Include="Resources\istockphoto-1143434145-612x612.jpg" />
+    <None Include="Resources\pngtree-white-background-with-blue-smoke-on-sides-image_312167.jpg" />
     <Content Include="Resources\search.JPG" />
     <Content Include="Resources\search.png" />
     <None Include="obj\Debug\Asset_Management_System.vbproj.CoreCompileInputs.cache" />

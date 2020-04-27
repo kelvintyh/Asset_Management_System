@@ -73,31 +73,37 @@
 
         Dim u As User = db.Users.FirstOrDefault(Function(o) o.Id = id2)
 
-        Dim l As New LoginHistory()
-        l.Id = Lid
-        l.UserId = id2
-        l.Name = u.Name
-        l.Role = u.Role
-        l.DateTime = DateT
-
-        uid = id2
-
 
         If u Is Nothing Then
-            MessageBox.Show("Record not found", "Validating Record", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf u.Password <> pass Then
-            MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf u.Id <> id2 Then
-            MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Invalid User Login", "Validating user", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
 
-            MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            db.LoginHistories.InsertOnSubmit(l)
-            db.SubmitChanges()
+            Dim l As New LoginHistory()
+            l.Id = Lid
+            l.UserId = id2
+            l.Name = u.Name
+            l.Role = u.Role
+            l.DateTime = DateT
 
-            Frm_AssetHome.ShowDialog()
-            Dispose()
+            uid = id2
+
+
+
+            If u.Password <> pass Then
+                MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf u.Id <> id2 Then
+                MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+
+                MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                db.LoginHistories.InsertOnSubmit(l)
+                db.SubmitChanges()
+
+                Frm_AssetHome.ShowDialog()
+                Dispose()
+            End If
         End If
+
     End Sub
 
     Private Sub BackB_Click(sender As Object, e As EventArgs) Handles backB.Click
