@@ -9,7 +9,7 @@ Module Module1
     ' For FrmAssetAddOthers
     Public action_type As String
     Public cbo_selection As String
-
+    Public currentUser As New User
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         If image IsNot Nothing Then

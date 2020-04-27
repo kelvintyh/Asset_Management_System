@@ -33,12 +33,14 @@ Partial Class FrmAssetUpdate
         Me.cboLocation = New System.Windows.Forms.ComboBox()
         Me.cboCondition = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblWarrantyExp = New System.Windows.Forms.Label()
+        Me.lblWarrantyId = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.txtPrice = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.txtInvoice = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.picCOT = New System.Windows.Forms.PictureBox()
@@ -49,13 +51,20 @@ Partial Class FrmAssetUpdate
         Me.btnSave = New System.Windows.Forms.Button()
         Me.cboManu = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.grpLocal = New System.Windows.Forms.GroupBox()
         Me.lblContact = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.grpThirdParty = New System.Windows.Forms.GroupBox()
+        Me.txt3rdEmail = New System.Windows.Forms.TextBox()
+        Me.txt3rdContact = New System.Windows.Forms.TextBox()
+        Me.txt3rdDesc = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
@@ -75,7 +84,8 @@ Partial Class FrmAssetUpdate
         Me.GroupBox2.SuspendLayout()
         CType(Me.picCOT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.grpLocal.SuspendLayout()
+        Me.grpThirdParty.SuspendLayout()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -166,21 +176,55 @@ Partial Class FrmAssetUpdate
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblWarrantyExp)
+        Me.GroupBox2.Controls.Add(Me.lblWarrantyId)
+        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.txtVendor)
         Me.GroupBox2.Controls.Add(Me.txtPrice)
-        Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.txtInvoice)
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.dtpDateOfAcquisition)
         Me.GroupBox2.Location = New System.Drawing.Point(32, 28)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(491, 323)
+        Me.GroupBox2.Size = New System.Drawing.Size(491, 314)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
+        '
+        'lblWarrantyExp
+        '
+        Me.lblWarrantyExp.Location = New System.Drawing.Point(175, 262)
+        Me.lblWarrantyExp.Name = "lblWarrantyExp"
+        Me.lblWarrantyExp.Size = New System.Drawing.Size(200, 23)
+        Me.lblWarrantyExp.TabIndex = 18
+        '
+        'lblWarrantyId
+        '
+        Me.lblWarrantyId.Location = New System.Drawing.Point(175, 220)
+        Me.lblWarrantyId.Name = "lblWarrantyId"
+        Me.lblWarrantyId.Size = New System.Drawing.Size(200, 23)
+        Me.lblWarrantyId.TabIndex = 17
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(22, 226)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(93, 17)
+        Me.Label20.TabIndex = 16
+        Me.Label20.Text = "Warranty Id : "
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(22, 268)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(147, 17)
+        Me.Label18.TabIndex = 15
+        Me.Label18.Text = "Warranty expires on : "
         '
         'txtVendor
         '
@@ -195,15 +239,6 @@ Partial Class FrmAssetUpdate
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(174, 22)
         Me.txtPrice.TabIndex = 10
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(22, 224)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(93, 17)
-        Me.Label20.TabIndex = 8
-        Me.Label20.Text = "Warranty Id : "
         '
         'txtInvoice
         '
@@ -220,15 +255,6 @@ Partial Class FrmAssetUpdate
         Me.Label19.Size = New System.Drawing.Size(138, 17)
         Me.Label19.TabIndex = 5
         Me.Label19.Text = "Invoice /Reference : "
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(22, 266)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(147, 17)
-        Me.Label18.TabIndex = 4
-        Me.Label18.Text = "Warranty expires on : "
         '
         'Label17
         '
@@ -251,7 +277,7 @@ Partial Class FrmAssetUpdate
         'picCOT
         '
         Me.picCOT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picCOT.Location = New System.Drawing.Point(28, 21)
+        Me.picCOT.Location = New System.Drawing.Point(24, 21)
         Me.picCOT.Name = "picCOT"
         Me.picCOT.Size = New System.Drawing.Size(136, 181)
         Me.picCOT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,20 +347,22 @@ Partial Class FrmAssetUpdate
         Me.TabPage2.Text = "Purchase info."
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'grpLocal
         '
-        Me.GroupBox1.Controls.Add(Me.lblContact)
-        Me.GroupBox1.Controls.Add(Me.lblName)
-        Me.GroupBox1.Controls.Add(Me.txtId)
-        Me.GroupBox1.Controls.Add(Me.picCOT)
-        Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Location = New System.Drawing.Point(676, 188)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(427, 232)
-        Me.GroupBox1.TabIndex = 11
-        Me.GroupBox1.TabStop = False
+        Me.grpLocal.Controls.Add(Me.grpThirdParty)
+        Me.grpLocal.Controls.Add(Me.lblContact)
+        Me.grpLocal.Controls.Add(Me.lblName)
+        Me.grpLocal.Controls.Add(Me.txtId)
+        Me.grpLocal.Controls.Add(Me.picCOT)
+        Me.grpLocal.Controls.Add(Me.Label13)
+        Me.grpLocal.Controls.Add(Me.Label12)
+        Me.grpLocal.Controls.Add(Me.Label11)
+        Me.grpLocal.Location = New System.Drawing.Point(676, 206)
+        Me.grpLocal.Name = "grpLocal"
+        Me.grpLocal.Size = New System.Drawing.Size(427, 232)
+        Me.grpLocal.TabIndex = 11
+        Me.grpLocal.TabStop = False
+        Me.grpLocal.Text = "Local"
         '
         'lblContact
         '
@@ -385,6 +413,69 @@ Partial Class FrmAssetUpdate
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "ID : "
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'grpThirdParty
+        '
+        Me.grpThirdParty.Controls.Add(Me.txt3rdEmail)
+        Me.grpThirdParty.Controls.Add(Me.txt3rdContact)
+        Me.grpThirdParty.Controls.Add(Me.txt3rdDesc)
+        Me.grpThirdParty.Controls.Add(Me.Label23)
+        Me.grpThirdParty.Controls.Add(Me.Label22)
+        Me.grpThirdParty.Controls.Add(Me.Label21)
+        Me.grpThirdParty.Location = New System.Drawing.Point(0, 0)
+        Me.grpThirdParty.Name = "grpThirdParty"
+        Me.grpThirdParty.Size = New System.Drawing.Size(427, 232)
+        Me.grpThirdParty.TabIndex = 6
+        Me.grpThirdParty.TabStop = False
+        Me.grpThirdParty.Text = "Third Party"
+        '
+        'txt3rdEmail
+        '
+        Me.txt3rdEmail.Location = New System.Drawing.Point(32, 180)
+        Me.txt3rdEmail.Name = "txt3rdEmail"
+        Me.txt3rdEmail.Size = New System.Drawing.Size(251, 22)
+        Me.txt3rdEmail.TabIndex = 5
+        '
+        'txt3rdContact
+        '
+        Me.txt3rdContact.Location = New System.Drawing.Point(32, 113)
+        Me.txt3rdContact.Name = "txt3rdContact"
+        Me.txt3rdContact.Size = New System.Drawing.Size(251, 22)
+        Me.txt3rdContact.TabIndex = 4
+        '
+        'txt3rdDesc
+        '
+        Me.txt3rdDesc.Location = New System.Drawing.Point(32, 53)
+        Me.txt3rdDesc.Name = "txt3rdDesc"
+        Me.txt3rdDesc.Size = New System.Drawing.Size(251, 22)
+        Me.txt3rdDesc.TabIndex = 3
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(29, 160)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(128, 17)
+        Me.Label23.TabIndex = 2
+        Me.Label23.Text = "Third Party Email : "
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(29, 93)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(142, 17)
+        Me.Label22.TabIndex = 1
+        Me.Label22.Text = "Third Party Contact : "
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(29, 30)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(165, 17)
+        Me.Label21.TabIndex = 0
+        Me.Label21.Text = "Third Party Description : "
         '
         'Label9
         '
@@ -496,7 +587,7 @@ Partial Class FrmAssetUpdate
         Me.TabPage1.Controls.Add(Me.txtDesc)
         Me.TabPage1.Controls.Add(Me.cboManu)
         Me.TabPage1.Controls.Add(Me.lblId)
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.grpLocal)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Label7)
@@ -568,7 +659,7 @@ Partial Class FrmAssetUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1181, 694)
+        Me.ClientSize = New System.Drawing.Size(1181, 700)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.TabControl1)
@@ -578,8 +669,10 @@ Partial Class FrmAssetUpdate
         Me.GroupBox2.PerformLayout()
         CType(Me.picCOT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.grpLocal.ResumeLayout(False)
+        Me.grpLocal.PerformLayout()
+        Me.grpThirdParty.ResumeLayout(False)
+        Me.grpThirdParty.PerformLayout()
         CType(Me.picAsset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -599,10 +692,8 @@ Partial Class FrmAssetUpdate
     Friend WithEvents cboLocation As ComboBox
     Friend WithEvents cboCondition As ComboBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label20 As Label
     Friend WithEvents txtInvoice As TextBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents picCOT As PictureBox
@@ -613,7 +704,7 @@ Partial Class FrmAssetUpdate
     Friend WithEvents btnSave As Button
     Friend WithEvents cboManu As ComboBox
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents grpLocal As GroupBox
     Friend WithEvents lblContact As Label
     Friend WithEvents lblName As Label
     Friend WithEvents txtId As TextBox
@@ -638,4 +729,15 @@ Partial Class FrmAssetUpdate
     Friend WithEvents btnType As Button
     Friend WithEvents txtPrice As TextBox
     Friend WithEvents txtVendor As TextBox
+    Friend WithEvents grpThirdParty As GroupBox
+    Friend WithEvents txt3rdEmail As TextBox
+    Friend WithEvents txt3rdContact As TextBox
+    Friend WithEvents txt3rdDesc As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents lblWarrantyExp As Label
+    Friend WithEvents lblWarrantyId As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label18 As Label
 End Class
