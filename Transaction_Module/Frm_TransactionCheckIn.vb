@@ -135,6 +135,7 @@ Public Class Frm_TransactionCheckIn
 
                     'update database
                     db.SubmitChanges()
+                    createActionHistory("UpdateT", currentUser.Id, t.Id)
                 Next
             End If
             MessageBox.Show("Assets Check In Successfully !", "Information")

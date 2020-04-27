@@ -50,6 +50,7 @@ Public Class Frm_AssetHome
                 db.SubmitChanges()
                 UpdateTable()
                 UpdateInfo()
+                createActionHistory("DeleteA", currentUser.Id, a.Id)
                 MessageBox.Show("Asset Record Removed Successful !", "Information")
             End If
         Else
