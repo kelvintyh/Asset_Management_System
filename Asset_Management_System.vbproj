@@ -167,6 +167,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.Designer.vb">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmAssetAdd.resx">
@@ -184,20 +196,20 @@
     <EmbeddedResource Include="Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CheckedIn_Item_List.resx">
-      <DependentUpon>Frm_CheckedIn_Item_List.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TransactionCheckIn.resx">
-      <DependentUpon>Frm_TransactionCheckIn.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TransactionCheckOut.resx">
-      <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
+    <EmbeddedResource Include="Home_Page.resx">
+      <DependentUpon>Home_Page.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
