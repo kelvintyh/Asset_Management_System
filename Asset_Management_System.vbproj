@@ -100,34 +100,34 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset.vb" />
     <Compile Include="Transaction_Module\Module_Transaction.vb" />
-    <Compile Include="FrmAssetAdd.Designer.vb">
+    <Compile Include="Asset Module\FrmAssetAdd.Designer.vb">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAssetAdd.vb">
+    <Compile Include="Asset Module\FrmAssetAdd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAssetSummaryReport.Designer.vb">
+    <Compile Include="Asset Module\FrmAssetSummaryReport.Designer.vb">
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAssetSummaryReport.vb">
+    <Compile Include="Asset Module\FrmAssetSummaryReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAssetUpdate.Designer.vb">
+    <Compile Include="Asset Module\FrmAssetUpdate.Designer.vb">
       <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAssetUpdate.vb">
+    <Compile Include="Asset Module\FrmAssetUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAssetAddOthers.Designer.vb">
+    <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
       <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAssetAddOthers.vb">
+    <Compile Include="Asset Module\FrmAssetAddOthers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AssetHome.vb">
+    <Compile Include="Asset Module\Frm_AssetHome.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AssetHome.Designer.vb">
+    <Compile Include="Asset Module\Frm_AssetHome.Designer.vb">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +207,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User_Module\UserDetails.Designer.vb">
+      <DependentUpon>UserDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User_Module\UserDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
     </Compile>
@@ -227,6 +233,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAdd.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAddOthers.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetSummaryReport.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetUpdate.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_AssetHome.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_CheckedIn_Item_List.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_CheckedOut_Item_List.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_Date.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.frm_LoginAdmin.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_LoginStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_PassRecovery.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_Register.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_RoleChoose.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_TransactionCheckIn.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_TransactionCheckOut.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyAdd.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyHome.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyUpdate.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Home_Page.resources" />
+    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Resources.resources" />
     <EmbeddedResource Include="Transaction_Module\Frm_CheckedOut_Item_List.resx">
       <DependentUpon>Frm_CheckedOut_Item_List.vb</DependentUpon>
     </EmbeddedResource>
@@ -236,29 +262,23 @@
     <EmbeddedResource Include="Transaction_Module\Frm_TransactionCheckOut.resx">
       <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAssetAdd.resx">
+    <EmbeddedResource Include="Asset Module\FrmAssetAdd.resx">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAssetSummaryReport.resx">
+    <EmbeddedResource Include="Asset Module\FrmAssetSummaryReport.resx">
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAssetUpdate.resx">
+    <EmbeddedResource Include="Asset Module\FrmAssetUpdate.resx">
       <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAssetAddOthers.resx">
+    <EmbeddedResource Include="Asset Module\FrmAssetAddOthers.resx">
       <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AssetHome.resx">
+    <EmbeddedResource Include="Asset Module\Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction_Module\Frm_CheckedIn_Item_List.resx">
       <DependentUpon>Frm_CheckedIn_Item_List.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TransactionCheckIn.resx">
-      <DependentUpon>Frm_TransactionCheckIn.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TransactionCheckOut.resx">
-      <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Module\Frm_Date.resx">
       <DependentUpon>Frm_Date.vb</DependentUpon>
@@ -284,6 +304,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\UserDetails.resx">
+      <DependentUpon>UserDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +326,7 @@
     <None Include="AMSDB.dbml.layout">
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </None>
+    <None Include="bin\Debug\Asset_Management_System.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -315,10 +339,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include="AMSDB.mdf" />
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\Debug\Asset_Management_System.exe" />
+    <Content Include="bin\Debug\Asset_Management_System.pdb" />
+    <Content Include="bin\Debug\Asset_Management_System.xml" />
+    <Content Include="Image\Delete_25px.png" />
+    <Content Include="Image\Import_64px.png" />
+    <Content Include="Image\Pencil_15px.png" />
+    <Content Include="Image\Pencil_25px.png" />
+    <Content Include="Image\Picture_96px.png" />
+    <Content Include="Image\Plus Math_25px.png" />
+    <Content Include="Image\Save_64px.png" />
+    <Content Include="Image\Undo_48px.png" />
+    <Content Include="obj\Debug\Asset_Management_System.exe" />
+    <Content Include="obj\Debug\Asset_Management_System.pdb" />
+    <Content Include="obj\Debug\Asset_Management_System.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Asset_Management_System.xml" />
+    <Content Include="obj\Debug\TempPE\AMSDB.designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <None Include="obj\Debug\Asset_Management_System.vbproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Asset_Management_System.vbproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Asset_Management_System.vbprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\img_398183 %281%29.png" />
     <None Include="Resources\back butt.png" />
@@ -358,6 +406,8 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
