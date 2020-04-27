@@ -8,6 +8,7 @@ Public Class Frm_WarrantyHome
     End Sub
 
     Public Function UpdateTable()
+
         Dim db As New AMSDBDataContext()
         dgv.DataSource = db.Warranties
     End Function
@@ -60,6 +61,7 @@ Public Class Frm_WarrantyHome
             db.Warranties.DeleteOnSubmit(w)
             db.SubmitChanges()
             UpdateTable()
+
         Else
 
         End If

@@ -232,26 +232,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAdd.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAddOthers.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetSummaryReport.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetUpdate.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_AssetHome.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_CheckedIn_Item_List.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_CheckedOut_Item_List.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_Date.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.frm_LoginAdmin.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_LoginStaff.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_PassRecovery.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_Register.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_RoleChoose.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_TransactionCheckIn.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_TransactionCheckOut.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyAdd.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyHome.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Frm_WarrantyUpdate.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Home_Page.resources" />
-    <EmbeddedResource Include="obj\Debug\Asset_Management_System.Resources.resources" />
     <EmbeddedResource Include="Transaction_Module\Frm_CheckedOut_Item_List.resx">
       <DependentUpon>Frm_CheckedOut_Item_List.vb</DependentUpon>
     </EmbeddedResource>
@@ -325,7 +305,6 @@
     <None Include="AMSDB.dbml.layout">
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </None>
-    <None Include="bin\Debug\Asset_Management_System.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -344,9 +323,6 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
-    <Content Include="bin\Debug\Asset_Management_System.exe" />
-    <Content Include="bin\Debug\Asset_Management_System.pdb" />
-    <Content Include="bin\Debug\Asset_Management_System.xml" />
     <Content Include="Image\Back_40px.png" />
     <Content Include="Image\Checkmark_40px.png" />
     <Content Include="Image\Delete_25px.png" />
@@ -360,22 +336,8 @@
     <Content Include="Image\Save_40px.png" />
     <Content Include="Image\Save_64px.png" />
     <Content Include="Image\Undo_48px.png" />
-    <Content Include="obj\Debug\Asset_Management_System.exe" />
-    <Content Include="obj\Debug\Asset_Management_System.pdb" />
-    <Content Include="obj\Debug\Asset_Management_System.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Asset_Management_System.xml" />
-    <Content Include="obj\Debug\TempPE\AMSDB.designer.vb.dll" />
-    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
-    <Content Include="obj\Release\Asset_Management_System.vbproj.FileListAbsolute.txt" />
     <Content Include="Resources\search.JPG" />
     <Content Include="Resources\search.png" />
-    <None Include="obj\Debug\Asset_Management_System.vbproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Asset_Management_System.vbproj.GenerateResource.cache" />
-    <None Include="obj\Debug\Asset_Management_System.vbprojAssemblyReference.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Release\Asset_Management_System.vbproj.CoreCompileInputs.cache" />
-    <None Include="obj\Release\Asset_Management_System.vbprojAssemblyReference.cache" />
     <None Include="Resources\logo.jpg" />
     <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\img_398183 %281%29.png" />
@@ -416,9 +378,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Release\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
