@@ -96,23 +96,24 @@ Module Module1
                 Dim newid As Integer = Integer.Parse(rs.First.Warranty_Id.Substring(2, 5))
                 Return (newid + 1).ToString("W100000")
             End If
+        End If
 
-        ElseIf table.Equals("Transaction") Then
+        If table.Equals("Transaction") Then
 
-            Dim rs = From a In db.Transactions
-                     Order By a.Id Descending
+                Dim rs = From a In db.Transactions
+                         Order By a.Id Descending
 
-            ' If the table is empty
-            If rs.Count = 0 Then
-                Return "T100001"
-            Else
-                Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
-                Return (newid + 1).ToString("T100000")
-            End If
+                ' If the table is empty
+                If rs.Count = 0 Then
+                    Return "T100001"
+                Else
+                    Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
+                    Return (newid + 1).ToString("T100000")
+                End If
 
-        ElseIf table.Equals("ActionHistory") Then
+            ElseIf table.Equals("ActionHistory") Then
 
-            Dim rs = From a In db.ActionHistories
+                Dim rs = From a In db.ActionHistories
                      Order By a.Id Descending
 
             ' If the table is empty

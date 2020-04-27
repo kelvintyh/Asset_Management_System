@@ -22,13 +22,17 @@ Partial Class Frm_WarrantyHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_WarrantyHome))
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.gBoxList = New System.Windows.Forms.GroupBox()
+        Me.btPrint = New System.Windows.Forms.Button()
         Me.btEdit = New System.Windows.Forms.Button()
         Me.btDelete = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.lbCount = New System.Windows.Forms.Label()
         Me.tbSearch = New System.Windows.Forms.TextBox()
+        Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDialog = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gBoxList.SuspendLayout()
         Me.SuspendLayout()
@@ -55,6 +59,7 @@ Partial Class Frm_WarrantyHome
         '
         'gBoxList
         '
+        Me.gBoxList.Controls.Add(Me.btPrint)
         Me.gBoxList.Controls.Add(Me.btEdit)
         Me.gBoxList.Controls.Add(Me.btDelete)
         Me.gBoxList.Controls.Add(Me.btAdd)
@@ -67,6 +72,15 @@ Partial Class Frm_WarrantyHome
         Me.gBoxList.TabIndex = 6
         Me.gBoxList.TabStop = False
         Me.gBoxList.Text = "Item List"
+        '
+        'btPrint
+        '
+        Me.btPrint.Location = New System.Drawing.Point(633, 453)
+        Me.btPrint.Name = "btPrint"
+        Me.btPrint.Size = New System.Drawing.Size(89, 42)
+        Me.btPrint.TabIndex = 11
+        Me.btPrint.Text = "Print"
+        Me.btPrint.UseVisualStyleBackColor = True
         '
         'btEdit
         '
@@ -116,6 +130,19 @@ Partial Class Frm_WarrantyHome
         Me.tbSearch.TabIndex = 6
         Me.tbSearch.Text = "Search with ID or Name"
         '
+        'PrintDocument
+        '
+        '
+        'PrintDialog
+        '
+        Me.PrintDialog.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintDialog.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintDialog.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintDialog.Enabled = True
+        Me.PrintDialog.Icon = CType(resources.GetObject("PrintDialog.Icon"), System.Drawing.Icon)
+        Me.PrintDialog.Name = "PrintDialog"
+        Me.PrintDialog.Visible = False
+        '
         'Frm_WarrantyHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -140,4 +167,7 @@ Partial Class Frm_WarrantyHome
     Friend WithEvents btAdd As Button
     Friend WithEvents btDelete As Button
     Friend WithEvents btEdit As Button
+    Friend WithEvents btPrint As Button
+    Friend WithEvents PrintDocument As Printing.PrintDocument
+    Friend WithEvents PrintDialog As PrintPreviewDialog
 End Class
