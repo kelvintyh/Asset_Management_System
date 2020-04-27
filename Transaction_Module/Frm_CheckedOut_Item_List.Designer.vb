@@ -25,10 +25,7 @@ Partial Class Frm_CheckedOut_Item_List
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.dgv = New System.Windows.Forms.DataGridView()
-        Me.Panel1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,35 +50,17 @@ Partial Class Frm_CheckedOut_Item_List
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.txtSearch)
         Me.Panel1.Location = New System.Drawing.Point(29, 19)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(839, 34)
         Me.Panel1.TabIndex = 5
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(24, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Search : "
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(95, 8)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(237, 22)
-        Me.txtSearch.TabIndex = 0
         '
         'dgv
         '
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(29, 59)
         Me.dgv.Name = "dgv"
+        Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.ShowCellErrors = False
@@ -99,8 +78,6 @@ Partial Class Frm_CheckedOut_Item_List
         Me.Controls.Add(Me.dgv)
         Me.Name = "Frm_CheckedOut_Item_List"
         Me.Text = "Frm_CheckOut_Item_List"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -109,7 +86,5 @@ Partial Class Frm_CheckedOut_Item_List
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnConfirm As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtSearch As TextBox
     Friend WithEvents dgv As DataGridView
 End Class

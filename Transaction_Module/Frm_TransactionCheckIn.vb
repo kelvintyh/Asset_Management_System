@@ -58,7 +58,6 @@ Public Class Frm_TransactionCheckIn
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        'When enter key is press, search and fill up the user details
         Dim rs = From u In db.Users
                  Where u.Id.Equals(txtStaffID.Text.Trim)
         Try
@@ -138,7 +137,7 @@ Public Class Frm_TransactionCheckIn
                     db.SubmitChanges()
                 Next
             End If
-            MessageBox.Show("Assets Check Out Successfully !", "Information")
+            MessageBox.Show("Assets Check In Successfully !", "Information")
         ElseIf assetList.Count = 0 Then
             MessageBox.Show("No Asset To Check In !", "Error")
         End If
