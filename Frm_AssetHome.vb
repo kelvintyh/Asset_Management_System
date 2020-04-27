@@ -106,10 +106,13 @@ Public Class Frm_AssetHome
         FrmAssetSummaryReport.ShowDialog()
     End Sub
 
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+        Frm_Date.ShowDialog()
     Private Sub BtnCheckIn_Click(sender As Object, e As EventArgs) Handles btnCheckIn.Click
         Frm_TransactionCheckIn.ShowDialog()
     End Sub
 
+    End Sub
     Private Sub BtnCheckOut_Click(sender As Object, e As EventArgs) Handles btnCheckOut.Click
         Frm_TransactionCheckOut.ShowDialog()
     End Sub

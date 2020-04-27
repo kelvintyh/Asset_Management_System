@@ -26,6 +26,18 @@
         <elementListCompartment Id="75a1c1eb-bcb6-441e-a34c-04633d681e2e" absoluteBounds="0.76499999999999968, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="8fd1adf9-0bda-4679-81c5-c4c5d0a2f284" absoluteBounds="6.75, 1.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AMSDBDataContext/LoginHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0662c0da-b55e-404a-b70c-eefdd11f8bc8" absoluteBounds="6.7650000000000006, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e86f8c1-df6f-499b-b111-0c3015bbffc9" absoluteBounds="6.75, 4, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AMSDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20555536-3d6f-4603-9510-76ab494caa2c" absoluteBounds="6.765, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
     <classShape Id="cb979f6f-c4a3-4edd-9b5e-048bfa085654" absoluteBounds="6.25, 0.625, 2, 2.5401025390625">
       <DataClassMoniker Name="/AMSDBDataContext/User" />
       <nestedChildShapes>
