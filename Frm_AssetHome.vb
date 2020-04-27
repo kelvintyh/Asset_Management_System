@@ -102,6 +102,9 @@ Public Class Frm_AssetHome
         FrmAssetSummaryReport.ShowDialog()
     End Sub
 
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+        Frm_Date.ShowDialog()
 
+    End Sub
 End Class
 

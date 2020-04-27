@@ -26,9 +26,6 @@ Partial Class Frm_AssetHome
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -54,7 +51,6 @@ Partial Class Frm_AssetHome
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.picAsset = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.lblWarrantyExpDate = New System.Windows.Forms.Label()
         Me.lblWarrantyId = New System.Windows.Forms.Label()
@@ -78,13 +74,17 @@ Partial Class Frm_AssetHome
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssetSummaryReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginHistorySummaryReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.picAsset = New System.Windows.Forms.PictureBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.picAsset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -93,6 +93,7 @@ Partial Class Frm_AssetHome
         Me.TabPage4.SuspendLayout()
         CType(Me.dgvBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
+        CType(Me.picAsset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -141,33 +142,6 @@ Partial Class Frm_AssetHome
         Me.txtSearch.Size = New System.Drawing.Size(243, 22)
         Me.txtSearch.TabIndex = 0
         Me.txtSearch.Text = "Search"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Image = Global.Asset_Management_System.My.Resources.Resources.Delete_25px
-        Me.btnDelete.Location = New System.Drawing.Point(401, 636)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(50, 44)
-        Me.btnDelete.TabIndex = 3
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_25px
-        Me.btnEdit.Location = New System.Drawing.Point(345, 636)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(50, 44)
-        Me.btnEdit.TabIndex = 2
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Image = Global.Asset_Management_System.My.Resources.Resources.Plus_Math_25px
-        Me.btnAdd.Location = New System.Drawing.Point(289, 636)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(50, 44)
-        Me.btnAdd.TabIndex = 1
-        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -411,15 +385,6 @@ Partial Class Frm_AssetHome
         Me.Label1.Text = "ID : "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'picAsset
-        '
-        Me.picAsset.Location = New System.Drawing.Point(29, 28)
-        Me.picAsset.Name = "picAsset"
-        Me.picAsset.Size = New System.Drawing.Size(192, 152)
-        Me.picAsset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picAsset.TabIndex = 0
-        Me.picAsset.TabStop = False
-        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.lblWarrantyExpDate)
@@ -610,7 +575,7 @@ Partial Class Frm_AssetHome
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1312, 28)
+        Me.MenuStrip.Size = New System.Drawing.Size(1312, 30)
         Me.MenuStrip.TabIndex = 1
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -618,21 +583,63 @@ Partial Class Frm_AssetHome
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerateToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 26)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'GenerateToolStripMenuItem
         '
-        Me.GenerateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssetSummaryReportToolStripMenuItem})
+        Me.GenerateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssetSummaryReportToolStripMenuItem, Me.LoginHistorySummaryReportToolStripMenuItem})
         Me.GenerateToolStripMenuItem.Name = "GenerateToolStripMenuItem"
-        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.GenerateToolStripMenuItem.Text = "Generate Report"
         '
         'AssetSummaryReportToolStripMenuItem
         '
         Me.AssetSummaryReportToolStripMenuItem.Name = "AssetSummaryReportToolStripMenuItem"
-        Me.AssetSummaryReportToolStripMenuItem.Size = New System.Drawing.Size(242, 26)
+        Me.AssetSummaryReportToolStripMenuItem.Size = New System.Drawing.Size(295, 26)
         Me.AssetSummaryReportToolStripMenuItem.Text = "Asset Summary Report"
+        '
+        'LoginHistorySummaryReportToolStripMenuItem
+        '
+        Me.LoginHistorySummaryReportToolStripMenuItem.Name = "LoginHistorySummaryReportToolStripMenuItem"
+        Me.LoginHistorySummaryReportToolStripMenuItem.Size = New System.Drawing.Size(295, 26)
+        Me.LoginHistorySummaryReportToolStripMenuItem.Text = "Login History Summary Report"
+        '
+        'picAsset
+        '
+        Me.picAsset.Location = New System.Drawing.Point(29, 28)
+        Me.picAsset.Name = "picAsset"
+        Me.picAsset.Size = New System.Drawing.Size(192, 152)
+        Me.picAsset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picAsset.TabIndex = 0
+        Me.picAsset.TabStop = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Image = Global.Asset_Management_System.My.Resources.Resources.Delete_25px
+        Me.btnDelete.Location = New System.Drawing.Point(401, 636)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(50, 44)
+        Me.btnDelete.TabIndex = 3
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_25px
+        Me.btnEdit.Location = New System.Drawing.Point(345, 636)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(50, 44)
+        Me.btnEdit.TabIndex = 2
+        Me.btnEdit.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Image = Global.Asset_Management_System.My.Resources.Resources.Plus_Math_25px
+        Me.btnAdd.Location = New System.Drawing.Point(289, 636)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(50, 44)
+        Me.btnAdd.TabIndex = 1
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'Frm_AssetHome
         '
@@ -654,7 +661,6 @@ Partial Class Frm_AssetHome
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.picAsset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -665,6 +671,7 @@ Partial Class Frm_AssetHome
         CType(Me.dgvBooking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        CType(Me.picAsset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -726,4 +733,5 @@ Partial Class Frm_AssetHome
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GenerateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AssetSummaryReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoginHistorySummaryReportToolStripMenuItem As ToolStripMenuItem
 End Class

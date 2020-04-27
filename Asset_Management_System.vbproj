@@ -151,6 +151,42 @@
     <Compile Include="Frm_TransactionCheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login Module\Frm_Date.Designer.vb">
+      <DependentUpon>Frm_Date.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\Frm_Date.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Module\frm_LoginAdmin.Designer.vb">
+      <DependentUpon>frm_LoginAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\frm_LoginAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Module\Frm_LoginStaff.Designer.vb">
+      <DependentUpon>Frm_LoginStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\Frm_LoginStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Module\Frm_PassRecovery.Designer.vb">
+      <DependentUpon>Frm_PassRecovery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\Frm_PassRecovery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Module\Frm_Register.Designer.vb">
+      <DependentUpon>Frm_Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\Frm_Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Module\Frm_RoleChoose.Designer.vb">
+      <DependentUpon>Frm_RoleChoose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login Module\Frm_RoleChoose.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -193,6 +229,24 @@
     <EmbeddedResource Include="Frm_TransactionCheckOut.resx">
       <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\Frm_Date.resx">
+      <DependentUpon>Frm_Date.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\frm_LoginAdmin.resx">
+      <DependentUpon>frm_LoginAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\Frm_LoginStaff.resx">
+      <DependentUpon>Frm_LoginStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\Frm_PassRecovery.resx">
+      <DependentUpon>Frm_PassRecovery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\Frm_Register.resx">
+      <DependentUpon>Frm_Register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Module\Frm_RoleChoose.resx">
+      <DependentUpon>Frm_RoleChoose.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -225,6 +279,15 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\img_398183 %281%29.png" />
+    <None Include="Resources\back butt.png" />
+    <None Include="Resources\account-269-866236.png" />
+    <None Include="Resources\2080904.png" />
+    <None Include="Resources\loginid.png" />
+    <None Include="Resources\login-icons-png-5.png" />
+    <None Include="Resources\jupiter-fund-management-plc-investment-management-asset-management-text-floor.jpg" />
+    <None Include="Resources\jupiter-asset-management.png" />
+    <None Include="Resources\img_398183.png" />
     <None Include="Resources\Checkmark_40px.png" />
     <None Include="Resources\Save_40px.png" />
     <None Include="Resources\Plus Math_40px.png" />
