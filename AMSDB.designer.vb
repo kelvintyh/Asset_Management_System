@@ -31,6 +31,12 @@ Partial Public Class AMSDBDataContext
   #Region "Extensibility Method Definitions"
   Partial Private Sub OnCreated()
   End Sub
+  Partial Private Sub InsertActionHistory(instance As ActionHistory)
+    End Sub
+  Partial Private Sub UpdateActionHistory(instance As ActionHistory)
+    End Sub
+  Partial Private Sub DeleteActionHistory(instance As ActionHistory)
+    End Sub
   Partial Private Sub InsertAsset(instance As Asset)
     End Sub
   Partial Private Sub UpdateAsset(instance As Asset)
@@ -55,6 +61,18 @@ Partial Public Class AMSDBDataContext
     End Sub
   Partial Private Sub DeleteManufacturer(instance As Manufacturer)
     End Sub
+  Partial Private Sub InsertTransaction(instance As Transaction)
+    End Sub
+  Partial Private Sub UpdateTransaction(instance As Transaction)
+    End Sub
+  Partial Private Sub DeleteTransaction(instance As Transaction)
+    End Sub
+  Partial Private Sub InsertUser(instance As User)
+    End Sub
+  Partial Private Sub UpdateUser(instance As User)
+    End Sub
+  Partial Private Sub DeleteUser(instance As User)
+    End Sub
   Partial Private Sub InsertWarranty(instance As Warranty)
     End Sub
   Partial Private Sub UpdateWarranty(instance As Warranty)
@@ -66,12 +84,6 @@ Partial Public Class AMSDBDataContext
   Partial Private Sub UpdateLoginHistory(instance As LoginHistory)
     End Sub
   Partial Private Sub DeleteLoginHistory(instance As LoginHistory)
-    End Sub
-  Partial Private Sub InsertUser(instance As User)
-    End Sub
-  Partial Private Sub UpdateUser(instance As User)
-    End Sub
-  Partial Private Sub DeleteUser(instance As User)
     End Sub
   #End Region
 	
@@ -100,6 +112,12 @@ Partial Public Class AMSDBDataContext
 		OnCreated
 	End Sub
 	
+	Public ReadOnly Property ActionHistories() As System.Data.Linq.Table(Of ActionHistory)
+		Get
+			Return Me.GetTable(Of ActionHistory)
+		End Get
+	End Property
+	
 	Public ReadOnly Property Assets() As System.Data.Linq.Table(Of Asset)
 		Get
 			Return Me.GetTable(Of Asset)
@@ -124,6 +142,18 @@ Partial Public Class AMSDBDataContext
 		End Get
 	End Property
 	
+	Public ReadOnly Property Transactions() As System.Data.Linq.Table(Of Transaction)
+		Get
+			Return Me.GetTable(Of Transaction)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Users() As System.Data.Linq.Table(Of User)
+		Get
+			Return Me.GetTable(Of User)
+		End Get
+	End Property
+	
 	Public ReadOnly Property Warranties() As System.Data.Linq.Table(Of Warranty)
 		Get
 			Return Me.GetTable(Of Warranty)
@@ -135,12 +165,221 @@ Partial Public Class AMSDBDataContext
 			Return Me.GetTable(Of LoginHistory)
 		End Get
 	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.ActionHistory")>  _
+Partial Public Class ActionHistory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Public ReadOnly Property Users() As System.Data.Linq.Table(Of User)
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Id As String
+	
+	Private _Type As String
+	
+	Private _Description As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _UserId As String
+	
+	Private _Device_Name As String
+	
+	Private _MAC_Address As String
+	
+	Private _IP_Address As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnIdChanged()
+    End Sub
+    Partial Private Sub OnTypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnTypeChanged()
+    End Sub
+    Partial Private Sub OnDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnDescriptionChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnUserIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnUserIdChanged()
+    End Sub
+    Partial Private Sub OnDevice_NameChanging(value As String)
+    End Sub
+    Partial Private Sub OnDevice_NameChanged()
+    End Sub
+    Partial Private Sub OnMAC_AddressChanging(value As String)
+    End Sub
+    Partial Private Sub OnMAC_AddressChanged()
+    End Sub
+    Partial Private Sub OnIP_AddressChanging(value As String)
+    End Sub
+    Partial Private Sub OnIP_AddressChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property Id() As String
 		Get
-			Return Me.GetTable(Of User)
+			Return Me._Id
 		End Get
+		Set
+			If (String.Equals(Me._Id, value) = false) Then
+				Me.OnIdChanging(value)
+				Me.SendPropertyChanging
+				Me._Id = value
+				Me.SendPropertyChanged("Id")
+				Me.OnIdChanged
+			End If
+		End Set
 	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Type", DbType:="VarChar(50)")>  _
+	Public Property Type() As String
+		Get
+			Return Me._Type
+		End Get
+		Set
+			If (String.Equals(Me._Type, value) = false) Then
+				Me.OnTypeChanging(value)
+				Me.SendPropertyChanging
+				Me._Type = value
+				Me.SendPropertyChanged("Type")
+				Me.OnTypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Description", DbType:="VarChar(50)")>  _
+	Public Property Description() As String
+		Get
+			Return Me._Description
+		End Get
+		Set
+			If (String.Equals(Me._Description, value) = false) Then
+				Me.OnDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._Description = value
+				Me.SendPropertyChanged("Description")
+				Me.OnDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UserId", DbType:="VarChar(10)")>  _
+	Public Property UserId() As String
+		Get
+			Return Me._UserId
+		End Get
+		Set
+			If (String.Equals(Me._UserId, value) = false) Then
+				Me.OnUserIdChanging(value)
+				Me.SendPropertyChanging
+				Me._UserId = value
+				Me.SendPropertyChanged("UserId")
+				Me.OnUserIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Device Name]", Storage:="_Device_Name", DbType:="VarChar(50)")>  _
+	Public Property Device_Name() As String
+		Get
+			Return Me._Device_Name
+		End Get
+		Set
+			If (String.Equals(Me._Device_Name, value) = false) Then
+				Me.OnDevice_NameChanging(value)
+				Me.SendPropertyChanging
+				Me._Device_Name = value
+				Me.SendPropertyChanged("Device_Name")
+				Me.OnDevice_NameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[MAC Address]", Storage:="_MAC_Address", DbType:="VarChar(50)")>  _
+	Public Property MAC_Address() As String
+		Get
+			Return Me._MAC_Address
+		End Get
+		Set
+			If (String.Equals(Me._MAC_Address, value) = false) Then
+				Me.OnMAC_AddressChanging(value)
+				Me.SendPropertyChanging
+				Me._MAC_Address = value
+				Me.SendPropertyChanged("MAC_Address")
+				Me.OnMAC_AddressChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[IP Address]", Storage:="_IP_Address", DbType:="VarChar(50)")>  _
+	Public Property IP_Address() As String
+		Get
+			Return Me._IP_Address
+		End Get
+		Set
+			If (String.Equals(Me._IP_Address, value) = false) Then
+				Me.OnIP_AddressChanging(value)
+				Me.SendPropertyChanging
+				Me._IP_Address = value
+				Me.SendPropertyChanged("IP_Address")
+				Me.OnIP_AddressChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Asset")>  _
@@ -178,6 +417,8 @@ Partial Public Class Asset
 	Private _Invoice As String
 	
 	Private _WarrantyId As String
+	
+	Private _TransactionId As String
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -245,6 +486,10 @@ Partial Public Class Asset
     Partial Private Sub OnWarrantyIdChanging(value As String)
     End Sub
     Partial Private Sub OnWarrantyIdChanged()
+    End Sub
+    Partial Private Sub OnTransactionIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnTransactionIdChanged()
     End Sub
     #End Region
 	
@@ -489,6 +734,22 @@ Partial Public Class Asset
 				Me._WarrantyId = value
 				Me.SendPropertyChanged("WarrantyId")
 				Me.OnWarrantyIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TransactionId", DbType:="VarChar(50)")>  _
+	Public Property TransactionId() As String
+		Get
+			Return Me._TransactionId
+		End Get
+		Set
+			If (String.Equals(Me._TransactionId, value) = false) Then
+				Me.OnTransactionIdChanging(value)
+				Me.SendPropertyChanging
+				Me._TransactionId = value
+				Me.SendPropertyChanged("TransactionId")
+				Me.OnTransactionIdChanged
 			End If
 		End Set
 	End Property
@@ -738,6 +999,612 @@ Partial Public Class Manufacturer
 				Me._Name = value
 				Me.SendPropertyChanged("Name")
 				Me.OnNameChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[Transaction]")>  _
+Partial Public Class Transaction
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Id As String
+	
+	Private _Transaction_Type As String
+	
+	Private _Transaction_Date As System.Nullable(Of Date)
+	
+	Private _Asset_Id As String
+	
+	Private _Check_Out_To As String
+	
+	Private _Check_In_By As String
+	
+	Private _Check_Out_Type As String
+	
+	Private _Check_In_Type As String
+	
+	Private _Return_Due_Date As System.Nullable(Of Date)
+	
+	Private _Actual_Return_Date As System.Nullable(Of Date)
+	
+	Private _Third_Party_Description As String
+	
+	Private _Third_Party_Contact As String
+	
+	Private _Third_Party_Email As String
+	
+	Private _Notes As String
+	
+	Private _Status As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnIdChanged()
+    End Sub
+    Partial Private Sub OnTransaction_TypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnTransaction_TypeChanged()
+    End Sub
+    Partial Private Sub OnTransaction_DateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTransaction_DateChanged()
+    End Sub
+    Partial Private Sub OnAsset_IdChanging(value As String)
+    End Sub
+    Partial Private Sub OnAsset_IdChanged()
+    End Sub
+    Partial Private Sub OnCheck_Out_ToChanging(value As String)
+    End Sub
+    Partial Private Sub OnCheck_Out_ToChanged()
+    End Sub
+    Partial Private Sub OnCheck_In_ByChanging(value As String)
+    End Sub
+    Partial Private Sub OnCheck_In_ByChanged()
+    End Sub
+    Partial Private Sub OnCheck_Out_TypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnCheck_Out_TypeChanged()
+    End Sub
+    Partial Private Sub OnCheck_In_TypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnCheck_In_TypeChanged()
+    End Sub
+    Partial Private Sub OnReturn_Due_DateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnReturn_Due_DateChanged()
+    End Sub
+    Partial Private Sub OnActual_Return_DateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnActual_Return_DateChanged()
+    End Sub
+    Partial Private Sub OnThird_Party_DescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnThird_Party_DescriptionChanged()
+    End Sub
+    Partial Private Sub OnThird_Party_ContactChanging(value As String)
+    End Sub
+    Partial Private Sub OnThird_Party_ContactChanged()
+    End Sub
+    Partial Private Sub OnThird_Party_EmailChanging(value As String)
+    End Sub
+    Partial Private Sub OnThird_Party_EmailChanged()
+    End Sub
+    Partial Private Sub OnNotesChanging(value As String)
+    End Sub
+    Partial Private Sub OnNotesChanged()
+    End Sub
+    Partial Private Sub OnStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnStatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property Id() As String
+		Get
+			Return Me._Id
+		End Get
+		Set
+			If (String.Equals(Me._Id, value) = false) Then
+				Me.OnIdChanging(value)
+				Me.SendPropertyChanging
+				Me._Id = value
+				Me.SendPropertyChanged("Id")
+				Me.OnIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Transaction Type]", Storage:="_Transaction_Type", DbType:="VarChar(50)")>  _
+	Public Property Transaction_Type() As String
+		Get
+			Return Me._Transaction_Type
+		End Get
+		Set
+			If (String.Equals(Me._Transaction_Type, value) = false) Then
+				Me.OnTransaction_TypeChanging(value)
+				Me.SendPropertyChanging
+				Me._Transaction_Type = value
+				Me.SendPropertyChanged("Transaction_Type")
+				Me.OnTransaction_TypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Transaction Date]", Storage:="_Transaction_Date", DbType:="DateTime")>  _
+	Public Property Transaction_Date() As System.Nullable(Of Date)
+		Get
+			Return Me._Transaction_Date
+		End Get
+		Set
+			If (Me._Transaction_Date.Equals(value) = false) Then
+				Me.OnTransaction_DateChanging(value)
+				Me.SendPropertyChanging
+				Me._Transaction_Date = value
+				Me.SendPropertyChanged("Transaction_Date")
+				Me.OnTransaction_DateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Asset Id]", Storage:="_Asset_Id", DbType:="VarChar(10)")>  _
+	Public Property Asset_Id() As String
+		Get
+			Return Me._Asset_Id
+		End Get
+		Set
+			If (String.Equals(Me._Asset_Id, value) = false) Then
+				Me.OnAsset_IdChanging(value)
+				Me.SendPropertyChanging
+				Me._Asset_Id = value
+				Me.SendPropertyChanged("Asset_Id")
+				Me.OnAsset_IdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Check Out To]", Storage:="_Check_Out_To", DbType:="VarChar(50)")>  _
+	Public Property Check_Out_To() As String
+		Get
+			Return Me._Check_Out_To
+		End Get
+		Set
+			If (String.Equals(Me._Check_Out_To, value) = false) Then
+				Me.OnCheck_Out_ToChanging(value)
+				Me.SendPropertyChanging
+				Me._Check_Out_To = value
+				Me.SendPropertyChanged("Check_Out_To")
+				Me.OnCheck_Out_ToChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Check In By]", Storage:="_Check_In_By", DbType:="VarChar(50)")>  _
+	Public Property Check_In_By() As String
+		Get
+			Return Me._Check_In_By
+		End Get
+		Set
+			If (String.Equals(Me._Check_In_By, value) = false) Then
+				Me.OnCheck_In_ByChanging(value)
+				Me.SendPropertyChanging
+				Me._Check_In_By = value
+				Me.SendPropertyChanged("Check_In_By")
+				Me.OnCheck_In_ByChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Check Out Type]", Storage:="_Check_Out_Type", DbType:="VarChar(15)")>  _
+	Public Property Check_Out_Type() As String
+		Get
+			Return Me._Check_Out_Type
+		End Get
+		Set
+			If (String.Equals(Me._Check_Out_Type, value) = false) Then
+				Me.OnCheck_Out_TypeChanging(value)
+				Me.SendPropertyChanging
+				Me._Check_Out_Type = value
+				Me.SendPropertyChanged("Check_Out_Type")
+				Me.OnCheck_Out_TypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Check In Type]", Storage:="_Check_In_Type", DbType:="VarChar(15)")>  _
+	Public Property Check_In_Type() As String
+		Get
+			Return Me._Check_In_Type
+		End Get
+		Set
+			If (String.Equals(Me._Check_In_Type, value) = false) Then
+				Me.OnCheck_In_TypeChanging(value)
+				Me.SendPropertyChanging
+				Me._Check_In_Type = value
+				Me.SendPropertyChanged("Check_In_Type")
+				Me.OnCheck_In_TypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Return Due Date]", Storage:="_Return_Due_Date", DbType:="Date")>  _
+	Public Property Return_Due_Date() As System.Nullable(Of Date)
+		Get
+			Return Me._Return_Due_Date
+		End Get
+		Set
+			If (Me._Return_Due_Date.Equals(value) = false) Then
+				Me.OnReturn_Due_DateChanging(value)
+				Me.SendPropertyChanging
+				Me._Return_Due_Date = value
+				Me.SendPropertyChanged("Return_Due_Date")
+				Me.OnReturn_Due_DateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Actual Return Date]", Storage:="_Actual_Return_Date", DbType:="Date")>  _
+	Public Property Actual_Return_Date() As System.Nullable(Of Date)
+		Get
+			Return Me._Actual_Return_Date
+		End Get
+		Set
+			If (Me._Actual_Return_Date.Equals(value) = false) Then
+				Me.OnActual_Return_DateChanging(value)
+				Me.SendPropertyChanging
+				Me._Actual_Return_Date = value
+				Me.SendPropertyChanged("Actual_Return_Date")
+				Me.OnActual_Return_DateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Third Party Description]", Storage:="_Third_Party_Description", DbType:="VarChar(MAX)")>  _
+	Public Property Third_Party_Description() As String
+		Get
+			Return Me._Third_Party_Description
+		End Get
+		Set
+			If (String.Equals(Me._Third_Party_Description, value) = false) Then
+				Me.OnThird_Party_DescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._Third_Party_Description = value
+				Me.SendPropertyChanged("Third_Party_Description")
+				Me.OnThird_Party_DescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Third Party Contact]", Storage:="_Third_Party_Contact", DbType:="VarChar(MAX)")>  _
+	Public Property Third_Party_Contact() As String
+		Get
+			Return Me._Third_Party_Contact
+		End Get
+		Set
+			If (String.Equals(Me._Third_Party_Contact, value) = false) Then
+				Me.OnThird_Party_ContactChanging(value)
+				Me.SendPropertyChanging
+				Me._Third_Party_Contact = value
+				Me.SendPropertyChanged("Third_Party_Contact")
+				Me.OnThird_Party_ContactChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Third Party Email]", Storage:="_Third_Party_Email", DbType:="VarChar(MAX)")>  _
+	Public Property Third_Party_Email() As String
+		Get
+			Return Me._Third_Party_Email
+		End Get
+		Set
+			If (String.Equals(Me._Third_Party_Email, value) = false) Then
+				Me.OnThird_Party_EmailChanging(value)
+				Me.SendPropertyChanging
+				Me._Third_Party_Email = value
+				Me.SendPropertyChanged("Third_Party_Email")
+				Me.OnThird_Party_EmailChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Notes", DbType:="VarChar(MAX)")>  _
+	Public Property Notes() As String
+		Get
+			Return Me._Notes
+		End Get
+		Set
+			If (String.Equals(Me._Notes, value) = false) Then
+				Me.OnNotesChanging(value)
+				Me.SendPropertyChanging
+				Me._Notes = value
+				Me.SendPropertyChanged("Notes")
+				Me.OnNotesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Status", DbType:="VarChar(10)")>  _
+	Public Property Status() As String
+		Get
+			Return Me._Status
+		End Get
+		Set
+			If (String.Equals(Me._Status, value) = false) Then
+				Me.OnStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._Status = value
+				Me.SendPropertyChanged("Status")
+				Me.OnStatusChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[User]")>  _
+Partial Public Class User
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Id As String
+	
+	Private _Name As String
+	
+	Private _Username As String
+	
+	Private _Password As String
+	
+	Private _Gender As String
+	
+	Private _Contact_number As String
+	
+	Private _Email_address As String
+	
+	Private _Image As System.Data.Linq.Binary
+	
+	Private _Role As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnIdChanged()
+    End Sub
+    Partial Private Sub OnNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnNameChanged()
+    End Sub
+    Partial Private Sub OnUsernameChanging(value As String)
+    End Sub
+    Partial Private Sub OnUsernameChanged()
+    End Sub
+    Partial Private Sub OnPasswordChanging(value As String)
+    End Sub
+    Partial Private Sub OnPasswordChanged()
+    End Sub
+    Partial Private Sub OnGenderChanging(value As String)
+    End Sub
+    Partial Private Sub OnGenderChanged()
+    End Sub
+    Partial Private Sub OnContact_numberChanging(value As String)
+    End Sub
+    Partial Private Sub OnContact_numberChanged()
+    End Sub
+    Partial Private Sub OnEmail_addressChanging(value As String)
+    End Sub
+    Partial Private Sub OnEmail_addressChanged()
+    End Sub
+    Partial Private Sub OnImageChanging(value As System.Data.Linq.Binary)
+    End Sub
+    Partial Private Sub OnImageChanged()
+    End Sub
+    Partial Private Sub OnRoleChanging(value As String)
+    End Sub
+    Partial Private Sub OnRoleChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property Id() As String
+		Get
+			Return Me._Id
+		End Get
+		Set
+			If (String.Equals(Me._Id, value) = false) Then
+				Me.OnIdChanging(value)
+				Me.SendPropertyChanging
+				Me._Id = value
+				Me.SendPropertyChanged("Id")
+				Me.OnIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Name", DbType:="VarChar(50)")>  _
+	Public Property Name() As String
+		Get
+			Return Me._Name
+		End Get
+		Set
+			If (String.Equals(Me._Name, value) = false) Then
+				Me.OnNameChanging(value)
+				Me.SendPropertyChanging
+				Me._Name = value
+				Me.SendPropertyChanged("Name")
+				Me.OnNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="VarChar(50)")>  _
+	Public Property Username() As String
+		Get
+			Return Me._Username
+		End Get
+		Set
+			If (String.Equals(Me._Username, value) = false) Then
+				Me.OnUsernameChanging(value)
+				Me.SendPropertyChanging
+				Me._Username = value
+				Me.SendPropertyChanged("Username")
+				Me.OnUsernameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Password", DbType:="VarChar(50)")>  _
+	Public Property Password() As String
+		Get
+			Return Me._Password
+		End Get
+		Set
+			If (String.Equals(Me._Password, value) = false) Then
+				Me.OnPasswordChanging(value)
+				Me.SendPropertyChanging
+				Me._Password = value
+				Me.SendPropertyChanged("Password")
+				Me.OnPasswordChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Gender", DbType:="VarChar(10)")>  _
+	Public Property Gender() As String
+		Get
+			Return Me._Gender
+		End Get
+		Set
+			If (String.Equals(Me._Gender, value) = false) Then
+				Me.OnGenderChanging(value)
+				Me.SendPropertyChanging
+				Me._Gender = value
+				Me.SendPropertyChanged("Gender")
+				Me.OnGenderChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Contact number]", Storage:="_Contact_number", DbType:="VarChar(15)")>  _
+	Public Property Contact_number() As String
+		Get
+			Return Me._Contact_number
+		End Get
+		Set
+			If (String.Equals(Me._Contact_number, value) = false) Then
+				Me.OnContact_numberChanging(value)
+				Me.SendPropertyChanging
+				Me._Contact_number = value
+				Me.SendPropertyChanged("Contact_number")
+				Me.OnContact_numberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Email address]", Storage:="_Email_address", DbType:="VarChar(50)")>  _
+	Public Property Email_address() As String
+		Get
+			Return Me._Email_address
+		End Get
+		Set
+			If (String.Equals(Me._Email_address, value) = false) Then
+				Me.OnEmail_addressChanging(value)
+				Me.SendPropertyChanging
+				Me._Email_address = value
+				Me.SendPropertyChanged("Email_address")
+				Me.OnEmail_addressChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Image", DbType:="Image", UpdateCheck:=UpdateCheck.Never)>  _
+	Public Property Image() As System.Data.Linq.Binary
+		Get
+			Return Me._Image
+		End Get
+		Set
+			If (Object.Equals(Me._Image, value) = false) Then
+				Me.OnImageChanging(value)
+				Me.SendPropertyChanging
+				Me._Image = value
+				Me.SendPropertyChanged("Image")
+				Me.OnImageChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Role", DbType:="VarChar(50)")>  _
+	Public Property Role() As String
+		Get
+			Return Me._Role
+		End Get
+		Set
+			If (String.Equals(Me._Role, value) = false) Then
+				Me.OnRoleChanging(value)
+				Me.SendPropertyChanging
+				Me._Role = value
+				Me.SendPropertyChanged("Role")
+				Me.OnRoleChanged
 			End If
 		End Set
 	End Property
@@ -1058,243 +1925,6 @@ Partial Public Class LoginHistory
 				Me._DateTime = value
 				Me.SendPropertyChanged("DateTime")
 				Me.OnDateTimeChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[User]")>  _
-Partial Public Class User
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _Id As String
-	
-	Private _Name As String
-	
-	Private _Username As String
-	
-	Private _Password As String
-	
-	Private _Gender As String
-	
-	Private _Contact_number As String
-	
-	Private _Email_address As String
-	
-	Private _Image As System.Data.Linq.Binary
-	
-	Private _Role As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnIdChanged()
-    End Sub
-    Partial Private Sub OnNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnNameChanged()
-    End Sub
-    Partial Private Sub OnUsernameChanging(value As String)
-    End Sub
-    Partial Private Sub OnUsernameChanged()
-    End Sub
-    Partial Private Sub OnPasswordChanging(value As String)
-    End Sub
-    Partial Private Sub OnPasswordChanged()
-    End Sub
-    Partial Private Sub OnGenderChanging(value As String)
-    End Sub
-    Partial Private Sub OnGenderChanged()
-    End Sub
-    Partial Private Sub OnContact_numberChanging(value As String)
-    End Sub
-    Partial Private Sub OnContact_numberChanged()
-    End Sub
-    Partial Private Sub OnEmail_addressChanging(value As String)
-    End Sub
-    Partial Private Sub OnEmail_addressChanged()
-    End Sub
-    Partial Private Sub OnImageChanging(value As System.Data.Linq.Binary)
-    End Sub
-    Partial Private Sub OnImageChanged()
-    End Sub
-    Partial Private Sub OnRoleChanging(value As String)
-    End Sub
-    Partial Private Sub OnRoleChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property Id() As String
-		Get
-			Return Me._Id
-		End Get
-		Set
-			If (String.Equals(Me._Id, value) = false) Then
-				Me.OnIdChanging(value)
-				Me.SendPropertyChanging
-				Me._Id = value
-				Me.SendPropertyChanged("Id")
-				Me.OnIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Name", DbType:="VarChar(50)")>  _
-	Public Property Name() As String
-		Get
-			Return Me._Name
-		End Get
-		Set
-			If (String.Equals(Me._Name, value) = false) Then
-				Me.OnNameChanging(value)
-				Me.SendPropertyChanging
-				Me._Name = value
-				Me.SendPropertyChanged("Name")
-				Me.OnNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="VarChar(50)")>  _
-	Public Property Username() As String
-		Get
-			Return Me._Username
-		End Get
-		Set
-			If (String.Equals(Me._Username, value) = false) Then
-				Me.OnUsernameChanging(value)
-				Me.SendPropertyChanging
-				Me._Username = value
-				Me.SendPropertyChanged("Username")
-				Me.OnUsernameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Password", DbType:="VarChar(50)")>  _
-	Public Property Password() As String
-		Get
-			Return Me._Password
-		End Get
-		Set
-			If (String.Equals(Me._Password, value) = false) Then
-				Me.OnPasswordChanging(value)
-				Me.SendPropertyChanging
-				Me._Password = value
-				Me.SendPropertyChanged("Password")
-				Me.OnPasswordChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Gender", DbType:="VarChar(10)")>  _
-	Public Property Gender() As String
-		Get
-			Return Me._Gender
-		End Get
-		Set
-			If (String.Equals(Me._Gender, value) = false) Then
-				Me.OnGenderChanging(value)
-				Me.SendPropertyChanging
-				Me._Gender = value
-				Me.SendPropertyChanged("Gender")
-				Me.OnGenderChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Contact number]", Storage:="_Contact_number", DbType:="VarChar(15)")>  _
-	Public Property Contact_number() As String
-		Get
-			Return Me._Contact_number
-		End Get
-		Set
-			If (String.Equals(Me._Contact_number, value) = false) Then
-				Me.OnContact_numberChanging(value)
-				Me.SendPropertyChanging
-				Me._Contact_number = value
-				Me.SendPropertyChanged("Contact_number")
-				Me.OnContact_numberChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Email address]", Storage:="_Email_address", DbType:="VarChar(50)")>  _
-	Public Property Email_address() As String
-		Get
-			Return Me._Email_address
-		End Get
-		Set
-			If (String.Equals(Me._Email_address, value) = false) Then
-				Me.OnEmail_addressChanging(value)
-				Me.SendPropertyChanging
-				Me._Email_address = value
-				Me.SendPropertyChanged("Email_address")
-				Me.OnEmail_addressChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Image", DbType:="Image", UpdateCheck:=UpdateCheck.Never)>  _
-	Public Property Image() As System.Data.Linq.Binary
-		Get
-			Return Me._Image
-		End Get
-		Set
-			If (Object.Equals(Me._Image, value) = false) Then
-				Me.OnImageChanging(value)
-				Me.SendPropertyChanging
-				Me._Image = value
-				Me.SendPropertyChanged("Image")
-				Me.OnImageChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Role", DbType:="VarChar(10)")>  _
-	Public Property Role() As String
-		Get
-			Return Me._Role
-		End Get
-		Set
-			If (String.Equals(Me._Role, value) = false) Then
-				Me.OnRoleChanging(value)
-				Me.SendPropertyChanging
-				Me._Role = value
-				Me.SendPropertyChanged("Role")
-				Me.OnRoleChanged
 			End If
 		End Set
 	End Property
