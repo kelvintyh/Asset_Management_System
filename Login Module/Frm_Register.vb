@@ -37,6 +37,7 @@ Public Class Frm_Register
 
         db.Users.InsertOnSubmit(u)
         db.SubmitChanges()
+        createActionHistory("CreateU", u.Id, u.Id)
 
         MessageBox.Show("Record Added", "Add Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
