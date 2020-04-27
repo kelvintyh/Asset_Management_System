@@ -63,6 +63,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.Document, Version=4.4.4.8, Culture=neutral, PublicKeyToken=e759c76c7515592a, processorArchitecture=MSIL">
+      <HintPath>packages\sautinsoft.document.4.4.4.8\lib\net47\SautinSoft.Document.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -338,6 +344,7 @@
     <Content Include="Image\Undo_48px.png" />
     <Content Include="Resources\search.JPG" />
     <Content Include="Resources\search.png" />
+    <None Include="packages.config" />
     <None Include="Resources\logo.jpg" />
     <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\img_398183 %281%29.png" />
