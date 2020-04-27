@@ -109,6 +109,8 @@ Public Class FrmAssetAdd
             db.SubmitChanges()
             MessageBox.Show("New Asset Record Added Successful !", "Information")
             Frm_AssetHome.UpdateTable()
+
+            createActionHistory("CreateA", "U10001", a.Id)
             Me.Close()
         End If
 

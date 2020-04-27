@@ -89,4 +89,61 @@
       <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Contact number]" Member="Contact_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Email address]" Member="Email_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginHistory" Member="LoginHistories">
+    <Type Name="LoginHistory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ActionHistory" Member="ActionHistories">
+    <Type Name="ActionHistory">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Device Name]" Member="Device_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[MAC Address]" Member="MAC_Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[IP Address]" Member="IP_Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Contact number]" Member="Contact_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Email address]" Member="Email_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Transaction]" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InventoryLocation" Member="InventoryLocation1s">
+    <Type Name="InventoryLocation1">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Name ]" Member="Name_" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

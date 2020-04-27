@@ -33,6 +33,7 @@ Namespace My
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.Asset_Management_System.Frm_AssetHome
+            Me.MainForm = Global.Asset_Management_System.UserDetails
         End Sub
     End Class
 End Namespace

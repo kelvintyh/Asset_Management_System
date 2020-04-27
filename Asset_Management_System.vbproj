@@ -231,6 +231,30 @@
     <Compile Include="Warranty_Module\Frm_WarrantyUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User_Module\UserDetails.Designer.vb">
+      <DependentUpon>UserDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User_Module\UserDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.Designer.vb">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.Designer.vb">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAdd.resources" />
@@ -316,6 +340,15 @@
     <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
       <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyHome.resx">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="AMSDB.dbml">
@@ -367,6 +400,7 @@
     <None Include="obj\Debug\Asset_Management_System.vbprojAssemblyReference.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Resources\logo.jpg" />
     <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\img_398183 %281%29.png" />
     <None Include="Resources\back butt.png" />

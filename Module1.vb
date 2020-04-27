@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Net.NetworkInformation
 
 Module Module1
 
@@ -26,7 +27,7 @@ Module Module1
 
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         ms = New MemoryStream(byteArray)
-        Dim image As Image = Image.FromStream(ms)
+        Dim image As Image = image.FromStream(ms)
         Return image
     End Function
 
@@ -82,7 +83,6 @@ Module Module1
                 Return (newid + 1).ToString("L100000")
             End If
 
-
         End If
 
         If table.Equals("Warranty") Then
@@ -109,6 +109,19 @@ Module Module1
                 Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
                 Return (newid + 1).ToString("T100000")
             End If
+        End If
+
+        ElseIf table.Equals("ActionHistory") Then
+        Dim rs = From a In db.ActionHistories
+                 Order By a.Id Descending
+
+        ' If the table is empty
+        If rs.Count = 0 Then
+            Return "AH100001"
+        Else
+            Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(3, 5))
+            Return (newid + 1).ToString("AH100000")
+        End If
         End If
     End Function
 
@@ -173,6 +186,72 @@ Module Module1
 
     End Function
 
+    Public Function createActionHistory(ByVal actionType As String, ByVal staffID As String, ByVal id As String) As String
+        Dim desc As String
+        Dim type As String
+        Dim deviceName As String 'get device name
+        Dim macAddress As String 'get mac address
+        Dim ipAddress As String 'get ip address
 
+        If actionType.Equals("CreateA") Then
+            desc = "Asset " + id
+            type = "Create"
+        ElseIf actionType.Equals("UpdateA") Then
+            desc = "Asset " + id
+            type = "Update"
+        ElseIf actionType.Equals("DeleteA") Then
+            desc = "Asset " + id
+            type = "Delete"
+        ElseIf actionType.Equals("CreateT") Then
+            desc = "Transaction " + id
+            type = "Create"
+        ElseIf actionType.Equals("UpdateT") Then
+            desc = "Transaction " + id
+            type = "Update"
+        ElseIf actionType.Equals("DeleteT") Then
+            desc = "Transaction " + id
+            type = "Delete"
+        ElseIf actionType.Equals("CreateW") Then
+            desc = "Warranty " + id
+            type = "Create"
+        ElseIf actionType.Equals("UpdateW") Then
+            desc = "Warranty " + id
+            type = "Update"
+        ElseIf actionType.Equals("DeleteW") Then
+            desc = "Warranty " + id
+            type = "Delete"
+        ElseIf actionType.Equals("CreateU") Then
+            desc = "User " + id
+            type = "Create"
+        ElseIf actionType.Equals("UpdateU") Then
+            desc = "User " + id
+            type = "Update"
+        ElseIf actionType.Equals("DeleteU") Then
+            desc = "User " + id
+            type = "Delete"
+        End If
+
+        deviceName = System.Environment.MachineName
+        ipAddress = System.Net.Dns.GetHostByName(deviceName).AddressList(0).ToString()
+        macAddress = getMacAddress()
+
+        Dim a As New ActionHistory()
+        a.Id = GetNextId("ActionHistory")
+        a.Type = type
+        a.Description = desc
+        a.Date = Date.Now.ToShortDateString()
+        a.UserId = staffID
+        a.Device_Name = deviceName
+        a.MAC_Address = macAddress
+        a.IP_Address = ipAddress
+
+        db.ActionHistories.InsertOnSubmit(a)
+        db.SubmitChanges()
+    End Function
+
+    Function getMacAddress()
+        Dim nics() As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()
+        Return nics(1).GetPhysicalAddress.ToString
+    End Function
 
 End Module
