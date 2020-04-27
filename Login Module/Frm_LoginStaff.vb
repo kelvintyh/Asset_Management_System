@@ -54,15 +54,22 @@
 
         Dim Lid As String = ""
         Dim DateT As DateTime = Convert.ToDateTime(DateTime.Now).ToString("dd.MMM,yyyy HH:mm:ss")
+        Dim rs = From ll In db.LoginHistories
+                 Order By ll.Id Descending
 
+        If rs.Count = 0 Then
+            Lid = "L0001"
+        Else
 
-        Dim id1 As String = (From a In db.LoginHistories
-                             Select a.Id).Max
+            Dim id1 As String = (From a In db.LoginHistories
+                                 Select a.Id).Max
 
-        id1 = id1.Substring(3)
-        Int32.TryParse(id1, digit)
-        digit = digit + 1
-        Lid = "L" + digit.ToString("D4")
+            id1 = id1.Substring(3)
+            Int32.TryParse(id1, digit)
+            digit = digit + 1
+            Lid = "L" + digit.ToString("D4")
+
+        End If
 
         Dim u As User = db.Users.FirstOrDefault(Function(o) o.Id = id2)
 

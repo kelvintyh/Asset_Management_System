@@ -190,7 +190,7 @@ Partial Class Frm_LoginStaff
         Me.GroupBox1.Controls.Add(Me.txtPass)
         Me.GroupBox1.Location = New System.Drawing.Point(473, 131)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(450, 293)
+        Me.GroupBox1.Size = New System.Drawing.Size(471, 293)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Please login using your own id and password"
