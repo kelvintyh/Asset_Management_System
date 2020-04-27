@@ -38,7 +38,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Asset_Management_System.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,7 +50,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Asset_Management_System.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -109,6 +113,42 @@
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Date.Designer.vb">
+      <DependentUpon>Frm_Date.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Date.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LoginAdmin.Designer.vb">
+      <DependentUpon>Frm_LoginAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LoginAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LoginStaff.Designer.vb">
+      <DependentUpon>Frm_LoginStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LoginStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PassRecovery.Designer.vb">
+      <DependentUpon>Frm_PassRecovery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PassRecovery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Register.Designer.vb">
+      <DependentUpon>Frm_Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_RoleChoose.Designer.vb">
+      <DependentUpon>Frm_RoleChoose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_RoleChoose.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Home_Page.Designer.vb">
       <DependentUpon>Home_Page.vb</DependentUpon>
     </Compile>
@@ -138,6 +178,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Date.resx">
+      <DependentUpon>Frm_Date.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_LoginAdmin.resx">
+      <DependentUpon>Frm_LoginAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LoginStaff.resx">
+      <DependentUpon>Frm_LoginStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PassRecovery.resx">
+      <DependentUpon>Frm_PassRecovery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Register.resx">
+      <DependentUpon>Frm_Register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_RoleChoose.resx">
+      <DependentUpon>Frm_RoleChoose.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home_Page.resx">
       <DependentUpon>Home_Page.vb</DependentUpon>
@@ -172,8 +230,18 @@
   <ItemGroup>
     <Content Include="AMSDB.mdf" />
     <Content Include="AMSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\back butt.png" />
+    <None Include="Resources\account-269-866236.png" />
+    <None Include="Resources\loginid.png" />
+    <None Include="Resources\img_398183 %281%29.png" />
+    <None Include="Resources\img_398183.png" />
+    <None Include="Resources\2080904.png" />
+    <None Include="Resources\jupiter-asset-management.png" />
+    <None Include="Resources\jupiter-fund-management-plc-investment-management-asset-management-text-floor.jpg" />
+    <None Include="Resources\login-icons-png-5.png" />
     <None Include="Resources\Undo_48px.png" />
     <None Include="Resources\Save_64px.png" />
     <None Include="Resources\Picture_96px.png" />
