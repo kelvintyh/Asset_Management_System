@@ -27,7 +27,7 @@ Module Module1
 
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         ms = New MemoryStream(byteArray)
-        Dim image As Image = Image.FromStream(ms)
+        Dim image As Image = image.FromStream(ms)
         Return image
     End Function
 
@@ -97,17 +97,31 @@ Module Module1
                 Return (newid + 1).ToString("W100000")
             End If
 
-        ElseIf table.Equals("ActionHistory") Then
-            Dim rs = From a In db.ActionHistories
+        ElseIf table.Equals("Transaction") Then
+
+            Dim rs = From a In db.Transactions
                      Order By a.Id Descending
 
             ' If the table is empty
             If rs.Count = 0 Then
-                Return "AH100001"
+                Return "T100001"
             Else
-                Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(3, 5))
-                Return (newid + 1).ToString("AH100000")
+                Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
+                Return (newid + 1).ToString("T100000")
             End If
+        End If
+
+        ElseIf table.Equals("ActionHistory") Then
+        Dim rs = From a In db.ActionHistories
+                 Order By a.Id Descending
+
+        ' If the table is empty
+        If rs.Count = 0 Then
+            Return "AH100001"
+        Else
+            Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(3, 5))
+            Return (newid + 1).ToString("AH100000")
+        End If
         End If
     End Function
 
@@ -142,10 +156,12 @@ Module Module1
 
         FrmAssetUpdate.cboLocation.Items.Clear()
         FrmAssetAdd.cboLocation.Items.Clear()
+        Frm_TransactionCheckIn.cboLocation.Items.Clear()
 
         For Each m In db.InventoryLocations
             FrmAssetUpdate.cboLocation.Items.Add(m.Name_)
             FrmAssetAdd.cboLocation.Items.Add(m.Name_)
+            Frm_TransactionCheckIn.cboLocation.Items.Add(m.Name_)
         Next
 
         FrmAssetUpdate.cboLocation.SelectedItem = a

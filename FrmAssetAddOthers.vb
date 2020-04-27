@@ -23,10 +23,6 @@ Public Class FrmAssetAddOthers
             End If
         Next
 
-
-
-
-
     End Sub
 
     Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick

@@ -1,24 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AMSDB" Class="AMSDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AMSDB.mdf;Integrated Security=True" SettingsObjectName="Asset_Management_System.My.MySettings" SettingsPropertyName="AMSDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Asset" Member="Assets">
-    <Type Name="Asset">
-      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[Asset type]" Member="Asset_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[Serial number]" Member="Serial_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Condition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[Inventory location]" Member="Inventory_location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="[Date of acquisition]" Member="Date_of_acquisition" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Vendor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[Value At Acquisition]" Member="Value_At_Acquisition" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Invoice" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="WarrantyId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.AssetType" Member="AssetTypes">
     <Type Name="AssetType">
       <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -45,6 +26,80 @@
       <Column Name="[Warranty Start]" Member="Warranty_Start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="[Warranty End]" Member="Warranty_End" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="[Warranty Status]" Member="Warranty_Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Contact number]" Member="Contact_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Email address]" Member="Email_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Transaction]" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Transaction Type]" Member="Transaction_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Transaction Date]" Member="Transaction_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Asset Id]" Member="Asset_Id" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Check Out To]" Member="Check_Out_To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Check In By]" Member="Check_In_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Check Out Type]" Member="Check_Out_Type" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Check In Type]" Member="Check_In_Type" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Return Due Date]" Member="Return_Due_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Actual Return Date]" Member="Actual_Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Third Party Description]" Member="Third_Party_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Third Party Contact]" Member="Third_Party_Contact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Third Party Email]" Member="Third_Party_Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Asset" Member="Assets">
+    <Type Name="Asset">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Manufacturer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Asset type]" Member="Asset_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Serial number]" Member="Serial_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Condition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Inventory location]" Member="Inventory_location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="[Date of acquisition]" Member="Date_of_acquisition" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Vendor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Value At Acquisition]" Member="Value_At_Acquisition" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Invoice" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WarrantyId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginHistory" Member="LoginHistories">
+    <Type Name="LoginHistory">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Contact number]" Member="Contact_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Email address]" Member="Email_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.LoginHistory" Member="LoginHistories">

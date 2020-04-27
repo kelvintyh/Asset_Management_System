@@ -78,6 +78,10 @@ Public Class Frm_AssetHome
                 dtpDateOfAcquisition.CustomFormat = " "
                 dtpDateOfAcquisition.Format = DateTimePickerFormat.Custom
             End Try
+            Dim rs = From o In db.Transactions
+                     Where o.Asset_Id = lblId.Text
+
+            dgvTransactionLog.DataSource = rs
         End If
     End Function
 
@@ -102,6 +106,15 @@ Public Class Frm_AssetHome
         FrmAssetSummaryReport.ShowDialog()
     End Sub
 
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+        Frm_Date.ShowDialog()
+    Private Sub BtnCheckIn_Click(sender As Object, e As EventArgs) Handles btnCheckIn.Click
+        Frm_TransactionCheckIn.ShowDialog()
+    End Sub
 
+    End Sub
+    Private Sub BtnCheckOut_Click(sender As Object, e As EventArgs) Handles btnCheckOut.Click
+        Frm_TransactionCheckOut.ShowDialog()
+    End Sub
 End Class
 
