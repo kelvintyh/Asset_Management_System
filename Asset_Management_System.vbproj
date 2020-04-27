@@ -167,6 +167,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User_Module\UserDetails.Designer.vb">
+      <DependentUpon>UserDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User_Module\UserDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.Designer.vb">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.Designer.vb">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmAssetAdd.resx">
@@ -199,6 +223,18 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\UserDetails.resx">
+      <DependentUpon>UserDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
+      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyHome.resx">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
+      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="AMSDB.dbml">
@@ -225,6 +261,7 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\logo.jpg" />
     <None Include="Resources\Checkmark_40px.png" />
     <None Include="Resources\Save_40px.png" />
     <None Include="Resources\Plus Math_40px.png" />
@@ -254,8 +291,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asset_Module\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
