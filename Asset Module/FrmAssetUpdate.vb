@@ -203,6 +203,7 @@ Public Class FrmAssetUpdate
                 t.Check_Out_To = txtId.Text
                 db.SubmitChanges()
                 Frm_AssetHome.UpdateTable()
+                createActionHistory("UpdateA", currentUser.Id, a.Id)
                 MessageBox.Show("Update record " + a.Id + " Successful", "Information")
                 Me.Close()
             End If
