@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AMSDB">
   <DataContextMoniker Name="/AMSDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="cd5b592a-0db1-40db-83cd-e213bc8dbc94" absoluteBounds="0.75, 0.75, 2, 3.6939111328124996">
-      <DataClassMoniker Name="/AMSDBDataContext/Asset" />
-      <nestedChildShapes>
-        <elementListCompartment Id="38b054e9-2710-45df-93ab-e6a19a5a79a9" absoluteBounds="0.765, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="adabd689-2633-4060-99d9-cf6b77dbdc25" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/AMSDBDataContext/AssetType" />
       <nestedChildShapes>
@@ -30,6 +24,24 @@
       <DataClassMoniker Name="/AMSDBDataContext/Warranty" />
       <nestedChildShapes>
         <elementListCompartment Id="75a1c1eb-bcb6-441e-a34c-04633d681e2e" absoluteBounds="0.76499999999999968, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb979f6f-c4a3-4edd-9b5e-048bfa085654" absoluteBounds="6.25, 0.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AMSDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8b3d4df-220e-415c-9374-c2d9fc62fad3" absoluteBounds="6.265, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b36a84c-a68c-4808-96b5-fe5060a38d41" absoluteBounds="6.25, 3.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/AMSDBDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95df9c27-44a3-4daf-8302-1ecb0ef30cf7" absoluteBounds="6.265, 4.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9229200-15d7-4809-9489-db38bb613df4" absoluteBounds="0.75, 0.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/AMSDBDataContext/Asset" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ea03ada-e805-4327-9400-6157f6d14d81" absoluteBounds="0.76500000000000012, 1.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

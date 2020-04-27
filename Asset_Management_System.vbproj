@@ -31,7 +31,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -94,8 +94,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="AMSDB.vb">
+      <DependentUpon>AMSDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset.vb" />
+    <Compile Include="Transaction_Module\Module_Transaction.vb" />
     <Compile Include="FrmAssetAdd.Designer.vb">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
     </Compile>
@@ -127,28 +131,28 @@
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_CheckedIn_Item_List.Designer.vb">
+    <Compile Include="Transaction_Module\Frm_CheckedIn_Item_List.Designer.vb">
       <DependentUpon>Frm_CheckedIn_Item_List.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_CheckedIn_Item_List.vb">
+    <Compile Include="Transaction_Module\Frm_CheckedIn_Item_List.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_CheckedOut_Item_List.Designer.vb">
+    <Compile Include="Transaction_Module\Frm_CheckedOut_Item_List.Designer.vb">
       <DependentUpon>Frm_CheckedOut_Item_List.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_CheckedOut_Item_List.vb">
+    <Compile Include="Transaction_Module\Frm_CheckedOut_Item_List.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_TransactionCheckIn.Designer.vb">
+    <Compile Include="Transaction_Module\Frm_TransactionCheckIn.Designer.vb">
       <DependentUpon>Frm_TransactionCheckIn.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_TransactionCheckIn.vb">
+    <Compile Include="Transaction_Module\Frm_TransactionCheckIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_TransactionCheckOut.Designer.vb">
+    <Compile Include="Transaction_Module\Frm_TransactionCheckOut.Designer.vb">
       <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_TransactionCheckOut.vb">
+    <Compile Include="Transaction_Module\Frm_TransactionCheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -173,6 +177,12 @@
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.designer.vb">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty_Module\Frm_WarrantyHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Warranty_Module\Frm_WarrantyUpdate.Designer.vb">
       <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
     </Compile>
@@ -181,6 +191,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Transaction_Module\Frm_CheckedOut_Item_List.resx">
+      <DependentUpon>Frm_CheckedOut_Item_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction_Module\Frm_TransactionCheckIn.resx">
+      <DependentUpon>Frm_TransactionCheckIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction_Module\Frm_TransactionCheckOut.resx">
+      <DependentUpon>Frm_TransactionCheckOut.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAssetAdd.resx">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
     </EmbeddedResource>
@@ -196,8 +215,8 @@
     <EmbeddedResource Include="Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_Page.resx">
-      <DependentUpon>Home_Page.vb</DependentUpon>
+    <EmbeddedResource Include="Transaction_Module\Frm_CheckedIn_Item_List.resx">
+      <DependentUpon>Frm_CheckedIn_Item_List.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -207,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyHome.resx">
+      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
       <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
@@ -237,6 +259,7 @@
     <Content Include="AMSDB_log.ldf">
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\Checkmark_40px.png" />
     <None Include="Resources\Save_40px.png" />
     <None Include="Resources\Plus Math_40px.png" />
@@ -266,8 +289,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Asset_Module\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

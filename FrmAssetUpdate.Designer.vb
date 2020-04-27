@@ -33,6 +33,7 @@ Partial Class FrmAssetUpdate
         Me.cboLocation = New System.Windows.Forms.ComboBox()
         Me.cboCondition = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtInvoice = New System.Windows.Forms.TextBox()
@@ -71,7 +72,6 @@ Partial Class FrmAssetUpdate
         Me.btnManu = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.picCOT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
@@ -182,6 +182,13 @@ Partial Class FrmAssetUpdate
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
+        'txtVendor
+        '
+        Me.txtVendor.Location = New System.Drawing.Point(175, 96)
+        Me.txtVendor.Name = "txtVendor"
+        Me.txtVendor.Size = New System.Drawing.Size(200, 22)
+        Me.txtVendor.TabIndex = 11
+        '
         'txtPrice
         '
         Me.txtPrice.Location = New System.Drawing.Point(201, 140)
@@ -255,7 +262,7 @@ Partial Class FrmAssetUpdate
         '
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Items.AddRange(New Object() {"In Storage", "Checked Out", "Loaned Out", "Out Of Repair"})
+        Me.cboStatus.Items.AddRange(New Object() {"In storage", "Checked out", "Loaned out", "Out of repair"})
         Me.cboStatus.Location = New System.Drawing.Point(746, 45)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(187, 24)
@@ -556,13 +563,6 @@ Partial Class FrmAssetUpdate
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1156, 615)
         Me.TabControl1.TabIndex = 3
-        '
-        'txtVendor
-        '
-        Me.txtVendor.Location = New System.Drawing.Point(175, 96)
-        Me.txtVendor.Name = "txtVendor"
-        Me.txtVendor.Size = New System.Drawing.Size(200, 22)
-        Me.txtVendor.TabIndex = 11
         '
         'FrmAssetUpdate
         '

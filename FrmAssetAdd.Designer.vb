@@ -60,6 +60,7 @@ Partial Class FrmAssetAdd
         Me.picAsset = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtInvoice = New System.Windows.Forms.TextBox()
@@ -71,7 +72,6 @@ Partial Class FrmAssetAdd
         Me.dtpDateOfAcquisition = New System.Windows.Forms.DateTimePicker()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.txtVendor = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -229,7 +229,7 @@ Partial Class FrmAssetAdd
         '
         Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Items.AddRange(New Object() {"In Storage", "Checked Out", "Loaned Out", "Out Of Repair"})
+        Me.cboStatus.Items.AddRange(New Object() {"In storage", "Checked out", "Loaned out", "Out of repair"})
         Me.cboStatus.Location = New System.Drawing.Point(746, 45)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(187, 24)
@@ -464,6 +464,13 @@ Partial Class FrmAssetAdd
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
+        'txtVendor
+        '
+        Me.txtVendor.Location = New System.Drawing.Point(175, 90)
+        Me.txtVendor.Name = "txtVendor"
+        Me.txtVendor.Size = New System.Drawing.Size(200, 22)
+        Me.txtVendor.TabIndex = 12
+        '
         'txtPrice
         '
         Me.txtPrice.Location = New System.Drawing.Point(175, 134)
@@ -556,13 +563,6 @@ Partial Class FrmAssetAdd
         Me.btnSave.Size = New System.Drawing.Size(70, 50)
         Me.btnSave.TabIndex = 1
         Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'txtVendor
-        '
-        Me.txtVendor.Location = New System.Drawing.Point(175, 90)
-        Me.txtVendor.Name = "txtVendor"
-        Me.txtVendor.Size = New System.Drawing.Size(200, 22)
-        Me.txtVendor.TabIndex = 12
         '
         'FrmAssetAdd
         '

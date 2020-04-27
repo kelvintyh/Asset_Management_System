@@ -78,6 +78,8 @@ Partial Class Frm_AssetHome
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssetSummaryReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnCheckIn = New System.Windows.Forms.Button()
+        Me.btnCheckOut = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -99,6 +101,8 @@ Partial Class Frm_AssetHome
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.btnCheckOut)
+        Me.GroupBox1.Controls.Add(Me.btnCheckIn)
         Me.GroupBox1.Controls.Add(Me.dgv)
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.btnDelete)
@@ -618,7 +622,7 @@ Partial Class Frm_AssetHome
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerateToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 26)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'GenerateToolStripMenuItem
@@ -633,6 +637,27 @@ Partial Class Frm_AssetHome
         Me.AssetSummaryReportToolStripMenuItem.Name = "AssetSummaryReportToolStripMenuItem"
         Me.AssetSummaryReportToolStripMenuItem.Size = New System.Drawing.Size(242, 26)
         Me.AssetSummaryReportToolStripMenuItem.Text = "Asset Summary Report"
+        '
+        'btnCheckIn
+        '
+        Me.btnCheckIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCheckIn.Location = New System.Drawing.Point(7, 19)
+        Me.btnCheckIn.Name = "btnCheckIn"
+        Me.btnCheckIn.Size = New System.Drawing.Size(130, 50)
+        Me.btnCheckIn.TabIndex = 6
+        Me.btnCheckIn.Text = "Check In"
+        Me.btnCheckIn.UseVisualStyleBackColor = True
+        '
+        'btnCheckOut
+        '
+        Me.btnCheckOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckOut.Location = New System.Drawing.Point(166, 19)
+        Me.btnCheckOut.Name = "btnCheckOut"
+        Me.btnCheckOut.Size = New System.Drawing.Size(130, 50)
+        Me.btnCheckOut.TabIndex = 7
+        Me.btnCheckOut.Text = "Check Out"
+        Me.btnCheckOut.UseVisualStyleBackColor = True
         '
         'Frm_AssetHome
         '
@@ -726,4 +751,6 @@ Partial Class Frm_AssetHome
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GenerateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AssetSummaryReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnCheckOut As Button
+    Friend WithEvents btnCheckIn As Button
 End Class
