@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -63,7 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
@@ -92,9 +94,6 @@
     <Compile Include="AMSDB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AMSDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="AMSDB.vb">
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -219,30 +218,6 @@
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyHome.designer.vb">
-      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.Designer.vb">
-      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyUpdate.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User_Module\UserDetails.Designer.vb">
-      <DependentUpon>UserDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="User_Module\UserDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
-      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Warranty_Module\Frm_WarrantyAdd.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Warranty_Module\Frm_WarrantyHome.Designer.vb">
       <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
     </Compile>
@@ -340,15 +315,6 @@
     <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
       <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyAdd.resx">
-      <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyHome.resx">
-      <DependentUpon>Frm_WarrantyHome.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Warranty_Module\Frm_WarrantyUpdate.resx">
-      <DependentUpon>Frm_WarrantyUpdate.vb</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="AMSDB.dbml">
@@ -381,12 +347,17 @@
     <Content Include="bin\Debug\Asset_Management_System.exe" />
     <Content Include="bin\Debug\Asset_Management_System.pdb" />
     <Content Include="bin\Debug\Asset_Management_System.xml" />
+    <Content Include="Image\Back_40px.png" />
+    <Content Include="Image\Checkmark_40px.png" />
     <Content Include="Image\Delete_25px.png" />
+    <Content Include="Image\Delete_40px.png" />
     <Content Include="Image\Import_64px.png" />
     <Content Include="Image\Pencil_15px.png" />
     <Content Include="Image\Pencil_25px.png" />
     <Content Include="Image\Picture_96px.png" />
     <Content Include="Image\Plus Math_25px.png" />
+    <Content Include="Image\Plus Math_40px.png" />
+    <Content Include="Image\Save_40px.png" />
     <Content Include="Image\Save_64px.png" />
     <Content Include="Image\Undo_48px.png" />
     <Content Include="obj\Debug\Asset_Management_System.exe" />
@@ -395,11 +366,16 @@
     <Content Include="obj\Debug\Asset_Management_System.xml" />
     <Content Include="obj\Debug\TempPE\AMSDB.designer.vb.dll" />
     <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="obj\Release\Asset_Management_System.vbproj.FileListAbsolute.txt" />
+    <Content Include="Resources\search.JPG" />
+    <Content Include="Resources\search.png" />
     <None Include="obj\Debug\Asset_Management_System.vbproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\Asset_Management_System.vbproj.GenerateResource.cache" />
     <None Include="obj\Debug\Asset_Management_System.vbprojAssemblyReference.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\Asset_Management_System.vbproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\Asset_Management_System.vbprojAssemblyReference.cache" />
     <None Include="Resources\logo.jpg" />
     <None Include="Resources\Delete_40px.png" />
     <None Include="Resources\img_398183 %281%29.png" />
@@ -442,6 +418,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -652,7 +652,7 @@ Partial Class Frm_AssetHome
         '
         Me.GenerateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssetSummaryReportToolStripMenuItem})
         Me.GenerateToolStripMenuItem.Name = "GenerateToolStripMenuItem"
-        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.GenerateToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
         Me.GenerateToolStripMenuItem.Text = "Generate Report"
         '
         'AssetSummaryReportToolStripMenuItem
@@ -671,7 +671,7 @@ Partial Class Frm_AssetHome
         'WarrantyToolStripMenuItem
         '
         Me.WarrantyToolStripMenuItem.Name = "WarrantyToolStripMenuItem"
-        Me.WarrantyToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.WarrantyToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
         Me.WarrantyToolStripMenuItem.Text = "Warranty"
         '
         'Frm_AssetHome

@@ -109,19 +109,19 @@ Module Module1
                 Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
                 Return (newid + 1).ToString("T100000")
             End If
-        End If
 
         ElseIf table.Equals("ActionHistory") Then
-        Dim rs = From a In db.ActionHistories
-                 Order By a.Id Descending
 
-        ' If the table is empty
-        If rs.Count = 0 Then
-            Return "AH100001"
-        Else
-            Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(3, 5))
-            Return (newid + 1).ToString("AH100000")
-        End If
+            Dim rs = From a In db.ActionHistories
+                     Order By a.Id Descending
+
+            ' If the table is empty
+            If rs.Count = 0 Then
+                Return "AH100001"
+            Else
+                Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(3, 5))
+                Return (newid + 1).ToString("AH100000")
+            End If
         End If
     End Function
 
