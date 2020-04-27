@@ -161,17 +161,36 @@ Public Class Frm_Register
         Dim digit As Integer = 0I
 
         If cboRole.SelectedItem = "Admin" Then
+            Dim rs = From u In db.Users
+                     Where u.Role = "Admin"
+                     Order By u.Id Descending
 
-            id1 = id1.Substring(3)
-            Int32.TryParse(id1, digit)
-            digit = digit + 1
-            txtID.Text = "AD" + digit.ToString("D4")
+            If rs.Count = 0 Then
+                txtID.Text = "AD0001"
+            Else
+                id1 = id1.Substring(3)
+                Int32.TryParse(id1, digit)
+                digit = digit + 1
+                txtID.Text = "AD" + digit.ToString("D4")
+            End If
+        End If
 
-        ElseIf cboRole.SelectedItem = "Staff" Then
-            id1 = id1.Substring(3)
-            Int32.TryParse(id1, digit)
-            digit = digit + 1
-            txtID.Text = "S" + digit.ToString("D4")
+
+        If cboRole.SelectedItem = "Staff" Then
+            Dim rs1 = From u In db.Users
+                      Where u.Role = "Staff"
+                      Order By u.Id Descending
+
+            If rs1.Count = 0 Then
+                txtID.Text = "S0001"
+            Else
+
+                id1 = id1.Substring(3)
+                Int32.TryParse(id1, digit)
+                digit = digit + 1
+                txtID.Text = "S" + digit.ToString("D4")
+            End If
+
         End If
     End Sub
 
