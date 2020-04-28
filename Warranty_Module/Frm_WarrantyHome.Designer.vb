@@ -49,6 +49,7 @@ Partial Class Frm_WarrantyHome
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(28, 74)
         Me.dgv.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.dgv.MultiSelect = False
         Me.dgv.Name = "dgv"
         Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
