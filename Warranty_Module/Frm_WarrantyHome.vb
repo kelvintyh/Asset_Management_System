@@ -62,6 +62,7 @@ Public Class Frm_WarrantyHome
             db.Warranties.DeleteOnSubmit(w)
             db.SubmitChanges()
             UpdateTable()
+            MessageBox.Show("Data deleted successfully", "Data Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
             createActionHistory("DeleteW", currentUser.Id, w.Warranty_Id)
 
         Else
