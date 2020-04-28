@@ -137,6 +137,11 @@ Public Class Frm_TransactionCheckOut
         Dim rs = From u In db.Users
                  Where u.Id.Equals(txtStaffID.Text.Trim)
         Try
+            Try
+                picProfile.Image = GetImage(rs.First.Image.ToArray)
+            Catch ex As Exception
+
+            End Try
             lblName.Text = rs.First.Name
             lblContact.Text = rs.First.Contact_number
             lblEmail.Text = rs.First.Email_address
@@ -188,9 +193,18 @@ Public Class Frm_TransactionCheckOut
             Case "Local"
                 tbc.TabPages(0).Enabled = True
                 tbc.TabPages(1).Enabled = False
+                txt3rdDesc.Text = ""
+                txt3rdContact.Text = ""
+                txt3rdEmail.Text = ""
+                txt3thNotes.Text = ""
             Case "Third Party"
                 tbc.TabPages(0).Enabled = False
                 tbc.TabPages(1).Enabled = True
+                txtStaffID.Text = ""
+                picProfile.Image = Nothing
+                lblContact.Text = ""
+                lblEmail.Text = ""
+                lblName.Text = ""
         End Select
     End Sub
 
