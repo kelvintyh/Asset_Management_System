@@ -228,7 +228,7 @@ Public Class Frm_AssetHome
         ProfileList.ShowDialog()
     End Sub
 
-    Private Sub mnuRegister_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
+    Private Sub MnuRegister_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
         Frm_Register.ShowDialog()
     End Sub
 End Class

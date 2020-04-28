@@ -859,7 +859,7 @@ Partial Class Frm_AssetHome
         '
         Me.mnuFileGenerateReport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFileReportASR, Me.mnuTransactionSummaryReport, Me.LoginHistorySummaryReportToolStripMenuItem})
         Me.mnuFileGenerateReport.Name = "mnuFileGenerateReport"
-        Me.mnuFileGenerateReport.Size = New System.Drawing.Size(159, 22)
+        Me.mnuFileGenerateReport.Size = New System.Drawing.Size(180, 22)
         Me.mnuFileGenerateReport.Text = "Generate Report"
         '
         'mnuFileReportASR
@@ -883,7 +883,7 @@ Partial Class Frm_AssetHome
         'mnuRegister
         '
         Me.mnuRegister.Name = "mnuRegister"
-        Me.mnuRegister.Size = New System.Drawing.Size(159, 22)
+        Me.mnuRegister.Size = New System.Drawing.Size(180, 22)
         Me.mnuRegister.Text = "Register"
         '
         'mnuView
@@ -896,25 +896,25 @@ Partial Class Frm_AssetHome
         'mnuViewWarranty
         '
         Me.mnuViewWarranty.Name = "mnuViewWarranty"
-        Me.mnuViewWarranty.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewWarranty.Size = New System.Drawing.Size(150, 22)
         Me.mnuViewWarranty.Text = "Warranty"
         '
         'mnuViewActionHistory
         '
         Me.mnuViewActionHistory.Name = "mnuViewActionHistory"
-        Me.mnuViewActionHistory.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewActionHistory.Size = New System.Drawing.Size(150, 22)
         Me.mnuViewActionHistory.Text = "Action History"
         '
         'mnuViewProfile
         '
         Me.mnuViewProfile.Name = "mnuViewProfile"
-        Me.mnuViewProfile.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewProfile.Size = New System.Drawing.Size(150, 22)
         Me.mnuViewProfile.Text = "Profile"
         '
         'mnuViewProfileList
         '
         Me.mnuViewProfileList.Name = "mnuViewProfileList"
-        Me.mnuViewProfileList.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewProfileList.Size = New System.Drawing.Size(150, 22)
         Me.mnuViewProfileList.Text = "Profile List"
         '
         'Frm_AssetHome

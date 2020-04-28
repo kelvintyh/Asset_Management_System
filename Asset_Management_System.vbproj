@@ -338,7 +338,6 @@
     <EmbeddedResource Include="Transaction_Module\Frm_TransactionSummaryReport.resx">
       <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
     </EmbeddedResource>
-  
     <EmbeddedResource Include="User_Module\UserDetails.resx">
       <DependentUpon>UserDetails.vb</DependentUpon>
     </EmbeddedResource>
