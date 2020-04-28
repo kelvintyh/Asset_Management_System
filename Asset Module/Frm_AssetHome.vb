@@ -8,6 +8,24 @@ Public Class Frm_AssetHome
     Dim db As New AMSDBDataContext()
 
     Private Sub Frm_AssetHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        frm_LoginAdmin.Visible = False
+        Frm_LoginStaff.Visible = False
+        grpLocal.Visible = False
+        grpThirdParty.Visible = False
+
+        'check whether is admin or staff
+        If Not currentUser.Role.ToUpper.Equals("ADMIN") Then
+            For Each item As ToolStripMenuItem In msp.Items
+                If item.Name = "mnuView" Then
+                    For Each i As ToolStripMenuItem In item.DropDownItems
+                        If i.Name = "mnuViewActionHistory" Then
+                            i.Visible = False
+                        End If
+                    Next
+                End If
+            Next
+        End If
         'fill the combo box
         GetManu()
         GetLocation()
@@ -48,8 +66,12 @@ Public Class Frm_AssetHome
     End Function
 
     Public Function UpdateInfo()
+
+        Dim db As New AMSDBDataContext()
         If dgv.SelectedRows.Count > 0 Then
             'validation
+
+            Dim empty As Byte()
             Try
                 Dim i As Integer
                 i = dgv.CurrentRow.Index
@@ -70,6 +92,10 @@ Public Class Frm_AssetHome
                 For Each a In db.Assets
                     If a.Id.Equals(dgv.Item(0, i).Value) Then
                         picAsset.Image = GetImage(a.Image.ToArray)
+                        '
+                        If lblId.Text = "" Then
+                            picAsset.Image = GetImage(empty.ToArray)
+                        End If
                     End If
                 Next
                 dtpDateOfAcquisition.Value = dgv.Item(10, i).Value
@@ -78,10 +104,47 @@ Public Class Frm_AssetHome
                 dtpDateOfAcquisition.CustomFormat = " "
                 dtpDateOfAcquisition.Format = DateTimePickerFormat.Custom
             End Try
+
+
             Dim rs = From o In db.Transactions
                      Where o.Asset_Id = lblId.Text
 
             dgvTransactionLog.DataSource = rs
+
+            ''Check out to details
+            Dim rs_2 = From o In db.Assets
+                       Where o.Id = lblId.Text
+
+            If rs_2.First.TransactionId <> "" Then
+                Dim rs_3 = From o In db.Transactions
+                           Where o.Id.Equals(rs_2.First.TransactionId)
+                If rs.First.Check_Out_Type = "Local" Then
+                    grpLocal.Visible = True
+                    grpThirdParty.Visible = False
+                    txtId.Text = rs.First.Check_Out_To
+                    Dim rs_4 = From o In db.Users
+                               Where o.Id.Equals(rs.First.Check_Out_To)
+                    Try
+                        picCOT.Image = GetImage(rs_2.First.Image.ToArray)
+                    Catch ex As Exception
+
+                    End Try
+
+                    lblName.Text = rs_4.First.Name
+                    lblContact.Text = rs_4.First.Contact_number
+                Else
+                    grpThirdParty.Visible = True
+                    grpLocal.Visible = False
+
+                    txt3rdDesc.Text = rs.First.Third_Party_Description
+                    txt3rdContact.Text = rs.First.Third_Party_Contact
+                    txt3rdEmail.Text = rs.First.Third_Party_Email
+                End If
+            Else
+                grpLocal.Visible = False
+                grpThirdParty.Visible = False
+            End If
+
         End If
     End Function
 
@@ -102,7 +165,7 @@ Public Class Frm_AssetHome
         dtpDateOfAcquisition.CustomFormat = "dd/MM/yyyy"
     End Sub
 
-    Private Sub AssetSummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssetSummaryReportToolStripMenuItem.Click
+    Private Sub AssetSummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuFileReportASR.Click
         FrmAssetSummaryReport.ShowDialog()
     End Sub
 
@@ -114,8 +177,17 @@ Public Class Frm_AssetHome
         Frm_TransactionCheckOut.ShowDialog()
     End Sub
 
-    Private Sub WarrantyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WarrantyToolStripMenuItem.Click
+    Private Sub Frm_AssetHome_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        UpdateTable()
+        UpdateInfo()
+    End Sub
+
+    Private Sub MnuViewWarranty_Click(sender As Object, e As EventArgs) Handles mnuViewWarranty.Click
         Frm_WarrantyHome.ShowDialog()
+    End Sub
+
+    Private Sub MnuViewActionHistory_Click(sender As Object, e As EventArgs) Handles mnuViewActionHistory.Click
+        UserDetails.ShowDialog()
     End Sub
 End Class
 

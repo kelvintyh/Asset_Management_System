@@ -136,4 +136,8 @@ Public Class FrmAssetAdd
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Close()
     End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
 End Class

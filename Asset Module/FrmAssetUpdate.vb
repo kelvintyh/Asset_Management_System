@@ -6,6 +6,10 @@ Public Class FrmAssetUpdate
 
     Private Sub FrmAssetUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        grpLocal.Visible = False
+        grpThirdParty.Visible = False
+
         For Each a In db.Assets
             If a.Id = Frm_AssetHome.lblId.Text Then
                 picAsset.Image = GetImage(a.Image.ToArray)
@@ -23,7 +27,35 @@ Public Class FrmAssetUpdate
                 txtInvoice.Text = a.Invoice
 
                 ''Check out to details
+                If a.TransactionId <> "" Then
+                    Dim rs = From o In db.Transactions
+                             Where o.Id.Equals(a.TransactionId)
+                    If rs.First.Check_Out_Type = "Local" Then
+                        grpLocal.Visible = True
+                        grpThirdParty.Visible = False
+                        txtId.Text = rs.First.Check_Out_To
+                        Dim rs_2 = From o In db.Users
+                                   Where o.Id.Equals(rs.First.Check_Out_To)
+                        Try
+                            picCOT.Image = GetImage(rs_2.First.Image.ToArray)
+                        Catch ex As Exception
 
+                        End Try
+
+                        lblName.Text = rs_2.First.Name
+                        lblContact.Text = rs_2.First.Contact_number
+                    Else
+                        grpThirdParty.Visible = True
+                        grpLocal.Visible = False
+
+                        txt3rdDesc.Text = rs.First.Third_Party_Description
+                        txt3rdContact.Text = rs.First.Third_Party_Contact
+                        txt3rdEmail.Text = rs.First.Third_Party_Email
+                    End If
+                Else
+                    grpLocal.Visible = False
+                    grpThirdParty.Visible = False
+                End If
             End If
         Next
     End Sub
@@ -187,10 +219,12 @@ Public Class FrmAssetUpdate
                 End If
                 db.SubmitChanges()
                 Frm_AssetHome.UpdateTable()
+                createActionHistory("UpdateA", currentUser.Id, a.Id)
                 MessageBox.Show("Update record " + a.Id + " Successful", "Information")
                 Me.Close()
             End If
         End If
 
     End Sub
+
 End Class
