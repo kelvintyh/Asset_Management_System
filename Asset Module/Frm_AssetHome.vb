@@ -21,6 +21,27 @@ Public Class Frm_AssetHome
                     For Each i As ToolStripMenuItem In item.DropDownItems
                         If i.Name = "mnuViewActionHistory" Then
                             i.Visible = False
+                        ElseIf i.Name = "mnuViewProfileList" Then
+                            i.Visible = False
+                        End If
+                    Next
+
+                End If
+
+                If item.Name = "mnuFile" Then
+                    For Each i As ToolStripMenuItem In item.DropDownItems
+                        If i.Name = "mnuRegister" Then
+                            i.Visible = False
+                        End If
+                    Next
+                End If
+            Next
+        Else
+            For Each item As ToolStripMenuItem In msp.Items
+                If item.Name = "mnuView" Then
+                    For Each i As ToolStripMenuItem In item.DropDownItems
+                        If i.Name = "mnuViewProfile" Then
+                            i.Visible = False
                         End If
                     Next
                 End If
@@ -192,6 +213,23 @@ Public Class Frm_AssetHome
 
     Private Sub MnuTransactionSummaryReport_Click(sender As Object, e As EventArgs) Handles mnuTransactionSummaryReport.Click
         Frm_TransactionSummaryReport.ShowDialog()
+    End Sub
+
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+        Frm_Date.ShowDialog()
+
+    End Sub
+
+    Private Sub MnuViewProfile_Click(sender As Object, e As EventArgs) Handles mnuViewProfile.Click
+        Profile.ShowDialog()
+    End Sub
+
+    Private Sub MnuViewProfileList_Click(sender As Object, e As EventArgs) Handles mnuViewProfileList.Click
+        ProfileList.ShowDialog()
+    End Sub
+
+    Private Sub MnuRegister_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
+        Frm_Register.ShowDialog()
     End Sub
 End Class
 

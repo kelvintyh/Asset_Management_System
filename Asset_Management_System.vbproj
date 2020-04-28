@@ -97,6 +97,18 @@
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetAddOthers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetUpdate.Designer.vb">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Asset.vb" />
     <Compile Include="AssetType.vb" />
     <Compile Include="InventoryLocation.vb" />
@@ -125,18 +137,6 @@
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Asset Module\FrmAssetSummaryReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetUpdate.Designer.vb">
-      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetUpdate.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
-      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetAddOthers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Asset Module\Frm_AssetHome.vb">
@@ -222,6 +222,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User_Module\Profile.Designer.vb">
+      <DependentUpon>Profile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User_Module\Profile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Module\ProfileList.Designer.vb">
+      <DependentUpon>ProfileList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User_Module\ProfileList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User_Module\UserDetails.Designer.vb">
       <DependentUpon>UserDetails.vb</DependentUpon>
     </Compile>
@@ -248,6 +260,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Asset Module\FrmAssetAddOthers.resx">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset Module\FrmAssetUpdate.resx">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAdd.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAddOthers.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetSummaryReport.resources" />
@@ -285,12 +303,6 @@
     <EmbeddedResource Include="Asset Module\FrmAssetSummaryReport.resx">
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Asset Module\FrmAssetUpdate.resx">
-      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Asset Module\FrmAssetAddOthers.resx">
-      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Asset Module\Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +332,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\Profile.resx">
+      <DependentUpon>Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\ProfileList.resx">
+      <DependentUpon>ProfileList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction_Module\Frm_TransactionSummaryReport.resx">
       <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
@@ -361,8 +379,11 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="AMSDB.mdf" />
+    <Content Include="AMSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="AMSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Debug\Asset_Management_System.exe" />

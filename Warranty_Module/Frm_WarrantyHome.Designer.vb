@@ -22,13 +22,17 @@ Partial Class Frm_WarrantyHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_WarrantyHome))
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.gBoxList = New System.Windows.Forms.GroupBox()
+        Me.btPrint = New System.Windows.Forms.Button()
         Me.btEdit = New System.Windows.Forms.Button()
         Me.btDelete = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.lbCount = New System.Windows.Forms.Label()
         Me.tbSearch = New System.Windows.Forms.TextBox()
+        Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDialog = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gBoxList.SuspendLayout()
         Me.SuspendLayout()
@@ -37,24 +41,23 @@ Partial Class Frm_WarrantyHome
         '
         Me.dgv.AllowUserToAddRows = False
         Me.dgv.AllowUserToDeleteRows = False
-        Me.dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(28, 74)
         Me.dgv.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.dgv.MultiSelect = False
         Me.dgv.Name = "dgv"
         Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
-        Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv.Size = New System.Drawing.Size(896, 370)
         Me.dgv.TabIndex = 5
         '
         'gBoxList
         '
+        Me.gBoxList.Controls.Add(Me.btPrint)
         Me.gBoxList.Controls.Add(Me.btEdit)
         Me.gBoxList.Controls.Add(Me.btDelete)
         Me.gBoxList.Controls.Add(Me.btAdd)
@@ -63,10 +66,19 @@ Partial Class Frm_WarrantyHome
         Me.gBoxList.Controls.Add(Me.dgv)
         Me.gBoxList.Location = New System.Drawing.Point(24, 22)
         Me.gBoxList.Name = "gBoxList"
-        Me.gBoxList.Size = New System.Drawing.Size(957, 510)
+        Me.gBoxList.Size = New System.Drawing.Size(952, 510)
         Me.gBoxList.TabIndex = 6
         Me.gBoxList.TabStop = False
         Me.gBoxList.Text = "Item List"
+        '
+        'btPrint
+        '
+        Me.btPrint.Location = New System.Drawing.Point(652, 453)
+        Me.btPrint.Name = "btPrint"
+        Me.btPrint.Size = New System.Drawing.Size(72, 42)
+        Me.btPrint.TabIndex = 11
+        Me.btPrint.Text = "Print"
+        Me.btPrint.UseVisualStyleBackColor = True
         '
         'btEdit
         '
@@ -116,12 +128,26 @@ Partial Class Frm_WarrantyHome
         Me.tbSearch.TabIndex = 6
         Me.tbSearch.Text = "Search with ID or Name"
         '
+        'PrintDocument
+        '
+        Me.PrintDocument.DocumentName = ".pdf"
+        '
+        'PrintDialog
+        '
+        Me.PrintDialog.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintDialog.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintDialog.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintDialog.Enabled = True
+        Me.PrintDialog.Icon = CType(resources.GetObject("PrintDialog.Icon"), System.Drawing.Icon)
+        Me.PrintDialog.Name = "PrintDialog"
+        Me.PrintDialog.Visible = False
+        '
         'Frm_WarrantyHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
-        Me.ClientSize = New System.Drawing.Size(1000, 548)
+        Me.ClientSize = New System.Drawing.Size(999, 548)
         Me.Controls.Add(Me.gBoxList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -140,4 +166,7 @@ Partial Class Frm_WarrantyHome
     Friend WithEvents btAdd As Button
     Friend WithEvents btDelete As Button
     Friend WithEvents btEdit As Button
+    Friend WithEvents PrintDocument As Printing.PrintDocument
+    Friend WithEvents PrintDialog As PrintPreviewDialog
+    Friend WithEvents btPrint As Button
 End Class

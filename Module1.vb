@@ -234,9 +234,15 @@ Module Module1
         ElseIf actionType.Equals("UpdateU") Then
             desc = "User " + id
             type = "Update"
+        ElseIf actionType.Equals("Recovery") Then
+            desc = "Password Recovery"
+            type = "Update"
         ElseIf actionType.Equals("DeleteU") Then
             desc = "User " + id
             type = "Delete"
+        ElseIf actionType.Equals("Recovery") Then
+            desc = "Password Recovery"
+            type = "Update"
         End If
 
         deviceName = System.Environment.MachineName

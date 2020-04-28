@@ -9,7 +9,7 @@ Public Class Frm_TransactionCheckIn
         GetLocation()
         cboStatus.SelectedIndex = 0
         cboReturnedBy.SelectedIndex = 0
-
+        reset()
     End Sub
 
     Function UpdateTable()
@@ -36,19 +36,17 @@ Public Class Frm_TransactionCheckIn
     End Function
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
-        'remove the asset from assetList
 
-        'loop the selected row to find whether match which item in assetList
         If dgv.SelectedRows.Count > 0 Then
             For i As Integer = 0 To dgv.Rows.Count - 1
                 If dgv.Rows(i).Selected Then
                     For item As Integer = 0 To assetList.Count - 1
-                        'if found then remove the item
+
                         If assetList(item).Id = dgv.Item(0, i).Value Then
                             assetList.Remove(assetList(item))
                         End If
                     Next
-                    'Console.WriteLine(assetArray(i).Id)
+
                 End If
             Next
             MessageBox.Show("Record removed successful !", "Information")
@@ -56,7 +54,7 @@ Public Class Frm_TransactionCheckIn
             MessageBox.Show("No Record Selected !", "Error")
         End If
 
-        'update the table
+
         UpdateTable()
     End Sub
 
@@ -87,7 +85,7 @@ Public Class Frm_TransactionCheckIn
     End Sub
 
     Private Sub Frm_TransactionCheckIn_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        'Load the data in array to the 
+
         UpdateTable()
     End Sub
 
@@ -122,25 +120,27 @@ Public Class Frm_TransactionCheckIn
                 For Each item In assetList
 
 
-                    'Update transaction
+
                     Dim t As Transaction = db.Transactions.FirstOrDefault(Function(o) o.Id = item.TransactionId)
                     t.Check_In_By = If(cboReturnedBy.SelectedIndex = 0, txtStaffID.Text, txt3rdDesc.Text)
                     t.Check_In_Type = If(cboReturnedBy.SelectedIndex = 0, "Local", "Third Party")
                     t.Status = "In"
                     t.Actual_Return_Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
 
-                    'update asset
+
                     Dim a As Asset = db.Assets.FirstOrDefault(Function(o) o.Id = item.Id)
                     a.Status = "In storage"
                     a.TransactionId = ""
                     a.Condition = item.Condition
                     a.Inventory_location = item.Inventory_location
 
-                    'update database
+
                     db.SubmitChanges()
+                    createActionHistory("UpdateT", currentUser.Id, t.Id)
                 Next
             End If
             MessageBox.Show("Assets Check In Successfully !", "Information")
+            reset()
         ElseIf assetList.Count = 0 Then
             MessageBox.Show("No Asset To Check In !", "Error")
         End If
@@ -148,7 +148,7 @@ Public Class Frm_TransactionCheckIn
     End Sub
 
     Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
-        'set cbo selection compatible to selected record
+
         If dgv.SelectedRows.Count > 0 Then
             Dim i As Integer
             i = dgv.CurrentRow.Index
@@ -167,8 +167,7 @@ Public Class Frm_TransactionCheckIn
     End Sub
 
     Private Sub BtnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
-        'get selected record
-        'loop the selected row to find whether match which item in assetList
+
         If dgv.SelectedRows.Count > 0 Then
             For i As Integer = 0 To dgv.Rows.Count - 1
                 If dgv.Rows(i).Selected Then
@@ -185,7 +184,7 @@ Public Class Frm_TransactionCheckIn
             MessageBox.Show("No Record Selected !", "Error")
         End If
 
-        'update the table
+
         UpdateTable()
         Reload()
     End Sub
@@ -195,6 +194,7 @@ Public Class Frm_TransactionCheckIn
             Case "Local"
                 tbc.TabPages(1).Enabled = True
                 tbc.TabPages(2).Enabled = False
+
             Case "Third Party"
                 tbc.TabPages(1).Enabled = False
                 tbc.TabPages(2).Enabled = True
@@ -204,7 +204,21 @@ Public Class Frm_TransactionCheckIn
     Private Sub Frm_TransactionCheckIn_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         assetList.Clear()
     End Sub
+    Sub reset()
+        txtStaffID.Text = ""
+        txt3rdDesc.Text = ""
+        picAssetProfile.Image = Nothing
+        picStaffProfile.Image = Nothing
+        lblAssetId.Text = ""
+        lblContact.Text = ""
+        lblDesc.Text = ""
+        lblEmail.Text = ""
+        lblModel.Text = ""
+        lblName.Text = ""
+        cboCondition.SelectedIndex = 0
+        cboLocation.SelectedIndex = 0
 
+    End Sub
     Function Reload()
 
     End Function

@@ -7,10 +7,6 @@ Public Class frm_LoginAdmin
     Public uid As String = ""
     Public count As Integer = 0I
 
-    Private Sub LblReg_Click(sender As Object, e As EventArgs) Handles lblReg.Click
-        Frm_Register.ShowDialog()
-    End Sub
-
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         If Me.ValidateChildren() = False Then
@@ -65,8 +61,8 @@ Public Class frm_LoginAdmin
 
                 'Add to variable currentUser for current logged user
                 currentUser = u
-                MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            db.LoginHistories.InsertOnSubmit(l)
+                MessageBox.Show("Login Successful" & vbNewLine & "Welcome" & " " & u.Name, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                db.LoginHistories.InsertOnSubmit(l)
             db.SubmitChanges()
 
             Frm_AssetHome.ShowDialog()

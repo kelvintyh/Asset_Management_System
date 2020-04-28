@@ -17,11 +17,11 @@
                 If dgv.Rows(i).Selected Then
                     Dim rs = From a In db.Assets
                              Where a.Id.Equals(dgv.Item(0, i).Value)
-                    'Redundancy check
+
                     If Not IsDuplicated(rs.First.Id) Then
                         assetList.Add(rs.First.Clone)
                     End If
-                    'Console.WriteLine(assetArray(i).Id)
+
                 End If
             Next
         End If

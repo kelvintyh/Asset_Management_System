@@ -63,8 +63,8 @@ Public Class UserDetails
         Dim footer As Integer = 0
 
         Dim body As New StringBuilder()
-        body.AppendLine("ID       Date       Type    Description     User ID  Device Name     MAC Address     IP Address")
-        body.AppendLine("--       ----       ----    -----------     -------  -----------     -----------     ----------")
+        body.AppendLine("ID       Date       Type    Description          User ID  Device Name     MAC Address   IP Address")
+        body.AppendLine("--       ----       ----    -----------          -------  -----------     -----------   ----------")
 
         Dim cnt As Integer = 0
         For Each a In dgv.SelectedRows
@@ -78,7 +78,7 @@ Public Class UserDetails
             Dim ip As String = dgv.SelectedRows(cnt).Cells(7).Value
             cnt += 1
 
-            body.AppendFormat("{0,-6} {1,-10} {2,-7} {3,-15} {4,-8} {5,-15} {6,-15} {7,-11}" & vbNewLine, id, date1, type, des, userId, device, mac, ip)
+            body.AppendFormat("{0,-6} {1,-10} {2,-7} {3,-20} {4,-8} {5,-15} {6,-13} {7,-11}" & vbNewLine, id, date1, type, des, userId, device, mac, ip)
         Next a
 
         body.AppendLine()

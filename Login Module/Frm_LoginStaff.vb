@@ -96,7 +96,7 @@
             Else
                 'Add to variable currentUser for current logged user
                 currentUser = u
-                MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Login Successful" & vbNewLine & "Welcome" & " " & u.Name, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 db.LoginHistories.InsertOnSubmit(l)
                 db.SubmitChanges()
 
