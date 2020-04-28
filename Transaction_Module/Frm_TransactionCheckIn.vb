@@ -193,6 +193,7 @@ Public Class Frm_TransactionCheckIn
             Case "Local"
                 tbc.TabPages(1).Enabled = True
                 tbc.TabPages(2).Enabled = False
+
             Case "Third Party"
                 tbc.TabPages(1).Enabled = False
                 tbc.TabPages(2).Enabled = True

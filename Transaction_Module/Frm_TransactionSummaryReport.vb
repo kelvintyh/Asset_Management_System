@@ -20,16 +20,16 @@ Public Class Frm_TransactionSummaryReport
 
         Dim body As New StringBuilder()
 
-        body.AppendLine("No   Transaction ID   Transaction Date       ")
-        body.AppendLine("--   --------------   --------------------   ----------")
+        body.AppendLine("No   Transaction ID   Asset ID      Transaction Date       ")
+        body.AppendLine("--   --------------   -----------   ----------------")
 
 
 
         Dim cnt As Integer = 0
-        For Each a In db.Assets
-            If a.Date_of_acquisition.Value.Date >= dtpStart.Value.Date And a.Date_of_acquisition.Value.Date <= dtpEnd.Value.Date Then
+        For Each a In db.Transactions
+            If a.Transaction_Date.Value.Date >= dtpStart.Value.Date And a.Transaction_Date.Value.Date <= dtpEnd.Value.Date Then
                 cnt += 1
-                body.AppendFormat("{0,2}   {1,10}   {2,-10}   {3, -10}" & vbNewLine, cnt, a.Id, a.Description, a.Date_of_acquisition.Value.Date.ToString("dd/mm/yyyy"))
+                body.AppendFormat("{0,2}   {1,10}   {2,12}   {3, 15}" & vbNewLine, cnt, a.Id, a.Asset_Id, a.Transaction_Date.Value.Date.ToString("dd/mm/yyyy"))
             End If
 
         Next
