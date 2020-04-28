@@ -96,6 +96,8 @@ Partial Class Frm_AssetHome
         Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuViewWarranty = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuViewActionHistory = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuViewProfile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuViewProfileList = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -125,9 +127,9 @@ Partial Class Frm_AssetHome
         Me.GroupBox1.Controls.Add(Me.btnEdit)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 27)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(343, 585)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -136,7 +138,7 @@ Partial Class Frm_AssetHome
         '
         Me.btnCheckOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheckOut.Location = New System.Drawing.Point(124, 15)
-        Me.btnCheckOut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCheckOut.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCheckOut.Name = "btnCheckOut"
         Me.btnCheckOut.Size = New System.Drawing.Size(98, 41)
         Me.btnCheckOut.TabIndex = 7
@@ -148,7 +150,7 @@ Partial Class Frm_AssetHome
         Me.btnCheckIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCheckIn.Location = New System.Drawing.Point(5, 15)
-        Me.btnCheckIn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCheckIn.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCheckIn.Name = "btnCheckIn"
         Me.btnCheckIn.Size = New System.Drawing.Size(98, 41)
         Me.btnCheckIn.TabIndex = 6
@@ -181,7 +183,7 @@ Partial Class Frm_AssetHome
         '
         Me.btnDelete.Image = Global.Asset_Management_System.My.Resources.Resources.Delete_25px
         Me.btnDelete.Location = New System.Drawing.Point(301, 517)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(38, 36)
         Me.btnDelete.TabIndex = 3
@@ -191,7 +193,7 @@ Partial Class Frm_AssetHome
         '
         Me.btnEdit.Image = Global.Asset_Management_System.My.Resources.Resources.Pencil_25px
         Me.btnEdit.Location = New System.Drawing.Point(259, 517)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(38, 36)
         Me.btnEdit.TabIndex = 2
@@ -201,7 +203,7 @@ Partial Class Frm_AssetHome
         '
         Me.btnAdd.Image = Global.Asset_Management_System.My.Resources.Resources.Plus_Math_25px
         Me.btnAdd.Location = New System.Drawing.Point(217, 517)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(38, 36)
         Me.btnAdd.TabIndex = 1
@@ -214,9 +216,9 @@ Partial Class Frm_AssetHome
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TabControl1)
         Me.GroupBox2.Location = New System.Drawing.Point(356, 27)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(702, 330)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
@@ -226,7 +228,7 @@ Partial Class Frm_AssetHome
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(4, 17)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(693, 308)
@@ -260,9 +262,9 @@ Partial Class Frm_AssetHome
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.picAsset)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Size = New System.Drawing.Size(685, 282)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General info."
@@ -271,7 +273,7 @@ Partial Class Frm_AssetHome
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(399, 39)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(210, 20)
         Me.DateTimePicker1.TabIndex = 24
@@ -287,9 +289,9 @@ Partial Class Frm_AssetHome
         Me.grpLocal.Controls.Add(Me.Label12)
         Me.grpLocal.Controls.Add(Me.Label14)
         Me.grpLocal.Location = New System.Drawing.Point(399, 106)
-        Me.grpLocal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpLocal.Margin = New System.Windows.Forms.Padding(2)
         Me.grpLocal.Name = "grpLocal"
-        Me.grpLocal.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpLocal.Padding = New System.Windows.Forms.Padding(2)
         Me.grpLocal.Size = New System.Drawing.Size(268, 166)
         Me.grpLocal.TabIndex = 23
         Me.grpLocal.TabStop = False
@@ -304,9 +306,9 @@ Partial Class Frm_AssetHome
         Me.grpThirdParty.Controls.Add(Me.Label22)
         Me.grpThirdParty.Controls.Add(Me.Label21)
         Me.grpThirdParty.Location = New System.Drawing.Point(0, 0)
-        Me.grpThirdParty.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpThirdParty.Margin = New System.Windows.Forms.Padding(2)
         Me.grpThirdParty.Name = "grpThirdParty"
-        Me.grpThirdParty.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpThirdParty.Padding = New System.Windows.Forms.Padding(2)
         Me.grpThirdParty.Size = New System.Drawing.Size(268, 166)
         Me.grpThirdParty.TabIndex = 6
         Me.grpThirdParty.TabStop = False
@@ -315,7 +317,7 @@ Partial Class Frm_AssetHome
         'txt3rdEmail
         '
         Me.txt3rdEmail.Location = New System.Drawing.Point(24, 130)
-        Me.txt3rdEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt3rdEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txt3rdEmail.Name = "txt3rdEmail"
         Me.txt3rdEmail.Size = New System.Drawing.Size(189, 20)
         Me.txt3rdEmail.TabIndex = 5
@@ -323,7 +325,7 @@ Partial Class Frm_AssetHome
         'txt3rdContact
         '
         Me.txt3rdContact.Location = New System.Drawing.Point(24, 85)
-        Me.txt3rdContact.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt3rdContact.Margin = New System.Windows.Forms.Padding(2)
         Me.txt3rdContact.Name = "txt3rdContact"
         Me.txt3rdContact.Size = New System.Drawing.Size(189, 20)
         Me.txt3rdContact.TabIndex = 4
@@ -331,7 +333,7 @@ Partial Class Frm_AssetHome
         'txt3rdDesc
         '
         Me.txt3rdDesc.Location = New System.Drawing.Point(24, 41)
-        Me.txt3rdDesc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt3rdDesc.Margin = New System.Windows.Forms.Padding(2)
         Me.txt3rdDesc.Name = "txt3rdDesc"
         Me.txt3rdDesc.Size = New System.Drawing.Size(189, 20)
         Me.txt3rdDesc.TabIndex = 3
@@ -387,7 +389,7 @@ Partial Class Frm_AssetHome
         'txtId
         '
         Me.txtId.Location = New System.Drawing.Point(110, 41)
-        Me.txtId.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(2)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(155, 20)
         Me.txtId.TabIndex = 4
@@ -396,7 +398,7 @@ Partial Class Frm_AssetHome
         '
         Me.picCOT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picCOT.Location = New System.Drawing.Point(18, 24)
-        Me.picCOT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picCOT.Margin = New System.Windows.Forms.Padding(2)
         Me.picCOT.Name = "picCOT"
         Me.picCOT.Size = New System.Drawing.Size(85, 129)
         Me.picCOT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -645,7 +647,7 @@ Partial Class Frm_AssetHome
         'picAsset
         '
         Me.picAsset.Location = New System.Drawing.Point(22, 23)
-        Me.picAsset.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picAsset.Margin = New System.Windows.Forms.Padding(2)
         Me.picAsset.Name = "picAsset"
         Me.picAsset.Size = New System.Drawing.Size(144, 124)
         Me.picAsset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -667,9 +669,9 @@ Partial Class Frm_AssetHome
         Me.TabPage2.Controls.Add(Me.Label15)
         Me.TabPage2.Controls.Add(Me.dtpDateOfAcquisition)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Size = New System.Drawing.Size(685, 282)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Purchase info."
@@ -779,7 +781,7 @@ Partial Class Frm_AssetHome
         '
         Me.dtpDateOfAcquisition.Enabled = False
         Me.dtpDateOfAcquisition.Location = New System.Drawing.Point(156, 31)
-        Me.dtpDateOfAcquisition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpDateOfAcquisition.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpDateOfAcquisition.Name = "dtpDateOfAcquisition"
         Me.dtpDateOfAcquisition.Size = New System.Drawing.Size(197, 20)
         Me.dtpDateOfAcquisition.TabIndex = 14
@@ -791,7 +793,7 @@ Partial Class Frm_AssetHome
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.TabControl2)
         Me.GroupBox3.Location = New System.Drawing.Point(356, 359)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(0)
         Me.GroupBox3.Size = New System.Drawing.Size(702, 253)
@@ -802,7 +804,7 @@ Partial Class Frm_AssetHome
         '
         Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Location = New System.Drawing.Point(8, 15)
-        Me.TabControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.Size = New System.Drawing.Size(690, 224)
@@ -812,9 +814,9 @@ Partial Class Frm_AssetHome
         '
         Me.TabPage3.Controls.Add(Me.dgvTransactionLog)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Size = New System.Drawing.Size(682, 198)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Transactions log"
@@ -824,7 +826,7 @@ Partial Class Frm_AssetHome
         '
         Me.dgvTransactionLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTransactionLog.Location = New System.Drawing.Point(4, 6)
-        Me.dgvTransactionLog.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvTransactionLog.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvTransactionLog.Name = "dgvTransactionLog"
         Me.dgvTransactionLog.ReadOnly = True
         Me.dgvTransactionLog.RowHeadersWidth = 51
@@ -865,7 +867,7 @@ Partial Class Frm_AssetHome
         '
         'mnuView
         '
-        Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuViewWarranty, Me.mnuViewActionHistory})
+        Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuViewWarranty, Me.mnuViewActionHistory, Me.mnuViewProfile, Me.mnuViewProfileList})
         Me.mnuView.Name = "mnuView"
         Me.mnuView.Size = New System.Drawing.Size(44, 20)
         Me.mnuView.Text = "View"
@@ -873,14 +875,26 @@ Partial Class Frm_AssetHome
         'mnuViewWarranty
         '
         Me.mnuViewWarranty.Name = "mnuViewWarranty"
-        Me.mnuViewWarranty.Size = New System.Drawing.Size(150, 22)
+        Me.mnuViewWarranty.Size = New System.Drawing.Size(180, 22)
         Me.mnuViewWarranty.Text = "Warranty"
         '
         'mnuViewActionHistory
         '
         Me.mnuViewActionHistory.Name = "mnuViewActionHistory"
-        Me.mnuViewActionHistory.Size = New System.Drawing.Size(150, 22)
+        Me.mnuViewActionHistory.Size = New System.Drawing.Size(180, 22)
         Me.mnuViewActionHistory.Text = "Action History"
+        '
+        'mnuViewProfile
+        '
+        Me.mnuViewProfile.Name = "mnuViewProfile"
+        Me.mnuViewProfile.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewProfile.Text = "Profile"
+        '
+        'mnuViewProfileList
+        '
+        Me.mnuViewProfileList.Name = "mnuViewProfileList"
+        Me.mnuViewProfileList.Size = New System.Drawing.Size(180, 22)
+        Me.mnuViewProfileList.Text = "Profile List"
         '
         'Frm_AssetHome
         '
@@ -892,7 +906,7 @@ Partial Class Frm_AssetHome
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.msp)
         Me.MainMenuStrip = Me.msp
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Frm_AssetHome"
         Me.Text = "Asset"
         Me.GroupBox1.ResumeLayout(False)
@@ -994,4 +1008,6 @@ Partial Class Frm_AssetHome
     Friend WithEvents Label12 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents mnuViewActionHistory As ToolStripMenuItem
+    Friend WithEvents mnuViewProfile As ToolStripMenuItem
+    Friend WithEvents mnuViewProfileList As ToolStripMenuItem
 End Class
