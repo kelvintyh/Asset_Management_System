@@ -12,6 +12,7 @@ Public Class Frm_Date
         Dim fontHeader As New Font("Georgia", 24, FontStyle.Bold)
         Dim fontSubHeader As New Font("Georgia", 12)
         Dim fontBody As New Font("Consola", 10)
+        Dim fontFooter As New Font("Georgia", 12)
 
         Dim u As User = db.Users.FirstOrDefault(Function(o) o.Id = frm_LoginAdmin.uid)
 
@@ -22,6 +23,7 @@ Public Class Frm_Date
         Dim subHeader As String = String.Format("Based on" & " " & month & vbNewLine & "Generated on {0:dd-MMMM-yyyy hh:mm:ss}" & vbNewLine & "Prepared by" & " " & u.Name, DateTime.Now)
 
         Dim header As String = "Login History Summary Report"
+        Dim footer As Integer = 0
 
         Dim body As New StringBuilder()
 
@@ -48,7 +50,7 @@ Public Class Frm_Date
             .DrawString(header, fontHeader, Brushes.Black, 150, 0)
             .DrawString(subHeader, fontSubHeader, Brushes.Black, 150, 40)
             .DrawString(body.ToString, fontBody, Brushes.Black, 0, 120)
-
+            .DrawString("PAGE " & footer + 1, fontFooter, Brushes.Black, 700, 1100)
         End With
     End Sub
 End Class
