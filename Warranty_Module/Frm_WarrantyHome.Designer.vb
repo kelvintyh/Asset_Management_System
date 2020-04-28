@@ -68,16 +68,16 @@ Partial Class Frm_WarrantyHome
         Me.gBoxList.Controls.Add(Me.dgv)
         Me.gBoxList.Location = New System.Drawing.Point(24, 22)
         Me.gBoxList.Name = "gBoxList"
-        Me.gBoxList.Size = New System.Drawing.Size(957, 510)
+        Me.gBoxList.Size = New System.Drawing.Size(952, 510)
         Me.gBoxList.TabIndex = 6
         Me.gBoxList.TabStop = False
         Me.gBoxList.Text = "Item List"
         '
         'btPrint
         '
-        Me.btPrint.Location = New System.Drawing.Point(633, 453)
+        Me.btPrint.Location = New System.Drawing.Point(652, 453)
         Me.btPrint.Name = "btPrint"
-        Me.btPrint.Size = New System.Drawing.Size(89, 42)
+        Me.btPrint.Size = New System.Drawing.Size(72, 42)
         Me.btPrint.TabIndex = 11
         Me.btPrint.Text = "Print"
         Me.btPrint.UseVisualStyleBackColor = True
@@ -132,6 +132,7 @@ Partial Class Frm_WarrantyHome
         '
         'PrintDocument
         '
+        Me.PrintDocument.DocumentName = ".pdf"
         '
         'PrintDialog
         '
@@ -148,7 +149,7 @@ Partial Class Frm_WarrantyHome
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
-        Me.ClientSize = New System.Drawing.Size(1000, 548)
+        Me.ClientSize = New System.Drawing.Size(999, 548)
         Me.Controls.Add(Me.gBoxList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -167,7 +168,7 @@ Partial Class Frm_WarrantyHome
     Friend WithEvents btAdd As Button
     Friend WithEvents btDelete As Button
     Friend WithEvents btEdit As Button
-    Friend WithEvents btPrint As Button
     Friend WithEvents PrintDocument As Printing.PrintDocument
     Friend WithEvents PrintDialog As PrintPreviewDialog
+    Friend WithEvents btPrint As Button
 End Class

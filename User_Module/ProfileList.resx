@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dlgPreview.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>264, 14</value>
+  <metadata name="doc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>27, 26</value>
+  </metadata>
+  <metadata name="ppd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>99, 26</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dlgPreview.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ppd.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAICAQAAAAAADoAgAAZgAAABAQEAAAAAAAKAEAAE4DAAAgIAAAAQAIAKgIAAB2BAAAEBAAAAEA
         CABoBQAAHg0AACAgAAABACAAqBAAAIYSAAAQEAAAAQAgAGgEAAAuIwAAKAAAACAAAABAAAAAAQAEAAAA
@@ -294,10 +297,33 @@
         wf+0BQAAgAUAAIAFAACAAQAAgAHB/4ABAACAAQAAgAEAALwBAAC8AQAAvAHB/4ABbP///5H/
 </value>
   </data>
-  <metadata name="doc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>430, 11</value>
-  </metadata>
-  <metadata name="dlgSaveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>115, 20</value>
-  </metadata>
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAYABgAAD/4QCwRXhpZgAATU0AKgAAAAgAAwE7AAIAAAAHAAAAModpAAQAAAAB
+        AAAAOpydAAEAAAAOAAAAmgAAAAB6aGl5aWgAAAAEkAMAAgAAABQAAABwkAQAAgAAABQAAACEkpEAAgAA
+        AAM3OQAAkpIAAgAAAAM3OQAAAAAAADIwMjA6MDQ6MjUgMjM6NTM6MzEAMjAyMDowNDoyNSAyMzo1Mzoz
+        MQAAAHoAaABpAHkAaQBoAAAA/9sAQwAHBQUGBQQHBgUGCAcHCAoRCwoJCQoVDxAMERgVGhkYFRgXGx4n
+        IRsdJR0XGCIuIiUoKSssKxogLzMvKjInKisq/9sAQwEHCAgKCQoUCwsUKhwYHCoqKioqKioqKioqKioq
+        KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq/8AAEQgAPwA+AwEiAAIRAQMRAf/EAB8A
+        AAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFB
+        BhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldY
+        WVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfI
+        ycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYH
+        CAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy
+        0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWG
+        h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz
+        9PX29/j5+v/aAAwDAQACEQMRAD8A+kaKKKACiis2bxFolvc/Z7jWNPinzjynukVvyJzQBpUUiOsiB0YM
+        rDIYHINLQAUUUUAFIzKilnIVVGSScAClrj/i1fT6b8I/ElzasyyixdAy9Ru+Un8mNAHkmq+JPFvx18YX
+        vh/wPfPpHhSxbZdagpIM4z1JHJzg7UBHHJ9ugt/2WvBiWey71DV57gj5pxMi5PqF2n+tb37Pel22nfBj
+        SZbZQJL5pbidgOWfeV5+gUD8K9NoA+a9V0Lxp+z1dRaxoOpza74SMgW5tJ+PKBOORyFJ7OuOcAjsfoLw
+        7r1j4o8O2WtaTJ5lpeRCSMnqPVT7g5B9xS+IdNttZ8Nalp18ivb3VtJFIG9Cp5/DrXkX7LN/PcfDnUbO
+        Vt0VnqLLEc9AyKxA/HJ/GgD26iiigArN8R6LD4j8M6jo10cRX1s8DN/d3DGfwPNaVFAHz78EvGw8DX15
+        8NPHLrp13Z3LfYppjtjfcclNx4wT8ynvu+lfQQIIBByD0Ncb4++Fvhr4i2qjW7Zo7yJdsN9bkLKg9M4w
+        w9iD7YrzP/hnXxPakWul/EzUYNPHAixKuB6YWTFAHS/G/wCK+neDvC95o+nXSTa9fRNCkUbZNsrDBkfH
+        3Tg8DqTjtVv9nzR7LSfhBYPY3cN3Jeu9zcPC2QkhwNh9CoCgj1zXNTfsueHj4Xu7ddUvLjW5Rvi1Gc4V
+        XHbyx/Ce+ST6GvHfCPi7xR8CfHlxpurW0n2beFvrBm+WVe0sZ6Zx0bv0PsAfatFQ2V3Ff2FveW+fKuIl
+        lTcMHawyOPoamoAKKKKACiiigArD1/wX4b8U3FtP4h0a01CW0OYXmTJXvj3HseK3KKAEVQqhVAAAwAB0
+        paKKAP/Z
+</value>
+  </data>
 </root>

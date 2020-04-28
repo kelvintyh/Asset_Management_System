@@ -27,7 +27,7 @@ Public Class FrmAssetAdd
 
         Dim a As New Asset()
         'Get image from picAsset and GetBinary(use original format)
-        Dim binaryArray As Byte() = If(IsNothing(GetBinary(picAsset.Image, Nothing)), Nothing, GetBinary(picAsset.Image, Nothing))
+        Dim binaryArray As Byte() = GetBinary(picAsset.Image, Nothing)
 
 
         '(1) For validation purpose
@@ -110,7 +110,7 @@ Public Class FrmAssetAdd
             MessageBox.Show("New Asset Record Added Successful !", "Information")
             Frm_AssetHome.UpdateTable()
 
-            createActionHistory("CreateA", currentUser.Id, a.Id)
+            createActionHistory("CreateA", "U10001", a.Id)
             Me.Close()
         End If
 
@@ -137,4 +137,7 @@ Public Class FrmAssetAdd
         Me.Close()
     End Sub
 
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
 End Class

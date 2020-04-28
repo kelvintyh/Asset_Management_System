@@ -29,7 +29,6 @@ Partial Class frm_LoginAdmin
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.lblForgot = New System.Windows.Forms.Label()
-        Me.lblReg = New System.Windows.Forms.Label()
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.chkShow = New System.Windows.Forms.CheckBox()
@@ -98,15 +97,6 @@ Partial Class frm_LoginAdmin
         Me.lblForgot.TabIndex = 7
         Me.lblForgot.Text = "Forgot Password?"
         '
-        'lblReg
-        '
-        Me.lblReg.AutoSize = True
-        Me.lblReg.Location = New System.Drawing.Point(370, 264)
-        Me.lblReg.Name = "lblReg"
-        Me.lblReg.Size = New System.Drawing.Size(61, 17)
-        Me.lblReg.TabIndex = 8
-        Me.lblReg.Text = "Register"
-        '
         'err
         '
         Me.err.ContainerControl = Me
@@ -151,7 +141,6 @@ Partial Class frm_LoginAdmin
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.PictureBox3)
-        Me.GroupBox1.Controls.Add(Me.lblReg)
         Me.GroupBox1.Controls.Add(Me.chkShow)
         Me.GroupBox1.Controls.Add(Me.lblForgot)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -252,7 +241,6 @@ Partial Class frm_LoginAdmin
     Friend WithEvents txtPass As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents lblForgot As Label
-    Friend WithEvents lblReg As Label
     Friend WithEvents err As ErrorProvider
     Friend WithEvents txtID As TextBox
     Friend WithEvents PictureBox4 As PictureBox

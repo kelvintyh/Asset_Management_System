@@ -16,6 +16,7 @@ Public Class Frm_TransactionCheckOut
     End Sub
 
     Function UpdateTable()
+
         dgv.Columns.Clear()
         dgv.Columns.Add("Id", "Id")
         dgv.Columns.Add("Description", "Description")
@@ -129,6 +130,7 @@ Public Class Frm_TransactionCheckOut
             MessageBox.Show("No Asset To Check Out !", "Error")
         End If
         UpdateTable()
+        reload()
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
@@ -199,4 +201,9 @@ Public Class Frm_TransactionCheckOut
     Private Sub Frm_TransactionCheckOut_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         assetList.Clear()
     End Sub
+
+    Function Reload()
+
+
+    End Function
 End Class

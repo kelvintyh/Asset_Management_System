@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+
 Public Class Frm_WarrantyHome
     Dim db As New AMSDBDataContext()
 
@@ -107,6 +108,7 @@ Public Class Frm_WarrantyHome
         body.AppendLine()
         body.AppendFormat("{0,0} record(s)", cnt)
 
+
         With e.Graphics
             .DrawImage(My.Resources.logo, 20, 20, 120, 120)
             .DrawString(header, fontHeader, Brushes.DarkBlue, 150, 30)
@@ -120,8 +122,10 @@ Public Class Frm_WarrantyHome
         If dgv.SelectedRows.Count > 0 Then
             PrintDialog.Document = PrintDocument
             PrintDialog.ShowDialog()
+
         Else
             MessageBox.Show("No data selected", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
 End Class

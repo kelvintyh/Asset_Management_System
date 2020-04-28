@@ -4,7 +4,6 @@ Imports System.Net.NetworkInformation
 
 Module Module1
 
-    Dim ms As New System.IO.MemoryStream
     Dim db As New AMSDBDataContext()
     ' For FrmAssetAddOthers
     Public action_type As String
@@ -12,6 +11,7 @@ Module Module1
     Public currentUser As New User
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
+        Dim ms As New System.IO.MemoryStream
         If image IsNot Nothing Then
             If format Is Nothing Then
                 format = image.RawFormat 'use image original format
@@ -21,13 +21,12 @@ Module Module1
         Else
             Return Nothing
         End If
-
-
     End Function
 
     Public Function GetImage(ByVal byteArray As Byte()) As Image
+        Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = image.FromStream(ms)
+        Dim image As Image = Image.FromStream(ms)
         Return image
     End Function
 
@@ -227,6 +226,9 @@ Module Module1
             type = "Create"
         ElseIf actionType.Equals("UpdateU") Then
             desc = "User " + id
+            type = "Update"
+        ElseIf actionType.Equals("Recovery") Then
+            desc = "Password Recovery"
             type = "Update"
         ElseIf actionType.Equals("DeleteU") Then
             desc = "User " + id

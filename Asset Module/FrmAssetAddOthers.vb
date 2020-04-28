@@ -10,47 +10,56 @@ Public Class FrmAssetAddOthers
         'for three table which are AssetType, Manufacturer and Location 
         'in one single form using the global variable = action_type 
         'action_type = 1.AssetType 2.Manufacturer 3.Location 
-        btnSave.Text = "&Add"
-        lblId.Text = GetNextId(action_type)
-        UpdateTable()
 
-        Console.WriteLine(cbo_selection)
+
+        lblId.Text = GetNextId(action_type) 'Get the lastest ID 
+        UpdateTable() ' Update the table from database
+
+        'show the dialog box for user guideline
+        ShowUserGuideline()
+
+
+        'Get the selected item from the previous combo and put here
         For i As Integer = 0 To dgv.Rows.Count - 2
+
+            Console.WriteLine("haha")
             If dgv.Item(1, i).Value.ToString = cbo_selection Then
                 dgv.Rows(i).Selected = True
                 lblId.Text = dgv.Item(0, i).Value.ToString
                 txtName.Text = dgv.Item(1, i).Value.ToString
+
+                Console.WriteLine("haha")
+                'Set the button mode
+                If txtName.Text = "" Then
+                    btnSave.Text = "&Add"
+                Else
+                    btnSave.Text = "&Save"
+                End If
+
             End If
         Next
+
 
     End Sub
 
     Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
 
-        Try
-            If IsNothing(dgv.Item(0, dgv.CurrentRow.Index).Value) Then
+        If dgv.Item(0, dgv.CurrentRow.Index).Value = Nothing Then
 
-                'if no record selected, change the button to add mode
-                btnSave.Text = "&Add"
-                'generate new id
-                lblId.Text = GetNextId(action_type)
-                'clear txtname
-                txtName.Text = ""
+            'if empty record selected, change the button to add mode
+            btnSave.Text = "&Add"
+            'generate new id
+            lblId.Text = GetNextId(action_type)
+            'clear txtname
+            txtName.Text = ""
+        Else
+            Dim i As Integer = dgv.CurrentRow.Index
+            lblId.Text = dgv.Item(0, i).Value
+            txtName.Text = dgv.Item(1, i).Value
 
-            Else
-                Dim i As Integer = dgv.CurrentRow.Index
-                lblId.Text = dgv.Item(0, i).Value
-                txtName.Text = dgv.Item(1, i).Value
-
-                'if any record selected, change the button to save mode
-                btnSave.Text = "&Save"
-
-            End If
-        Catch ex As Exception
-
-        End Try
-
-
+            'if any record selected, change the button to save mode
+            btnSave.Text = "&Save"
+        End If
 
     End Sub
 
@@ -94,6 +103,7 @@ Public Class FrmAssetAddOthers
 
             '(A) Add new record 
             If btnSave.Text = "&Add" Then
+                Console.WriteLine("hahah" + id)
                 If action_type = "AssetType" Then
                     Dim data As New AssetType()
                     data.Id = id
@@ -120,6 +130,7 @@ Public Class FrmAssetAddOthers
 
                 '(A.2)Update new Id
                 lblId.Text = GetNextId(action_type)
+
 
                 '(B) Modify current record
 
@@ -152,9 +163,11 @@ Public Class FrmAssetAddOthers
 
             End If
         End If
-        '(4) Update the table
+        '(4) Update the table...
         UpdateTable()
-        'Update combo box
+        txtName.Text = ""
+
+        '(5)Update combo box
         GetManu()
         GetLocation()
         GetAssetType()
@@ -165,6 +178,8 @@ Public Class FrmAssetAddOthers
     End Sub
 
     Private Sub Dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+
+        'To remove record from database
         Dim result As DialogResult = MessageBox.Show("Are you sure to delete selected record?", "", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Yes Then
             If action_type = "AssetType" Then
@@ -182,12 +197,48 @@ Public Class FrmAssetAddOthers
             MessageBox.Show("Record Removed Successful !", "Information")
         End If
         db.SubmitChanges()
+
+        'Update table...
         UpdateTable()
+        Dgv_CellClick(Nothing, Nothing)
+        txtName.Text = ""
+
         'Update combo box
         GetManu()
         GetLocation()
         GetAssetType()
-        Dgv_CellClick(Nothing, Nothing)
+
+
+
+    End Sub
+
+    Function ShowUserGuideline()
+        Dim msg As New StringBuilder()
+        msg.AppendLine("-----------------User Guideline-----------------" & vbNewLine)
+        msg.AppendLine("            1. TO ADD NEW RECORD")
+        msg.AppendLine("-1.1.Click on empty rows or column in the table")
+        msg.AppendLine("-1.2.Save button change to Add button")
+        msg.AppendLine("-1.3.Insert Description or Name in the textbox")
+        msg.AppendLine("-1.4.Click the Add button to add new record")
+        msg.AppendLine("-1.5.System will prompt appropriate message" & vbNewLine)
+        msg.AppendLine("            2. TO REMOVE A RECORD")
+        msg.AppendLine("-2.1.Double Click the desire record in the table")
+        msg.AppendLine("-2.2.System will prompt confirmation message" & vbNewLine)
+        msg.AppendLine("            3. TO MODIFY A RECORD")
+        msg.AppendLine("-3.1.Click on the desire row")
+        msg.AppendLine("-3.1.Add button change to Save button")
+        msg.AppendLine("-3.3.Modify Description or Name in the textbox")
+        msg.AppendLine("-3.4.Click the Save button to save the record")
+        msg.AppendLine("-3.5.System will prompt appropriate message" & vbNewLine)
+
+        MessageBox.Show(msg.ToString(), "User Guideline")
+    End Function
+
+    Private Sub MnuHelpUserGuideline_Click(sender As Object, e As EventArgs) Handles mnuHelpUserGuideline.Click
+        ShowUserGuideline()
+    End Sub
+
+    Private Sub FrmAssetAddOthers_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         txtName.Text = ""
     End Sub
 End Class
