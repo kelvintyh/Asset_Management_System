@@ -138,9 +138,9 @@ Partial Class Frm_Register
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(242, 64)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(392, 357)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
@@ -149,7 +149,7 @@ Partial Class Frm_Register
         'txtConfPass
         '
         Me.txtConfPass.Location = New System.Drawing.Point(137, 148)
-        Me.txtConfPass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtConfPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConfPass.Name = "txtConfPass"
         Me.txtConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfPass.Size = New System.Drawing.Size(138, 20)
@@ -169,7 +169,7 @@ Partial Class Frm_Register
         'mskCont
         '
         Me.mskCont.Location = New System.Drawing.Point(137, 213)
-        Me.mskCont.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mskCont.Margin = New System.Windows.Forms.Padding(2)
         Me.mskCont.Mask = "000-0000000"
         Me.mskCont.Name = "mskCont"
         Me.mskCont.Size = New System.Drawing.Size(138, 20)
@@ -178,7 +178,7 @@ Partial Class Frm_Register
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(137, 247)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(138, 20)
         Me.txtEmail.TabIndex = 22
@@ -200,7 +200,7 @@ Partial Class Frm_Register
         Me.cboGen.FormattingEnabled = True
         Me.cboGen.Items.AddRange(New Object() {"Male", "Female"})
         Me.cboGen.Location = New System.Drawing.Point(137, 179)
-        Me.cboGen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboGen.Margin = New System.Windows.Forms.Padding(2)
         Me.cboGen.Name = "cboGen"
         Me.cboGen.Size = New System.Drawing.Size(92, 21)
         Me.cboGen.TabIndex = 19
@@ -230,7 +230,7 @@ Partial Class Frm_Register
         'PicBox1
         '
         Me.PicBox1.Location = New System.Drawing.Point(290, 249)
-        Me.PicBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PicBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PicBox1.Name = "PicBox1"
         Me.PicBox1.Size = New System.Drawing.Size(74, 48)
         Me.PicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -243,7 +243,7 @@ Partial Class Frm_Register
         Me.cboRole.FormattingEnabled = True
         Me.cboRole.Items.AddRange(New Object() {"Admin", "Staff"})
         Me.cboRole.Location = New System.Drawing.Point(137, 316)
-        Me.cboRole.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboRole.Margin = New System.Windows.Forms.Padding(2)
         Me.cboRole.Name = "cboRole"
         Me.cboRole.Size = New System.Drawing.Size(92, 21)
         Me.cboRole.TabIndex = 13
@@ -251,9 +251,9 @@ Partial Class Frm_Register
         'btnBrowse
         '
         Me.btnBrowse.AutoSize = True
-        Me.btnBrowse.Location = New System.Drawing.Point(183, 344)
+        Me.btnBrowse.Location = New System.Drawing.Point(137, 278)
         Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(56, 23)
+        Me.btnBrowse.Size = New System.Drawing.Size(76, 23)
         Me.btnBrowse.TabIndex = 12
         Me.btnBrowse.Text = "Browse"
         Me.btnBrowse.UseVisualStyleBackColor = True
@@ -261,7 +261,7 @@ Partial Class Frm_Register
         'txtPass
         '
         Me.txtPass.Location = New System.Drawing.Point(137, 118)
-        Me.txtPass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(138, 20)
@@ -270,7 +270,7 @@ Partial Class Frm_Register
         'txtUser
         '
         Me.txtUser.Location = New System.Drawing.Point(137, 80)
-        Me.txtUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtUser.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(138, 20)
         Me.txtUser.TabIndex = 10
@@ -278,7 +278,7 @@ Partial Class Frm_Register
         'txtName
         '
         Me.txtName.Location = New System.Drawing.Point(137, 48)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(138, 20)
         Me.txtName.TabIndex = 9
@@ -287,7 +287,7 @@ Partial Class Frm_Register
         '
         Me.txtID.Enabled = False
         Me.txtID.Location = New System.Drawing.Point(137, 19)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(138, 20)
         Me.txtID.TabIndex = 8
@@ -319,7 +319,7 @@ Partial Class Frm_Register
         Me.btnRegister.AutoSize = True
         Me.btnRegister.Enabled = False
         Me.btnRegister.Location = New System.Drawing.Point(266, 427)
-        Me.btnRegister.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(59, 23)
         Me.btnRegister.TabIndex = 7
@@ -330,7 +330,7 @@ Partial Class Frm_Register
         '
         Me.btnClose.AutoSize = True
         Me.btnClose.Location = New System.Drawing.Point(488, 426)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(59, 23)
         Me.btnClose.TabIndex = 8
@@ -345,7 +345,7 @@ Partial Class Frm_Register
         '
         Me.btnClear.AutoSize = True
         Me.btnClear.Location = New System.Drawing.Point(376, 426)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(2)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(59, 23)
         Me.btnClear.TabIndex = 9
@@ -360,7 +360,7 @@ Partial Class Frm_Register
         '
         Me.PictureBox1.Image = Global.Asset_Management_System.My.Resources.Resources.Reg
         Me.PictureBox1.Location = New System.Drawing.Point(28, 64)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(189, 259)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -371,7 +371,7 @@ Partial Class Frm_Register
         '
         Me.backB.Image = Global.Asset_Management_System.My.Resources.Resources.back_butt
         Me.backB.Location = New System.Drawing.Point(9, 10)
-        Me.backB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.backB.Margin = New System.Windows.Forms.Padding(2)
         Me.backB.Name = "backB"
         Me.backB.Size = New System.Drawing.Size(39, 41)
         Me.backB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -391,7 +391,7 @@ Partial Class Frm_Register
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "Frm_Register"
         Me.Text = "Register"
