@@ -181,4 +181,7 @@
   <data name="Reg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2080904.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree_white_background_with_blue_smoke_on_sides_image_312167" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-white-background-with-blue-smoke-on-sides-image_312167.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

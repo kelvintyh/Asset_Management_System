@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
+Public Class Frm_TransactionSummaryReport
 
-Public Class FrmAssetSummaryReport
 
     Dim db As New AMSDBDataContext()
     Private Sub Doc_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles doc.PrintPage
@@ -20,8 +20,8 @@ Public Class FrmAssetSummaryReport
         '(3) Prepare body
         Dim body As New StringBuilder()
 
-        body.AppendLine("No   Asset ID     Asset Name   Acq. Date")
-        body.AppendLine("--   ----------   ----------   ----------")
+        body.AppendLine("No   Transaction ID   Transaction Date       ")
+        body.AppendLine("--   --------------   --------------------   ----------")
 
         'Dim rs = From a In db.Assets
         'Order By a.Asset_type
@@ -57,7 +57,7 @@ Public Class FrmAssetSummaryReport
 
 
         '(2) Prepare header and sub-Header
-        Dim header As String = "Asset Summary Report " & vbNewLine & dtpStart.Value.Date.Date & "To" & dtpEnd.Value.Date.Date
+        Dim header As String = "Transaction Summary Report " & vbNewLine & dtpStart.Value.Date.Date & "To" & dtpEnd.Value.Date.Date
         Dim subHeader As String = String.Format(
             "Printed on {0:dd-MMMM-yyyy hh:mm:ss tt}" & vbNewLine &
             "Prepared by " & currentUser.Name & ", " & currentUser.Id, DateTime.Now
@@ -67,7 +67,7 @@ Public Class FrmAssetSummaryReport
         'Initialize the saveFileDialog
         With dlgSaveFile
             .InitialDirectory = Application.StartupPath
-            .FileName = "Asset Summary Report.txt"
+            .FileName = "Transaction Summary Report.txt"
             .Filter = "Text File | *.txt"
         End With
 
@@ -82,8 +82,8 @@ Public Class FrmAssetSummaryReport
             ' Open the file.
             Dim swReport As New StreamWriter(dlgSaveFile.FileName)
             swReport.WriteLine(header & vbNewLine & subHeader)
-            swReport.WriteLine("No   Asset ID     Asset Name   Acq. Date")
-            swReport.WriteLine("--   ----------   ----------   ----------")
+            swReport.WriteLine("No   Transaction ID   Transaction Date       ")
+            swReport.WriteLine("--   --------------   --------------------   ----------")
 
             ' Save the items in the file.
             Dim cnt As Integer = 0
@@ -105,11 +105,7 @@ Public Class FrmAssetSummaryReport
         Me.Close()
     End Sub
 
-    Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs)
-
-    End Sub
-
-    Private Sub FrmAssetSummaryReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Frm_TransactionSummaryReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

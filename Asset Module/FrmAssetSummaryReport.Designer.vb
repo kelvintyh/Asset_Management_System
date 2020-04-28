@@ -32,13 +32,12 @@ Partial Class FrmAssetSummaryReport
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dlgPreview = New System.Windows.Forms.PrintPreviewDialog()
         Me.doc = New System.Drawing.Printing.PrintDocument()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dlgSaveFile = New System.Windows.Forms.SaveFileDialog()
         Me.SuspendLayout()
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(318, 239)
+        Me.btnCancel.Location = New System.Drawing.Point(318, 179)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 0
@@ -47,7 +46,7 @@ Partial Class FrmAssetSummaryReport
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(194, 236)
+        Me.btnPrint.Location = New System.Drawing.Point(194, 176)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 26)
         Me.btnPrint.TabIndex = 1
@@ -56,7 +55,7 @@ Partial Class FrmAssetSummaryReport
         '
         'btnPreview
         '
-        Me.btnPreview.Location = New System.Drawing.Point(83, 236)
+        Me.btnPreview.Location = New System.Drawing.Point(83, 176)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(75, 26)
         Me.btnPreview.TabIndex = 2
@@ -110,31 +109,11 @@ Partial Class FrmAssetSummaryReport
         '
         Me.doc.OriginAtMargins = True
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"ID", "Asset type", "Condition", "Status", "Value at acquisition", "Inventory location", "Name", "Date of acquisition"})
-        Me.ComboBox1.Location = New System.Drawing.Point(139, 165)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(254, 24)
-        Me.ComboBox1.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(44, 168)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 17)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Order By : "
-        '
         'FrmAssetSummaryReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(450, 305)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.ClientSize = New System.Drawing.Size(450, 239)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtpEnd)
@@ -158,6 +137,5 @@ Partial Class FrmAssetSummaryReport
     Friend WithEvents Label2 As Label
     Friend WithEvents dlgPreview As PrintPreviewDialog
     Friend WithEvents doc As Printing.PrintDocument
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents dlgSaveFile As SaveFileDialog
 End Class

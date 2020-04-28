@@ -6,6 +6,10 @@ Public Class FrmAssetUpdate
 
     Private Sub FrmAssetUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        grpLocal.Visible = False
+        grpThirdParty.Visible = False
+
         For Each a In db.Assets
             If a.Id = Frm_AssetHome.lblId.Text Then
                 picAsset.Image = GetImage(a.Image.ToArray)
@@ -44,7 +48,6 @@ Public Class FrmAssetUpdate
                         grpThirdParty.Visible = True
                         grpLocal.Visible = False
 
-                        Console.WriteLine("hahahahaa")
                         txt3rdDesc.Text = rs.First.Third_Party_Description
                         txt3rdContact.Text = rs.First.Third_Party_Contact
                         txt3rdEmail.Text = rs.First.Third_Party_Email
@@ -93,12 +96,16 @@ Public Class FrmAssetUpdate
 
         Dim a As Asset = db.Assets.FirstOrDefault(Function(o) o.Id = lblId.Text)
         'Get image from picAsset and GetBinary(use original format)
-        Dim binaryArray As Byte() = If(IsNothing(GetBinary(picAsset.Image, Nothing)), Nothing, GetBinary(picAsset.Image, Nothing))
+        Dim binaryArray As Byte() = GetBinary(picAsset.Image, Nothing)
 
 
         '(1) For validation purpose
         Dim err As New StringBuilder()
         Dim ctr As Control = Nothing
+        Dim Contact As String = ""
+        Dim desc As String = ""
+        Dim email As String = ""
+
 
         '(2) Read inputs
         'General Info
@@ -178,16 +185,22 @@ Public Class FrmAssetUpdate
             Else
                 If txt3rdDesc.Text = "" Then
                     err.AppendLine("-Third Party Description empty")
+                Else
+                    desc = txt3rdDesc.Text
                 End If
 
                 If txt3rdContact.Text = "" Then
                     err.AppendLine("-Third Party Contact empty")
+                Else
+                    Contact = txt3rdContact.Text
                 End If
                 If txt3rdEmail.Text = "" Then
                     err.AppendLine("-Third Party Email empty")
+                Else
+                    email = txt3rdEmail.Text
                 End If
             End If
-            End If
+        End If
 
         'Check If there Is input error, If no error then update database
         If err.Length > 0 Then
@@ -195,12 +208,15 @@ Public Class FrmAssetUpdate
         Else
             Dim result As DialogResult = MessageBox.Show("Are you sure to modify current record?", "", MessageBoxButtons.YesNoCancel)
             If result = DialogResult.Yes Then
-                'update transaction
-                Dim t As Transaction = db.Transactions.FirstOrDefault(Function(o) o.Id = a.TransactionId)
-                t.Third_Party_Contact = txt3rdContact.Text
-                t.Third_Party_Description = txt3rdDesc.Text
-                t.Third_Party_Email = txt3rdEmail.Text
-                t.Check_Out_To = txtId.Text
+
+                If a.TransactionId <> "" Then
+                    'update transaction
+                    Dim t As Transaction = db.Transactions.FirstOrDefault(Function(o) o.Id = a.TransactionId)
+                    t.Third_Party_Contact = Contact
+                    t.Third_Party_Description = desc
+                    t.Third_Party_Email = email
+                    t.Check_Out_To = txtId.Text
+                End If
                 db.SubmitChanges()
                 Frm_AssetHome.UpdateTable()
                 createActionHistory("UpdateA", currentUser.Id, a.Id)
