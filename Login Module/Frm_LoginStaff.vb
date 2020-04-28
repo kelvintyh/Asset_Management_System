@@ -94,7 +94,8 @@
             ElseIf u.Id <> id2 Then
                 MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-
+                'Add to variable currentUser for current logged user
+                currentUser = u
                 MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 db.LoginHistories.InsertOnSubmit(l)
                 db.SubmitChanges()
@@ -108,6 +109,10 @@
 
     Private Sub BackB_Click(sender As Object, e As EventArgs) Handles backB.Click
         Me.Close()
-        Frm_RoleChoose.Show()
+        Frm_RoleChoose.Visible = True
+    End Sub
+
+    Private Sub Frm_LoginStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Frm_RoleChoose.Visible = False
     End Sub
 End Class

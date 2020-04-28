@@ -30,7 +30,11 @@ Partial Class FrmAssetAddOthers
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.mnu = New System.Windows.Forms.MenuStrip()
+        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelpUserGuideline = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnu.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -102,6 +106,29 @@ Partial Class FrmAssetAddOthers
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'mnu
+        '
+        Me.mnu.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.mnu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelp})
+        Me.mnu.Location = New System.Drawing.Point(0, 0)
+        Me.mnu.Name = "mnu"
+        Me.mnu.Size = New System.Drawing.Size(408, 28)
+        Me.mnu.TabIndex = 11
+        Me.mnu.Text = "MenuStrip1"
+        '
+        'mnuHelp
+        '
+        Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelpUserGuideline})
+        Me.mnuHelp.Name = "mnuHelp"
+        Me.mnuHelp.Size = New System.Drawing.Size(55, 24)
+        Me.mnuHelp.Text = "Help"
+        '
+        'mnuHelpUserGuideline
+        '
+        Me.mnuHelpUserGuideline.Name = "mnuHelpUserGuideline"
+        Me.mnuHelpUserGuideline.Size = New System.Drawing.Size(224, 26)
+        Me.mnuHelpUserGuideline.Text = "User Guideline"
+        '
         'FrmAssetAddOthers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -115,10 +142,14 @@ Partial Class FrmAssetAddOthers
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.mnu)
+        Me.MainMenuStrip = Me.mnu
         Me.MaximizeBox = False
         Me.Name = "FrmAssetAddOthers"
         Me.Text = "FrmAssetAddOthers"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnu.ResumeLayout(False)
+        Me.mnu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -132,4 +163,7 @@ Partial Class FrmAssetAddOthers
     Friend WithEvents txtName As TextBox
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents mnu As MenuStrip
+    Friend WithEvents mnuHelp As ToolStripMenuItem
+    Friend WithEvents mnuHelpUserGuideline As ToolStripMenuItem
 End Class
