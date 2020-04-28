@@ -87,8 +87,8 @@ Public Class Frm_WarrantyAdd
 
         db.Warranties.InsertOnSubmit(w)
         db.SubmitChanges()
-        MessageBox.Show("Record Registered Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Frm_WarrantyHome.UpdateTable()
+        MessageBox.Show("Record Registered Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         createActionHistory("CreateW", currentUser.Id, w.Warranty_Id)
         ResetForm()
         Me.Close()

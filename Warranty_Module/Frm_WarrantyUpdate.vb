@@ -100,8 +100,8 @@ Public Class Frm_WarrantyUpdate
 
         If r = DialogResult.Yes Then
             db.SubmitChanges()
-            MessageBox.Show("Record Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Frm_WarrantyHome.UpdateTable()
+            MessageBox.Show("Record Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             createActionHistory("UpdateW", currentUser.Id, w.Warranty_Id)
             ResetForm()
             Me.Close()
