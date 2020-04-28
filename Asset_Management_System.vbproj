@@ -329,6 +329,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\Profile.resx">
+      <DependentUpon>Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Module\ProfileList.resx">
+      <DependentUpon>ProfileList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction_Module\Frm_TransactionSummaryReport.resx">
       <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
     </EmbeddedResource>
