@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class UserDetails
+Partial Class ProfileList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class UserDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserDetails))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfileList))
         Me.doc = New System.Drawing.Printing.PrintDocument()
         Me.ppd = New System.Windows.Forms.PrintPreviewDialog()
         Me.dgv = New System.Windows.Forms.DataGridView()
@@ -35,6 +35,8 @@ Partial Class UserDetails
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,18 +87,19 @@ Partial Class UserDetails
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(624, 28)
+        Me.Label2.Location = New System.Drawing.Point(547, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 23)
+        Me.Label2.Size = New System.Drawing.Size(135, 23)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "User ID: "
+        Me.Label2.Text = "Name or Username: "
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cboType
         '
         Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Items.AddRange(New Object() {"Type", "Create", "Update", "Delete"})
-        Me.cboType.Location = New System.Drawing.Point(497, 27)
+        Me.cboType.Items.AddRange(New Object() {"Gender", "Male", "Female"})
+        Me.cboType.Location = New System.Drawing.Point(420, 23)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(121, 24)
         Me.cboType.TabIndex = 1
@@ -111,7 +114,7 @@ Partial Class UserDetails
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(217, 33)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Action History"
+        Me.Label1.Text = "Profile List"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1
@@ -155,26 +158,46 @@ Partial Class UserDetails
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnEdit)
+        Me.GroupBox1.Controls.Add(Me.btnDelete)
         Me.GroupBox1.Controls.Add(Me.btnPrint)
         Me.GroupBox1.Controls.Add(Me.lblCount)
         Me.GroupBox1.Controls.Add(Me.dgv)
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 15)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(902, 546)
-        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "History"
+        Me.GroupBox1.Text = "Profile List"
         '
-        'UserDetails
+        'btnEdit
+        '
+        Me.btnEdit.Location = New System.Drawing.Point(648, 504)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(97, 28)
+        Me.btnEdit.TabIndex = 2
+        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(545, 503)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(97, 28)
+        Me.btnDelete.TabIndex = 2
+        Me.btnDelete.Text = "&Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'ProfileList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(937, 577)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "UserDetails"
-        Me.Text = "Action History"
+        Me.Name = "ProfileList"
+        Me.Text = "Profile List"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -183,16 +206,19 @@ Partial Class UserDetails
         Me.ResumeLayout(False)
 
     End Sub
+
     Friend WithEvents doc As Printing.PrintDocument
     Friend WithEvents ppd As PrintPreviewDialog
     Friend WithEvents dgv As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents cboType As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
     Friend WithEvents lblCount As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents cboType As ComboBox
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnDelete As Button
 End Class
