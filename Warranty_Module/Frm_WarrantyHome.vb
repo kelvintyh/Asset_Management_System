@@ -3,9 +3,32 @@
 Public Class Frm_WarrantyHome
     Dim db As New AMSDBDataContext()
 
-    Private Sub Frm_Warranty_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub Frm_Warranty_load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateTable()
+        SearchItem()
+    End Sub
 
+    Private Sub btDelete_Click(sender As Object, e As EventArgs) Handles btDelete.Click
+
+        If dgv.SelectedRows.Count > 0 Then
+
+
+
+            Dim q = MessageBox.Show("Are you sure to Delete this Data?", "Delete Data?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If q = DialogResult.Yes Then
+                Dim w As Warranty = db.Warranties.FirstOrDefault(Function(o) o.Warranty_Id = dgv.Item(0, dgv.CurrentRow.Index).Value.ToString)
+                db.Warranties.DeleteOnSubmit(w)
+                db.SubmitChanges()
+                UpdateTable()
+                SearchItem()
+                MessageBox.Show("Data deleted successfully", "Data Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                createActionHistory("DeleteW", currentUser.Id, w.Warranty_Id)
+
+            End If
+        Else
+            MessageBox.Show("Please select a record to proceed !", "Information")
+        End If
     End Sub
 
     Public Function UpdateTable()
@@ -14,7 +37,7 @@ Public Class Frm_WarrantyHome
         dgv.DataSource = db.Warranties
     End Function
 
-    Private Sub SearchItem()
+    Public Sub SearchItem()
         Dim name As String = tbSearch.Text.Trim
         Dim id As String = tbSearch.Text.Trim
 
@@ -54,25 +77,10 @@ Public Class Frm_WarrantyHome
         Frm_WarrantyAdd.ShowDialog()
     End Sub
 
-    Private Sub btDelete_Click(sender As Object, e As EventArgs) Handles btDelete.Click
-        Dim w As Warranty = db.Warranties.FirstOrDefault(Function(o) o.Warranty_Id = dgv.Item(0, dgv.CurrentRow.Index).Value.ToString)
-        Dim q = MessageBox.Show("Are you sure to Delete this Data?", "Delete Data?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-        If q = DialogResult.Yes Then
-            db.Warranties.DeleteOnSubmit(w)
-            db.SubmitChanges()
-            UpdateTable()
-            MessageBox.Show("Data deleted successfully", "Data Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            createActionHistory("DeleteW", currentUser.Id, w.Warranty_Id)
-
-        Else
-
-        End If
-    End Sub
-
     Private Sub btEdit_Click(sender As Object, e As EventArgs) Handles btEdit.Click
         If dgv.SelectedRows.Count > 0 Then
             Frm_WarrantyUpdate.ShowDialog()
+
         Else
             MessageBox.Show("Please select a record to proceed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
