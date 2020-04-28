@@ -189,5 +189,9 @@ Public Class Frm_AssetHome
     Private Sub MnuViewActionHistory_Click(sender As Object, e As EventArgs) Handles mnuViewActionHistory.Click
         UserDetails.ShowDialog()
     End Sub
+
+    Private Sub MnuTransactionSummaryReport_Click(sender As Object, e As EventArgs) Handles mnuTransactionSummaryReport.Click
+        Frm_TransactionSummaryReport.ShowDialog()
+    End Sub
 End Class
 

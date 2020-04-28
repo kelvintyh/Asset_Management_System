@@ -93,10 +93,10 @@ Partial Class Frm_AssetHome
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFileGenerateReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFileReportASR = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuTransactionSummaryReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuViewWarranty = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuViewActionHistory = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTransactionSummaryReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -794,6 +794,12 @@ Partial Class Frm_AssetHome
         Me.mnuFileReportASR.Size = New System.Drawing.Size(282, 26)
         Me.mnuFileReportASR.Text = "Asset Summary Report"
         '
+        'mnuTransactionSummaryReport
+        '
+        Me.mnuTransactionSummaryReport.Name = "mnuTransactionSummaryReport"
+        Me.mnuTransactionSummaryReport.Size = New System.Drawing.Size(282, 26)
+        Me.mnuTransactionSummaryReport.Text = "Transaction Summary Report"
+        '
         'mnuView
         '
         Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuViewWarranty, Me.mnuViewActionHistory})
@@ -804,20 +810,14 @@ Partial Class Frm_AssetHome
         'mnuViewWarranty
         '
         Me.mnuViewWarranty.Name = "mnuViewWarranty"
-        Me.mnuViewWarranty.Size = New System.Drawing.Size(224, 26)
+        Me.mnuViewWarranty.Size = New System.Drawing.Size(186, 26)
         Me.mnuViewWarranty.Text = "Warranty"
         '
         'mnuViewActionHistory
         '
         Me.mnuViewActionHistory.Name = "mnuViewActionHistory"
-        Me.mnuViewActionHistory.Size = New System.Drawing.Size(224, 26)
+        Me.mnuViewActionHistory.Size = New System.Drawing.Size(186, 26)
         Me.mnuViewActionHistory.Text = "Action History"
-        '
-        'mnuTransactionSummaryReport
-        '
-        Me.mnuTransactionSummaryReport.Name = "mnuTransactionSummaryReport"
-        Me.mnuTransactionSummaryReport.Size = New System.Drawing.Size(282, 26)
-        Me.mnuTransactionSummaryReport.Text = "Transaction Summary Report"
         '
         'Frm_AssetHome
         '
