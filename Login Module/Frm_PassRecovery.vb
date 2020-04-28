@@ -22,6 +22,7 @@
         Else
             u.Password = pass
             db.SubmitChanges()
+            createActionHistory("Recovery", currentUser.Id, u.Id)
             MessageBox.Show("Password updated", "Update Password", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtUser.Text = ""
             txtPass.Text = ""

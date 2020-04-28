@@ -62,6 +62,7 @@ Public Class Frm_WarrantyHome
             db.Warranties.DeleteOnSubmit(w)
             db.SubmitChanges()
             UpdateTable()
+            createActionHistory("DeleteW", currentUser.Id, w.Warranty_Id)
 
         Else
 

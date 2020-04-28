@@ -37,6 +37,7 @@ Public Class Frm_Register
 
         db.Users.InsertOnSubmit(u)
         db.SubmitChanges()
+        createActionHistory("CreateU", u.Id, u.Id)
 
         MessageBox.Show("Record Added", "Add Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -178,13 +179,12 @@ Public Class Frm_Register
 
         If cboRole.SelectedItem = "Staff" Then
             Dim rs1 = From u In db.Users
-                      Where u.Role = "Staff"
+                      Where u.Role = "Admin"
                       Order By u.Id Descending
 
             If rs1.Count = 0 Then
                 txtID.Text = "S0001"
             Else
-
                 id1 = id1.Substring(3)
                 Int32.TryParse(id1, digit)
                 digit = digit + 1
@@ -261,7 +261,7 @@ Public Class Frm_Register
 
     Private Sub BackB_Click(sender As Object, e As EventArgs) Handles backB.Click
         Me.Close()
-        frm_LoginAdmin.Show()
+        Frm_AssetHome.Visible = True
 
     End Sub
 End Class
