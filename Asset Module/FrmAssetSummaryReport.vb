@@ -105,11 +105,4 @@ Public Class FrmAssetSummaryReport
         Me.Close()
     End Sub
 
-    Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs)
-
-    End Sub
-
-    Private Sub FrmAssetSummaryReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
