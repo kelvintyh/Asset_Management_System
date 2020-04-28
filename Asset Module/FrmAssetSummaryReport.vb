@@ -40,6 +40,7 @@ Public Class FrmAssetSummaryReport
 
         '(4) Print
         With e.Graphics
+            .DrawImage(GetImage(currentUser.Image.ToArray), 0, 0, 80, 100)
             .DrawString(header, fontHeader, Brushes.Purple, 100, 0)
             .DrawString(subHeader, fontSubHeader, Brushes.Black, 100, 40)
             .DrawString(body.ToString(), fontBody, Brushes.Black, 0, 120)

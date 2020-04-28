@@ -20,8 +20,8 @@ Public Class Frm_TransactionSummaryReport
         '(3) Prepare body
         Dim body As New StringBuilder()
 
-        body.AppendLine("No   Asset ID     Asset Name   Acq. Date")
-        body.AppendLine("--   ----------   ----------   ----------")
+        body.AppendLine("No   Transaction ID   Transaction Date       ")
+        body.AppendLine("--   --------------   --------------------   ----------")
 
         'Dim rs = From a In db.Assets
         'Order By a.Asset_type
@@ -40,6 +40,7 @@ Public Class Frm_TransactionSummaryReport
 
         '(4) Print
         With e.Graphics
+            .DrawImage(GetImage(currentUser.Image.ToArray), 0, 0, 80, 100)
             .DrawString(header, fontHeader, Brushes.Purple, 100, 0)
             .DrawString(subHeader, fontSubHeader, Brushes.Black, 100, 40)
             .DrawString(body.ToString(), fontBody, Brushes.Black, 0, 120)
@@ -104,11 +105,7 @@ Public Class Frm_TransactionSummaryReport
         Me.Close()
     End Sub
 
-    Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs)
-
-    End Sub
-
-    Private Sub FrmAssetSummaryReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Frm_TransactionSummaryReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
