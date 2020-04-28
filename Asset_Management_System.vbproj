@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset.vb" />
+    <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.Designer.vb">
+      <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaction_Module\Module_Transaction.vb" />
     <Compile Include="Asset Module\FrmAssetAdd.Designer.vb">
       <DependentUpon>FrmAssetAdd.vb</DependentUpon>
@@ -282,6 +288,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction_Module\Frm_TransactionSummaryReport.resx">
+      <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Module\UserDetails.resx">
       <DependentUpon>UserDetails.vb</DependentUpon>

@@ -27,7 +27,7 @@ Public Class FrmAssetAdd
 
         Dim a As New Asset()
         'Get image from picAsset and GetBinary(use original format)
-        Dim binaryArray As Byte() = If(IsNothing(GetBinary(picAsset.Image, Nothing)), Nothing, GetBinary(picAsset.Image, Nothing))
+        Dim binaryArray As Byte() = GetBinary(picAsset.Image, Nothing)
 
 
         '(1) For validation purpose

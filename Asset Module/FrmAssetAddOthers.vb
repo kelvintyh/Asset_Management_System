@@ -10,11 +10,14 @@ Public Class FrmAssetAddOthers
         'for three table which are AssetType, Manufacturer and Location 
         'in one single form using the global variable = action_type 
         'action_type = 1.AssetType 2.Manufacturer 3.Location 
-        btnSave.Text = "&Add"
-        lblId.Text = GetNextId(action_type)
-        UpdateTable()
 
-        Console.WriteLine(cbo_selection)
+
+        btnSave.Text = "&Add"
+
+        lblId.Text = GetNextId(action_type) 'Get the lastest ID 
+        UpdateTable() ' Update the table from database
+
+
         For i As Integer = 0 To dgv.Rows.Count - 2
             If dgv.Item(1, i).Value.ToString = cbo_selection Then
                 dgv.Rows(i).Selected = True

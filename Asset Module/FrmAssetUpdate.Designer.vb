@@ -52,12 +52,6 @@ Partial Class FrmAssetUpdate
         Me.cboManu = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.grpLocal = New System.Windows.Forms.GroupBox()
-        Me.lblContact = New System.Windows.Forms.Label()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.txtId = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.grpThirdParty = New System.Windows.Forms.GroupBox()
         Me.txt3rdEmail = New System.Windows.Forms.TextBox()
         Me.txt3rdContact = New System.Windows.Forms.TextBox()
@@ -65,6 +59,12 @@ Partial Class FrmAssetUpdate
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
@@ -364,56 +364,6 @@ Partial Class FrmAssetUpdate
         Me.grpLocal.TabStop = False
         Me.grpLocal.Text = "Local"
         '
-        'lblContact
-        '
-        Me.lblContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblContact.Location = New System.Drawing.Point(185, 179)
-        Me.lblContact.Name = "lblContact"
-        Me.lblContact.Size = New System.Drawing.Size(225, 23)
-        Me.lblContact.TabIndex = 6
-        '
-        'lblName
-        '
-        Me.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblName.Location = New System.Drawing.Point(185, 110)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(225, 23)
-        Me.lblName.TabIndex = 5
-        '
-        'txtId
-        '
-        Me.txtId.Location = New System.Drawing.Point(185, 41)
-        Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(222, 22)
-        Me.txtId.TabIndex = 4
-        '
-        'Label13
-        '
-        Me.Label13.Location = New System.Drawing.Point(182, 151)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(71, 17)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "Contact : "
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label12
-        '
-        Me.Label12.Location = New System.Drawing.Point(182, 80)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(59, 17)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "Name : "
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label11
-        '
-        Me.Label11.Location = New System.Drawing.Point(182, 21)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(59, 17)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "ID : "
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'grpThirdParty
         '
         Me.grpThirdParty.Controls.Add(Me.txt3rdEmail)
@@ -476,6 +426,56 @@ Partial Class FrmAssetUpdate
         Me.Label21.Size = New System.Drawing.Size(165, 17)
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Third Party Description : "
+        '
+        'lblContact
+        '
+        Me.lblContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblContact.Location = New System.Drawing.Point(185, 179)
+        Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(225, 23)
+        Me.lblContact.TabIndex = 6
+        '
+        'lblName
+        '
+        Me.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblName.Location = New System.Drawing.Point(185, 110)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(225, 23)
+        Me.lblName.TabIndex = 5
+        '
+        'txtId
+        '
+        Me.txtId.Location = New System.Drawing.Point(185, 41)
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(222, 22)
+        Me.txtId.TabIndex = 4
+        '
+        'Label13
+        '
+        Me.Label13.Location = New System.Drawing.Point(182, 151)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(71, 17)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "Contact : "
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label12
+        '
+        Me.Label12.Location = New System.Drawing.Point(182, 80)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(59, 17)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "Name : "
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label11
+        '
+        Me.Label11.Location = New System.Drawing.Point(182, 21)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(59, 17)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "ID : "
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label9
         '

@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
+Public Class Frm_TransactionSummaryReport
 
-Public Class FrmAssetSummaryReport
 
     Dim db As New AMSDBDataContext()
     Private Sub Doc_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles doc.PrintPage
@@ -56,7 +56,7 @@ Public Class FrmAssetSummaryReport
 
 
         '(2) Prepare header and sub-Header
-        Dim header As String = "Asset Summary Report " & vbNewLine & dtpStart.Value.Date.Date & "To" & dtpEnd.Value.Date.Date
+        Dim header As String = "Transaction Summary Report " & vbNewLine & dtpStart.Value.Date.Date & "To" & dtpEnd.Value.Date.Date
         Dim subHeader As String = String.Format(
             "Printed on {0:dd-MMMM-yyyy hh:mm:ss tt}" & vbNewLine &
             "Prepared by " & currentUser.Name & ", " & currentUser.Id, DateTime.Now
@@ -66,7 +66,7 @@ Public Class FrmAssetSummaryReport
         'Initialize the saveFileDialog
         With dlgSaveFile
             .InitialDirectory = Application.StartupPath
-            .FileName = "Asset Summary Report.txt"
+            .FileName = "Transaction Summary Report.txt"
             .Filter = "Text File | *.txt"
         End With
 
@@ -81,8 +81,8 @@ Public Class FrmAssetSummaryReport
             ' Open the file.
             Dim swReport As New StreamWriter(dlgSaveFile.FileName)
             swReport.WriteLine(header & vbNewLine & subHeader)
-            swReport.WriteLine("No   Asset ID     Asset Name   Acq. Date")
-            swReport.WriteLine("--   ----------   ----------   ----------")
+            swReport.WriteLine("No   Transaction ID   Transaction Date       ")
+            swReport.WriteLine("--   --------------   --------------------   ----------")
 
             ' Save the items in the file.
             Dim cnt As Integer = 0
