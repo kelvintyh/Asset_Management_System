@@ -375,8 +375,11 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="AMSDB.mdf" />
+    <Content Include="AMSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="AMSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Debug\Asset_Management_System.exe" />
