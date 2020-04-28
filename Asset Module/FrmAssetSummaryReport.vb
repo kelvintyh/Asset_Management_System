@@ -90,7 +90,7 @@ Public Class FrmAssetSummaryReport
             For Each a In db.Assets
                 If a.Date_of_acquisition.Value.Date >= dtpStart.Value.Date And a.Date_of_acquisition.Value.Date <= dtpEnd.Value.Date Then
                     cnt += 1
-                    swReport.WriteLine("{0,2}   {1,10}   {2,-10}   {3, -10}" & vbNewLine, cnt, a.Id, a.Description, a.Date_of_acquisition.Value.Date.ToString("dd/mm/yyyy"))
+                    swReport.WriteLine("{0,2}   {1,10}   {2,-10}   {3, -10}" & vbNewLine, cnt, a.Id, a.Description, a.Date_of_acquisition.Value.Date.ToString("dd/MMM/yyyy"))
                 End If
             Next
             ' Close the file.
