@@ -234,7 +234,7 @@ Partial Class Frm_Register
         'btnBrowse
         '
         Me.btnBrowse.AutoSize = True
-        Me.btnBrowse.Location = New System.Drawing.Point(183, 339)
+        Me.btnBrowse.Location = New System.Drawing.Point(183, 344)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(75, 27)
         Me.btnBrowse.TabIndex = 12

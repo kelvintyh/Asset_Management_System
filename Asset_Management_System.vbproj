@@ -97,6 +97,18 @@
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetAddOthers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetUpdate.Designer.vb">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Asset Module\FrmAssetUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Asset.vb" />
     <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.Designer.vb">
       <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
@@ -121,18 +133,6 @@
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Asset Module\FrmAssetSummaryReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetUpdate.Designer.vb">
-      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetUpdate.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
-      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asset Module\FrmAssetAddOthers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Asset Module\Frm_AssetHome.vb">
@@ -244,6 +244,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Asset Module\FrmAssetAddOthers.resx">
+      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset Module\FrmAssetUpdate.resx">
+      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAdd.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetAddOthers.resources" />
     <EmbeddedResource Include="obj\Debug\Asset_Management_System.FrmAssetSummaryReport.resources" />
@@ -280,12 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Asset Module\FrmAssetSummaryReport.resx">
       <DependentUpon>FrmAssetSummaryReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Asset Module\FrmAssetUpdate.resx">
-      <DependentUpon>FrmAssetUpdate.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Asset Module\FrmAssetAddOthers.resx">
-      <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Asset Module\Frm_AssetHome.resx">
       <DependentUpon>Frm_AssetHome.vb</DependentUpon>

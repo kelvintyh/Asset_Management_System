@@ -22,6 +22,14 @@ Public Class Frm_AssetHome
                         End If
                     Next
                 End If
+
+                If item.Name = "mnuFile" Then
+                        For Each i As ToolStripMenuItem In item.DropDownItems
+                        If i.Name = "mnuRegister" Then
+                            i.Visible = False
+                        End If
+                    Next
+                    End If
             Next
         End If
         'fill the combo box
@@ -183,6 +191,16 @@ Public Class Frm_AssetHome
 
     Private Sub MnuViewActionHistory_Click(sender As Object, e As EventArgs) Handles mnuViewActionHistory.Click
         UserDetails.ShowDialog()
+    End Sub
+
+    Private Sub RegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
+        Frm_Register.ShowDialog()
+
+    End Sub
+
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+        Frm_Date.ShowDialog()
+
     End Sub
 End Class
 
