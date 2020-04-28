@@ -24,9 +24,12 @@ Partial Class Frm_CheckedIn_Item_List
     Private Sub InitializeComponent()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnConfirm = New System.Windows.Forms.Button()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgv
@@ -34,7 +37,6 @@ Partial Class Frm_CheckedIn_Item_List
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(27, 67)
         Me.dgv.Name = "dgv"
-        Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.ShowCellErrors = False
@@ -44,10 +46,29 @@ Partial Class Frm_CheckedIn_Item_List
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtSearch)
         Me.Panel1.Location = New System.Drawing.Point(27, 27)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(839, 34)
         Me.Panel1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(24, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 17)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Search : "
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(95, 8)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(237, 22)
+        Me.txtSearch.TabIndex = 0
         '
         'btnCancel
         '
@@ -79,12 +100,16 @@ Partial Class Frm_CheckedIn_Item_List
         Me.Name = "Frm_CheckedIn_Item_List"
         Me.Text = "Frm_CheckedIn_Item_List"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents dgv As DataGridView
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnConfirm As Button
     Friend WithEvents btnCancel As Button
 End Class

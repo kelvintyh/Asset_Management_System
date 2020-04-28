@@ -17,10 +17,7 @@ Public Class frm_LoginAdmin
             Return
         End If
 
-
         Dim digit As Integer = 0I
-        Dim id2 As String = txtID.Text
-        Dim pass As String = txtPass.Text
         Dim Lid As String = ""
 
         Dim DateT As DateTime = Convert.ToDateTime(DateTime.Now).ToString("dd.MMM,yyyy HH:mm:ss")
@@ -41,29 +38,31 @@ Public Class frm_LoginAdmin
 
 
         End If
+        Dim id2 As String = txtID.Text
+        Dim pass As String = txtPass.Text
+
 
         Dim u As User = db.Users.FirstOrDefault(Function(o) o.Id = id2)
 
-        Dim l As New LoginHistory()
-        l.Id = Lid
-        l.UserId = id2
-        l.Name = u.Name
-        l.Role = u.Role
-        l.DateTime = DateT
-
-        uid = id2
-
         If u Is Nothing Then
-            MessageBox.Show("Record not found", "Validating Record", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf u.Password <> pass Then
-            MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf u.Id <> id2 Then
-            MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Invalid User Login", "Validating User", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
+            Dim l As New LoginHistory()
+            l.Id = Lid
+            l.UserId = id2
+            l.Name = u.Name
+            l.Role = u.Role
+            l.DateTime = DateT
 
-            'Add to variable currentUser for current logged user
-            currentUser = u
-            MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            uid = id2
+
+
+            If u.Password <> pass Then
+                MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf u.Id <> id2 Then
+                MessageBox.Show("Your login ID or password is wrong.Please enter again.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("Login Successful", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information)
             db.LoginHistories.InsertOnSubmit(l)
             db.SubmitChanges()
 
@@ -71,7 +70,7 @@ Public Class frm_LoginAdmin
             Dispose()
         End If
 
-
+        End If
     End Sub
 
     Private Sub LblForgot_Click(sender As Object, e As EventArgs) Handles lblForgot.Click
@@ -115,11 +114,7 @@ Public Class frm_LoginAdmin
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles backB.Click
         Me.Close()
-        Frm_RoleChoose.Visible = True
+        Frm_RoleChoose.Show()
 
-    End Sub
-
-    Private Sub Frm_LoginAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Frm_RoleChoose.Visible = False
     End Sub
 End Class
