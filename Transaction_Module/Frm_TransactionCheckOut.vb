@@ -121,6 +121,7 @@ Public Class Frm_TransactionCheckOut
 
                     'update database
                     db.SubmitChanges()
+                    createActionHistory("CreateT", currentUser.Id, t.Id)
                 Next
             End If
             MessageBox.Show("Assets Check Out Successfully !", "Information")

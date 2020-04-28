@@ -72,6 +72,7 @@ Partial Class FrmAssetAddOthers
         Me.dgv.Location = New System.Drawing.Point(41, 143)
         Me.dgv.MultiSelect = False
         Me.dgv.Name = "dgv"
+        Me.dgv.ReadOnly = True
         Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.Size = New System.Drawing.Size(333, 228)

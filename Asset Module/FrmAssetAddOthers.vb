@@ -26,24 +26,31 @@ Public Class FrmAssetAddOthers
     End Sub
 
     Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
-        If IsNothing(dgv.Item(0, dgv.CurrentRow.Index).Value) Then
 
-            'if no record selected, change the button to add mode
-            btnSave.Text = "&Add"
-            'generate new id
-            lblId.Text = GetNextId(action_type)
-            'clear txtname
-            txtName.Text = ""
+        Try
+            If IsNothing(dgv.Item(0, dgv.CurrentRow.Index).Value) Then
 
-        Else
-            Dim i As Integer = dgv.CurrentRow.Index
-            lblId.Text = dgv.Item(0, i).Value
-            txtName.Text = dgv.Item(1, i).Value
+                'if no record selected, change the button to add mode
+                btnSave.Text = "&Add"
+                'generate new id
+                lblId.Text = GetNextId(action_type)
+                'clear txtname
+                txtName.Text = ""
 
-            'if any record selected, change the button to save mode
-            btnSave.Text = "&Save"
+            Else
+                Dim i As Integer = dgv.CurrentRow.Index
+                lblId.Text = dgv.Item(0, i).Value
+                txtName.Text = dgv.Item(1, i).Value
 
-        End If
+                'if any record selected, change the button to save mode
+                btnSave.Text = "&Save"
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
 
     End Sub
 
@@ -87,7 +94,6 @@ Public Class FrmAssetAddOthers
 
             '(A) Add new record 
             If btnSave.Text = "&Add" Then
-                Console.WriteLine("hahah" + id)
                 If action_type = "AssetType" Then
                     Dim data As New AssetType()
                     data.Id = id
@@ -182,5 +188,6 @@ Public Class FrmAssetAddOthers
         GetLocation()
         GetAssetType()
         Dgv_CellClick(Nothing, Nothing)
+        txtName.Text = ""
     End Sub
 End Class
