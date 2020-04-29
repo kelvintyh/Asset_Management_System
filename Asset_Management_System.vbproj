@@ -91,9 +91,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionHistory.vb" />
     <Compile Include="AMSDB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AMSDB.vb">
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -112,6 +116,7 @@
     <Compile Include="Asset.vb" />
     <Compile Include="AssetType.vb" />
     <Compile Include="InventoryLocation.vb" />
+    <Compile Include="LoginHistory.vb" />
     <Compile Include="Manufacturer.vb" />
     <Compile Include="Transaction.vb" />
     <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.Designer.vb">
@@ -222,6 +227,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User.vb" />
     <Compile Include="User_Module\Profile.Designer.vb">
       <DependentUpon>Profile.vb</DependentUpon>
     </Compile>
@@ -240,6 +246,7 @@
     <Compile Include="User_Module\UserDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Warranty.vb" />
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
     </Compile>

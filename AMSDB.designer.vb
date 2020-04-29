@@ -1646,10 +1646,10 @@ Partial Public Class Warranty
 	Private _Warranty_Start As System.Nullable(Of Date)
 	
 	Private _Warranty_End As System.Nullable(Of Date)
-	
-	Private _Warranty_Status As String
-	
-    #Region "Extensibility Method Definitions"
+
+    Private _Warranty_Status As String
+
+#Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -1680,14 +1680,15 @@ Partial Public Class Warranty
     End Sub
     Partial Private Sub OnWarranty_StatusChanged()
     End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Id]", Storage:="_Warranty_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+#End Region
+
+    Public Sub New()
+        MyBase.New
+        OnCreated()
+    End Sub
+
+
+    <Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Warranty Id]", Storage:="_Warranty_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
 	Public Property Warranty_Id() As String
 		Get
 			Return Me._Warranty_Id

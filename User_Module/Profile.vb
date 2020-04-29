@@ -55,6 +55,7 @@ Public Class Profile
             txtEmail.Enabled = False
             btnBrowse.Enabled = False
             MessageBox.Show("Record Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ProfileList.UpdateTable()
 
             createActionHistory("UpdateU", currentUser.Id, u.Id)
         End If
@@ -67,6 +68,8 @@ Public Class Profile
             txtID.Text = i.Id
             txtName.Text = i.Name
             txtUser.Text = i.Username
+            txtPass.Text = i.Password
+            txtConfPass.Text = i.Password
             cboGen.Text = i.Gender
             mskCont.Text = i.Contact_number
             txtEmail.Text = i.Email_address
@@ -88,6 +91,8 @@ Public Class Profile
                     txtID.Text = w.Id
                     txtName.Text = w.Name
                     txtUser.Text = w.Username
+                    txtPass.Text = w.Password
+                    txtConfPass.Text = w.Password
                     cboGen.Text = w.Gender
                     mskCont.Text = w.Contact_number
                     txtEmail.Text = w.Email_address
