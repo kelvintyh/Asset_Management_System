@@ -7,4 +7,7 @@
         Frm_LoginStaff.ShowDialog()
     End Sub
 
+    Private Sub Frm_RoleChoose_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initiateData()
+    End Sub
 End Class

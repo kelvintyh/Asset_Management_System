@@ -11,7 +11,7 @@ Public Class FrmAssetSummaryReport
         Dim fontBody As New Font("Consolas", 10)
 
         '(2) Prepare header and sub-Header
-        Dim header As String = "Asset Summary Report " & vbNewLine & dtpStart.Value.Date.Date & "To" & dtpEnd.Value.Date.Date
+        Dim header As String = "Asset Summary Report "
         Dim subHeader As String = String.Format(
             "Printed on {0:dd-MMMM-yyyy hh:mm:ss tt}" & vbNewLine &
             "Prepared by " & currentUser.Name & ", " & currentUser.Id, DateTime.Now

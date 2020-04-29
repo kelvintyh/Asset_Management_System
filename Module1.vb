@@ -138,7 +138,7 @@ Module Module1
     End Function
 
     Public Function GetManu()
-
+        Dim db As New AMSDBDataContext()
         'store the selection of user first
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboManu.SelectedItem), "", FrmAssetUpdate.cboManu.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboManu.SelectedItem), "", FrmAssetAdd.cboManu.SelectedItem.ToString)
@@ -162,7 +162,7 @@ Module Module1
     End Function
 
     Public Function GetLocation()
-
+        Dim db As New AMSDBDataContext()
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboLocation.SelectedItem), "", FrmAssetUpdate.cboLocation.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboLocation.SelectedItem), "", FrmAssetAdd.cboLocation.SelectedItem.ToString)
 
@@ -182,6 +182,7 @@ Module Module1
     End Function
 
     Public Function GetAssetType()
+        Dim db As New AMSDBDataContext()
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboType.SelectedItem), "", FrmAssetUpdate.cboType.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboType.SelectedItem), "", FrmAssetAdd.cboType.SelectedItem.ToString)
 
@@ -366,27 +367,27 @@ Module Module1
         login_history.Add(New LoginHistory("L0010", "AD0001", "Gregg", "Admin", "2020-04-27 23:30:50"))
         login_history.Add(New LoginHistory("L0011", "AD0001", "Gregg", "Admin", "2020-04-27 23:35:55"))
 
-        actionHistory.Add(New ActionHistory("AH100001", "Create", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100002", "Update", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100003", "Create", "User S0002", "26/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100004", "Update", "User S0002", "27/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100005", "Delete", "Asset A100003", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100006", "Create", "Warranty W100001", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100007", "Create", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100008", "Update", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
-        actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100001", "Create", "Transaction T100001", "2020-04-27 23:35:55", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100002", "Update", "Transaction T100001", "2020-04-28 14:47:23", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100003", "Create", "User S0002", "2020-04-28 14:47:23", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100004", "Update", "User S0002", "2020-04-28 14:47:23", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100005", "Delete", "Asset A100003", "2020-04-28 14:47:23", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100006", "Create", "Warranty W100001", "2020-04-28 14:47:23", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100007", "Create", "Warranty W100002", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100008", "Update", "Warranty W100002", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
 
-        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "29/04/2020", "29/07/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "29/04/2020", "29/04/2020", "Pending"))
-        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "29/04/2020", "29/07/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
-        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "29/04/2020", "29/04/2020", "Pending"))
-        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "2020-04-29 23:35:55", "2020-07-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-05-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "2020-04-29 23:35:55", "2020-04-29 23:35:55", "Pending"))
+        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "2020-04-29 23:35:55", "2020-10-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-07-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "2020-04-29 23:35:55", "2021-04-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "2020-04-29 23:35:55", "2020-10-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-05-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "2020-04-29 23:35:55", "2020-04-29 23:35:55", "Pending"))
+        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "2020-04-29 23:35:55", "2021-04-29 23:35:55", "Active"))
 
 
         'Load the item in list into database
