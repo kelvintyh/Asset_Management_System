@@ -1,5 +1,5 @@
 ﻿Public Class Warranty
-    Public Sub New(id As String, name As String, type As String, StartDate As DateTime, EndDate As Date, status As String)
+    Public Sub New(id As String, name As String, type As String, StartDate As DateTime, EndDate As DateTime, status As String)
         Me.Warranty_Id = id
         Me.Warranty_Name = name
         Me.Warranty_Type = type
