@@ -8,7 +8,6 @@ Public Class Frm_AssetHome
     Dim db As New AMSDBDataContext()
 
     Private Sub Frm_AssetHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        initiateData()
         frm_LoginAdmin.Visible = False
         Frm_LoginStaff.Visible = False
         grpLocal.Visible = False

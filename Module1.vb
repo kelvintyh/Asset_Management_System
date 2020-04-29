@@ -37,7 +37,7 @@ Module Module1
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = image.FromStream(ms)
+        Dim image As Image = Image.FromStream(ms)
         Return image
     End Function
 
@@ -302,7 +302,7 @@ Module Module1
     Function initiateData()
         Dim db As New AMSDBDataContext()
         Dim d As DateTime = DateTime.Now
-        Initiate the List with 10 records
+        'Initiate the List with 10 records
         asset_List.Add(New Asset("A100001", "Smartphone", "Xiaomi", "Electronic", "Xiaomi Redmi 8A", "SDE3484DCSFCS4", "New", "In storage", "UnitA-101", GetBinary(My.Resources.Xiaomi_Redmi_8A__2GB___32GB__Global_Versionr, Nothing), d, "Xiaomi Official Store Global", 329, "13485-001", "", ""))
         asset_List.Add(New Asset("A100002", "Laptop", "HP", "Electronic", "Pavilion x360", "HMH8NUDA7AXS7A8C", "New", "In storage", "UnitA-101", GetBinary(My.Resources.HP_Pavilion_x360_Laptop___14_dh0041tx, Nothing), d, "HP Online Store", 3199, "13485-002", "", ""))
         asset_List.Add(New Asset("A100003", "Printer", "HP", "Electronic", "Deskjet 2529 Ink Advantage All in One Printer K7W98A", "S87FS76QWB89RT", "New", "In storage", "UnitA-101", GetBinary(My.Resources.HP_DeskJet_Ink_Advantage_Ultra_2529_500x500, Nothing), d, "all_it.os", 275, "13485-003", "", ""))
@@ -381,16 +381,16 @@ Module Module1
         actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
         actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "2020-04-28 14:47:23", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
 
-        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "29/04/2020", "29/07/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "29/04/2020", "29/04/2020", "Pending"))
-        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "29/04/2020", "29/07/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
-        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
-        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "29/04/2020", "29/04/2020", "Pending"))
-        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "2020-04-29 23:35:55", "2020-07-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-05-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "2020-04-29 23:35:55", "2020-04-29 23:35:55", "Pending"))
+        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "2020-04-29 23:35:55", "2020-10-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-07-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "2020-04-29 23:35:55", "2021-04-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "2020-04-29 23:35:55", "2020-10-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "2020-04-29 23:35:55", "2020-05-29 23:35:55", "Active"))
+        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "2020-04-29 23:35:55", "2020-04-29 23:35:55", "Pending"))
+        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "2020-04-29 23:35:55", "2021-04-29 23:35:55", "Active"))
 
 
         'Load the item in list into database
