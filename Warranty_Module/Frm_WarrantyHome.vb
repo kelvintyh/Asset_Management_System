@@ -17,6 +17,7 @@ Public Class Frm_WarrantyHome
             Dim q = MessageBox.Show("Are you sure to Delete this Data?", "Delete Data?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If q = DialogResult.Yes Then
+                Dim db As New AMSDBDataContext()
                 Dim w As Warranty = db.Warranties.FirstOrDefault(Function(o) o.Warranty_Id = dgv.Item(0, dgv.CurrentRow.Index).Value.ToString)
                 db.Warranties.DeleteOnSubmit(w)
                 db.SubmitChanges()
