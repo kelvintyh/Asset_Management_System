@@ -96,6 +96,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="AMSDB.vb">
+      <DependentUpon>AMSDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Asset Module\FrmAssetAddOthers.Designer.vb">
       <DependentUpon>FrmAssetAddOthers.vb</DependentUpon>
@@ -112,6 +115,7 @@
     <Compile Include="Asset.vb" />
     <Compile Include="AssetType.vb" />
     <Compile Include="InventoryLocation.vb" />
+    <Compile Include="LoginHistory.vb" />
     <Compile Include="Manufacturer.vb" />
     <Compile Include="Transaction.vb" />
     <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.Designer.vb">
@@ -222,6 +226,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User.vb" />
     <Compile Include="User_Module\Profile.Designer.vb">
       <DependentUpon>Profile.vb</DependentUpon>
     </Compile>
