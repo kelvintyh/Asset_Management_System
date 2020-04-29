@@ -226,6 +226,7 @@ Public Class Frm_Register
         txtName.Text = ""
         txtUser.Text = ""
         txtPass.Text = ""
+        txtConfPass.Text = ""
         txtEmail.Text = ""
         mskCont.Text = ""
         cboGen.SelectedIndex = 0
