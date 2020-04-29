@@ -138,7 +138,7 @@ Module Module1
     End Function
 
     Public Function GetManu()
-
+        Dim db As New AMSDBDataContext()
         'store the selection of user first
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboManu.SelectedItem), "", FrmAssetUpdate.cboManu.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboManu.SelectedItem), "", FrmAssetAdd.cboManu.SelectedItem.ToString)
@@ -162,7 +162,7 @@ Module Module1
     End Function
 
     Public Function GetLocation()
-
+        Dim db As New AMSDBDataContext()
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboLocation.SelectedItem), "", FrmAssetUpdate.cboLocation.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboLocation.SelectedItem), "", FrmAssetAdd.cboLocation.SelectedItem.ToString)
 
@@ -182,6 +182,7 @@ Module Module1
     End Function
 
     Public Function GetAssetType()
+        Dim db As New AMSDBDataContext()
         Dim a As String = If(IsNothing(FrmAssetUpdate.cboType.SelectedItem), "", FrmAssetUpdate.cboType.SelectedItem.ToString)
         Dim b As String = If(IsNothing(FrmAssetAdd.cboType.SelectedItem), "", FrmAssetAdd.cboType.SelectedItem.ToString)
 
@@ -244,9 +245,6 @@ Module Module1
         ElseIf actionType.Equals("DeleteU") Then
             desc = "User " + id
             type = "Delete"
-        ElseIf actionType.Equals("Recovery") Then
-            desc = "Password Recovery"
-            type = "Update"
         End If
 
         deviceName = System.Environment.MachineName

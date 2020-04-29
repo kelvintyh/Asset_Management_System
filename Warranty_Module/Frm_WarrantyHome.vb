@@ -132,7 +132,6 @@ Public Class Frm_WarrantyHome
         If dgv.SelectedRows.Count > 0 Then
             PrintDialog.Document = PrintDocument
             PrintDialog.ShowDialog()
-
         Else
             MessageBox.Show("No data selected", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
