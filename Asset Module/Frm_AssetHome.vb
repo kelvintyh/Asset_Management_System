@@ -21,7 +21,8 @@ Public Class Frm_AssetHome
                     For Each i As ToolStripMenuItem In item.DropDownItems
                         If i.Name = "mnuViewActionHistory" Then
                             i.Visible = False
-                        ElseIf i.Name = "mnuViewProfileList" Then
+                        End If
+                        If i.Name = "mnuViewProfileList" Then
                             i.Visible = False
                         End If
                     Next
@@ -33,6 +34,14 @@ Public Class Frm_AssetHome
                         If i.Name = "mnuRegister" Then
                             i.Visible = False
                         End If
+                        If i.Name = "mnuFileGenerateReport" Then
+                            For Each j As ToolStripMenuItem In i.DropDownItems
+                                If j.Name = "mnuLoginHistorySummaryReport" Then
+                                    j.Visible = False
+                                End If
+                            Next
+                        End If
+
                     Next
                 End If
             Next
@@ -215,7 +224,7 @@ Public Class Frm_AssetHome
         Frm_TransactionSummaryReport.ShowDialog()
     End Sub
 
-    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuLoginHistorySummaryReport.Click
         Frm_Date.ShowDialog()
 
     End Sub
@@ -230,6 +239,16 @@ Public Class Frm_AssetHome
 
     Private Sub MnuRegister_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
         Frm_Register.ShowDialog()
+    End Sub
+
+    Private Sub MnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
+        Dim result As DialogResult = MessageBox.Show("Are u sure to logout ?", "Logout Confirmation", MessageBoxButtons.YesNoCancel)
+        If result = DialogResult.Yes Then
+            currentUser = Nothing
+            Me.Visible = False
+            Frm_RoleChoose.Visible = True
+        End If
+
     End Sub
 End Class
 
