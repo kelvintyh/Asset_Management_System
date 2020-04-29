@@ -10,11 +10,18 @@ Module Module1
     Public cbo_selection As String
     Public currentUser As New User
 
+    'for initialize database
+    Public asset_List As New List(Of Asset)
+    Public manufacturer_List As New List(Of Manufacturer)
+    Public assetType_List As New List(Of AssetType)
+    Public location_List As New List(Of InventoryLocation)
+    Public Transaction_List As New List(Of Transaction)
+
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         Dim ms As New System.IO.MemoryStream
         If image IsNot Nothing Then
             If format Is Nothing Then
-                format = image.RawFormat 'use image original format
+                format = image.RawFormat
             End If
             image.Save(ms, format)
             Return ms.ToArray()
@@ -259,6 +266,113 @@ Module Module1
     Function getMacAddress()
         Dim nics() As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()
         Return nics(1).GetPhysicalAddress.ToString
+    End Function
+
+    Public Function ResizeImage(ByVal InputImage As Image) As Image
+        ' Get the scale factor.
+        Dim scale_factor As Single = Single.Parse(2)
+
+        ' Get the source bitmap.
+        Dim bm_source As New Bitmap(InputImage)
+
+        ' Make a bitmap for the result.
+        Dim bm_dest As New Bitmap(
+        CInt(bm_source.Width / scale_factor),
+        CInt(bm_source.Height / scale_factor))
+
+        ' Make a Graphics object for the result Bitmap.
+        Dim gr_dest As Graphics = Graphics.FromImage(bm_dest)
+
+        ' Copy the source image into the destination bitmap.
+        gr_dest.DrawImage(bm_source, 0, 0,
+        bm_dest.Width + 1,
+        bm_dest.Height + 1)
+
+        ' Display the result.
+        ' Console.WriteLine("resized")
+        'Console.WriteLine(bm_dest.Size)
+        Return bm_dest
+    End Function
+
+    Function initiateData()
+        Dim db As New AMSDBDataContext()
+        Dim d As DateTime = DateTime.Now
+        'Initiate the List with 10 records
+        asset_List.Add(New Asset("A100001", "Smartphone", "Xiaomi", "Electronic", "Xiaomi Redmi 8A", "SDE3484DCSFCS4", "New", "In storage", "UnitA-101", GetBinary(My.Resources.Xiaomi_Redmi_8A__2GB___32GB__Global_Versionr, Nothing), d, "Xiaomi Official Store Global", 329, "13485-001", "", ""))
+        asset_List.Add(New Asset("A100002", "Laptop", "HP", "Electronic", "Pavilion x360", "HMH8NUDA7AXS7A8C", "New", "In storage", "UnitA-101", GetBinary(My.Resources.HP_Pavilion_x360_Laptop___14_dh0041tx, Nothing), d, "HP Online Store", 3199, "13485-002", "", ""))
+        asset_List.Add(New Asset("A100003", "Printer", "HP", "Electronic", "Deskjet 2529 Ink Advantage All in One Printer K7W98A", "S87FS76QWB89RT", "New", "In storage", "UnitA-101", GetBinary(My.Resources.HP_DeskJet_Ink_Advantage_Ultra_2529_500x500, Nothing), d, "all_it.os", 275, "13485-003", "", ""))
+        asset_List.Add(New Asset("A100004", "Speaker", "Logitech", "Electronic", "Logitech Z623 Speaker System (980-000403)", "23JDSVID2SDSD", "New", "In storage", "UnitA-101", GetBinary(My.Resources.Logitech_Z623_Speaker_System__980_000403_, Nothing), d, "logitech.os", 449.88, "13485-004", "", ""))
+        asset_List.Add(New Asset("A100005", "Projector", "BenQ", "Electronic", "BenQ SVGA Projector 3600lm MS550", "8WEIUH2I21EFNK", "New", "In storage", "UnitA-101", GetBinary(My.Resources.BenQ_SVGA_Projector_3600lm_MS550, Nothing), d, "all_it.os", 1119, "13485-005", "", ""))
+        asset_List.Add(New Asset("A100006", "Rack", "Y23E", "Furniture", "2 Bar Garment Rack - Grey", "3IDNWEUI23N3J2", "New", "In storage", "UnitB-101", GetBinary(My.Resources.Y23E_2_Bar_Garment_Rack___Grey, Nothing), d, "courts.os", 60, "13485-006", "", ""))
+        asset_List.Add(New Asset("A100007", "Rack", "PLASTIC Master", "Furniture", "3 Tier Multipurpose Rack", "2IEUN23BUSD", "New", "In storage", "UnitB-101", GetBinary(My.Resources._3_Tier_Multipurpose_Rack, Nothing), d, "plasticmaster", 40, "13485-007", "", ""))
+        asset_List.Add(New Asset("A100008", "Chair", "Odoso", "Furniture", "Odoso Ajustable Office Chair", "FIUH4UI430212DG", "New", "In storage", "UnitB-101", GetBinary(My.Resources.ODOSO_Adjustable_Swivel_Med_Back_Mesh_Mix___match_Office_Chai, Nothing), d, "sokano", 69.9, "13485-008", "", ""))
+        asset_List.Add(New Asset("A100009", "Table", "Ay Office System", "Furniture", "AY Office System L Shape Office Table with J Metal Leg", "2E23NFIB024JFOF", "New", "In storage", "UnitB-101", GetBinary(My.Resources.AY_Office_System_L_Shape_Office_Table_with_J_Metal_Leg, Nothing), d, "ayofficesystem", 675, "13485-009", "", ""))
+        asset_List.Add(New Asset("A100010", "Sofa", "ATOM", "Furniture", "2 Seater Atom Foldable Sofa Bed", "09DNSFU2GEU3D2J", "New", "In storage", "UnitB-101", GetBinary(My.Resources._2_Seater_Atom_Foldable_Sofa_Bed, Nothing), d, "myfurniturelab", 199, "13485-010", "", ""))
+
+        assetType_List.Add(New AssetType("AT100001", "Electronic"))
+        assetType_List.Add(New AssetType("AT100002", "Furniture"))
+        assetType_List.Add(New AssetType("AT100003", "Automotive"))
+        assetType_List.Add(New AssetType("AT100004", "Sports"))
+        assetType_List.Add(New AssetType("AT100005", "Outdoor"))
+
+        manufacturer_List.Add(New Manufacturer("M100001", "Xiaomi"))
+        manufacturer_List.Add(New Manufacturer("M100002", "HP"))
+        manufacturer_List.Add(New Manufacturer("M100003", "Logitech"))
+        manufacturer_List.Add(New Manufacturer("M100004", "BenQ"))
+        manufacturer_List.Add(New Manufacturer("M100005", "Y23E"))
+        manufacturer_List.Add(New Manufacturer("M100006", "Plastic Master"))
+        manufacturer_List.Add(New Manufacturer("M100007", "Odoso"))
+        manufacturer_List.Add(New Manufacturer("M100008", "Ay Office System"))
+        manufacturer_List.Add(New Manufacturer("M100009", "ATOM"))
+
+
+        location_List.Add(New InventoryLocation("L100001", "UnitA-101"))
+        location_List.Add(New InventoryLocation("L100002", "UnitB-101"))
+        location_List.Add(New InventoryLocation("L100003", "UnitC-101"))
+        location_List.Add(New InventoryLocation("L100004", "UnitD-101"))
+        location_List.Add(New InventoryLocation("L100005", "UnitE-101"))
+
+        Transaction_List.Add(New Transaction("T100001", "Checked out", "2020-04-27 21:56:49", "A100001", "AD0001", "AD0001", "Local", "Local", "2020-04-27", "2020-04-27", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100002", "Checked out", "2020-04-27 22:00:01", "A100001", "", "AD0001", "Third Party", "Local", "2020-04-27", "2020-04-27", "Jaren Yeap", "012-5453257", "jarenyp123@gmail.com", "", "In"))
+        Transaction_List.Add(New Transaction("T100003", "Checked out", "2020-04-28 13:17:56", "A100002", "AD0001", "AD0001", "Local", "Local", "2020-04-28", "2020-04-29", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100004", "Checked out", "2020-04-28 13:58:03", "A100002", "AD0001", "AD0001", "Local", "Local", "2020-04-28", "2020-04-30", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100005", "Checked out", "2020-04-28 14:02:30", "A100002", "AD0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100006", "Checked out", "2020-04-28 14:32:06", "A100003", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "Out"))
+        Transaction_List.Add(New Transaction("T100007", "Checked out", "2020-04-28 14:38:18", "A100002", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100008", "Checked out", "2020-04-28 14:43:11", "A100002", "AD0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100009", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
+        Transaction_List.Add(New Transaction("T100010", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
+
+        'Load the item in list into database
+        Try
+            For Each i In asset_List
+                db.Assets.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In assetType_List
+                db.AssetTypes.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In manufacturer_List
+                db.Manufacturers.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In location_List
+                db.InventoryLocations.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In Transaction_List
+                db.Transactions.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+        Catch ex As Exception
+
+        End Try
+
     End Function
 
 End Module

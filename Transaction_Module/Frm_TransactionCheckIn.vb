@@ -9,7 +9,7 @@ Public Class Frm_TransactionCheckIn
         GetLocation()
         cboStatus.SelectedIndex = 0
         cboReturnedBy.SelectedIndex = 0
-
+        reset()
     End Sub
 
     Function UpdateTable()
@@ -140,6 +140,7 @@ Public Class Frm_TransactionCheckIn
                 Next
             End If
             MessageBox.Show("Assets Check In Successfully !", "Information")
+            reset()
         ElseIf assetList.Count = 0 Then
             MessageBox.Show("No Asset To Check In !", "Error")
         End If
@@ -203,7 +204,21 @@ Public Class Frm_TransactionCheckIn
     Private Sub Frm_TransactionCheckIn_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         assetList.Clear()
     End Sub
+    Sub reset()
+        txtStaffID.Text = ""
+        txt3rdDesc.Text = ""
+        picAssetProfile.Image = Nothing
+        picStaffProfile.Image = Nothing
+        lblAssetId.Text = ""
+        lblContact.Text = ""
+        lblDesc.Text = ""
+        lblEmail.Text = ""
+        lblModel.Text = ""
+        lblName.Text = ""
+        cboCondition.SelectedIndex = 0
+        cboLocation.SelectedIndex = 0
 
+    End Sub
     Function Reload()
 
     End Function

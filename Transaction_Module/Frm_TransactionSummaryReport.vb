@@ -29,7 +29,7 @@ Public Class Frm_TransactionSummaryReport
         For Each a In db.Transactions
             If a.Transaction_Date.Value.Date >= dtpStart.Value.Date And a.Transaction_Date.Value.Date <= dtpEnd.Value.Date Then
                 cnt += 1
-                body.AppendFormat("{0,2}   {1,10}   {2,12}   {3, 15}" & vbNewLine, cnt, a.Id, a.Asset_Id, a.Transaction_Date.Value.Date.ToString("dd/mm/yyyy"))
+                body.AppendFormat("{0,2}   {1,10}   {2,12}   {3, 15}" & vbNewLine, cnt, a.Id, a.Asset_Id, a.Transaction_Date.Value.Date.ToString("dd/MMM/yyyy"))
             End If
 
         Next
