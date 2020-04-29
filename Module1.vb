@@ -17,6 +17,8 @@ Module Module1
     Public location_List As New List(Of InventoryLocation)
     Public Transaction_List As New List(Of Transaction)
     Public actionHistory As New List(Of ActionHistory)
+    Public Warranty_List As New List(Of Warranty)
+
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         Dim ms As New System.IO.MemoryStream
@@ -34,7 +36,7 @@ Module Module1
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = Image.FromStream(ms)
+        Dim image As Image = image.FromStream(ms)
         Return image
     End Function
 
@@ -355,6 +357,17 @@ Module Module1
         actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
         actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
 
+        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "29/04/2020", "29/07/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "29/04/2020", "29/04/2020", "Pending"))
+        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "29/04/2020", "29/07/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "29/04/2020", "29/04/2020", "Pending"))
+        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+
         'Load the item in list into database
         Try
             For Each i In asset_List
@@ -384,6 +397,11 @@ Module Module1
 
             For Each i In actionHistory
                 db.ActionHistories.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In Warranty_List
+                db.Warranties.InsertOnSubmit(i)
                 db.SubmitChanges()
             Next
         Catch ex As Exception

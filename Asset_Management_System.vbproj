@@ -241,6 +241,7 @@
     <Compile Include="User_Module\UserDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Warranty.vb" />
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
     </Compile>
