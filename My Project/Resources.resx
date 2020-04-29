@@ -184,4 +184,37 @@
   <data name="pngtree_white_background_with_blue_smoke_on_sides_image_312167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-white-background-with-blue-smoke-on-sides-image_312167.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AY_Office_System_L_Shape_Office_Table_with_J_Metal_Leg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AY Office System L Shape Office Table with J Metal Leg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BenQ_SVGA_Projector_3600lm_MS550" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BenQ SVGA Projector 3600lm MS550.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HP_DeskJet_Ink_Advantage_Ultra_2529_500x500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HP-DeskJet-Ink-Advantage-Ultra-2529-500x500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HP_Pavilion_x360_Laptop___14_dh0041tx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HP Pavilion x360 Laptop - 14-dh0041tx.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logitech_Z623_Speaker_System__980_000403_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logitech Z623 Speaker System (980-000403).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ODOSO_Adjustable_Swivel_Med_Back_Mesh_Mix___match_Office_Chai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ODOSO Adjustable Swivel Med-Back Mesh Mix &amp; match Office Chai.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Picture_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Picture_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Xiaomi_Redmi_8A__2GB___32GB__Global_Versionr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xiaomi Redmi 8A (2GB + 32GB) Global Versionr.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Y23E_2_Bar_Garment_Rack___Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Y23E 2 Bar Garment Rack - Grey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2_Seater_Atom_Foldable_Sofa_Bed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2 Seater Atom Foldable Sofa Bed .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3_Tier_Multipurpose_Rack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3 Tier Multipurpose Rack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

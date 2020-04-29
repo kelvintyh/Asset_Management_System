@@ -43,19 +43,17 @@ Public Class Frm_TransactionCheckOut
     Private Sub BtnCheckOut_Click(sender As Object, e As EventArgs) Handles btnCheckOut.Click
 
 
-        '(A) if Thiry Party Mode is selected 
+
         If cboCheckOutTo.SelectedIndex = 1 Then
-            '(1) For validation purpose
+
             Dim err As New StringBuilder()
             Console.WriteLine("hahaha")
-            '(2) Read inputs
-            'General Info
+
             Dim desc = txt3rdDesc.Text.Trim
             Dim contact = txt3rdContact.Text.Trim
             Dim email = txt3rdEmail.Text.Trim
 
 
-            '(3) Validate empty input
             If desc = "" Then
                 err.AppendLine("-Third Party Description empty")
             End If
@@ -73,7 +71,7 @@ Public Class Frm_TransactionCheckOut
             End If
 
 
-            'Check If there Is input error, If no error then update database
+
             If err.Length > 0 Then
                 MessageBox.Show(err.ToString(), "Input Error")
                 Return
@@ -81,7 +79,7 @@ Public Class Frm_TransactionCheckOut
                 valid = True
             End If
 
-            '(B) if Local Mode is selected
+
         Else
             BtnSearch_Click(Nothing, Nothing)
 
@@ -99,7 +97,7 @@ Public Class Frm_TransactionCheckOut
             If result = DialogResult.Yes Then
                 For Each item In assetList
 
-                    'perform transaction
+
                     Dim t As New Transaction()
                     t.Id = GetNextId("Transaction")
                     t.Transaction_Type = cboTransactionType.SelectedItem.ToString
@@ -115,12 +113,12 @@ Public Class Frm_TransactionCheckOut
                     t.Notes = If(t.Transaction_Type = "Check out", txtNotes.Text, txt3thNotes.Text)
                     db.Transactions.InsertOnSubmit(t)
 
-                    'perform asset update
+
                     Dim a As Asset = db.Assets.FirstOrDefault(Function(o) o.Id = item.Id)
                     a.Status = t.Transaction_Type
                     a.TransactionId = t.Id
 
-                    'update database
+
                     db.SubmitChanges()
                     createActionHistory("CreateT", currentUser.Id, t.Id)
                 Next
@@ -130,15 +128,20 @@ Public Class Frm_TransactionCheckOut
             MessageBox.Show("No Asset To Check Out !", "Error")
         End If
         UpdateTable()
-        reload()
+        Reload()
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
-        'When enter key is press, search and fill up the user details
+
         Dim rs = From u In db.Users
                  Where u.Id.Equals(txtStaffID.Text.Trim)
         Try
+            Try
+                picProfile.Image = GetImage(rs.First.Image.ToArray)
+            Catch ex As Exception
+
+            End Try
             lblName.Text = rs.First.Name
             lblContact.Text = rs.First.Contact_number
             lblEmail.Text = rs.First.Email_address
@@ -153,24 +156,22 @@ Public Class Frm_TransactionCheckOut
 
 
     Private Sub Frm_TransactionCheckOut_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        'Load the data in array to the 
+
         UpdateTable()
     End Sub
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
-        'remove the asset from assetList
 
-        'loop the selected row to find whether match which item in assetList
         If dgv.SelectedRows.Count > 0 Then
             For i As Integer = 0 To dgv.Rows.Count - 1
                 If dgv.Rows(i).Selected Then
                     For item As Integer = 0 To assetList.Count - 1
-                        'if found then remove the item
+
                         If assetList(item).Id = dgv.Item(0, i).Value Then
                             assetList.Remove(assetList(item))
                         End If
                     Next
-                    'Console.WriteLine(assetArray(i).Id)
+
                 End If
             Next
             MessageBox.Show("Record removed successful !", "Information")
@@ -178,7 +179,7 @@ Public Class Frm_TransactionCheckOut
             MessageBox.Show("No Record Selected !", "Error")
         End If
 
-        'update the table
+
         UpdateTable()
 
     End Sub
@@ -192,9 +193,18 @@ Public Class Frm_TransactionCheckOut
             Case "Local"
                 tbc.TabPages(0).Enabled = True
                 tbc.TabPages(1).Enabled = False
+                txt3rdDesc.Text = ""
+                txt3rdContact.Text = ""
+                txt3rdEmail.Text = ""
+                txt3thNotes.Text = ""
             Case "Third Party"
                 tbc.TabPages(0).Enabled = False
                 tbc.TabPages(1).Enabled = True
+                txtStaffID.Text = ""
+                picProfile.Image = Nothing
+                lblContact.Text = ""
+                lblEmail.Text = ""
+                lblName.Text = ""
         End Select
     End Sub
 

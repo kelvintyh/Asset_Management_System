@@ -110,6 +110,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Asset.vb" />
+    <Compile Include="AssetType.vb" />
+    <Compile Include="InventoryLocation.vb" />
+    <Compile Include="Manufacturer.vb" />
+    <Compile Include="Transaction.vb" />
     <Compile Include="Transaction_Module\Frm_TransactionSummaryReport.Designer.vb">
       <DependentUpon>Frm_TransactionSummaryReport.vb</DependentUpon>
     </Compile>
@@ -375,8 +379,11 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="AMSDB.mdf" />
+    <Content Include="AMSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="AMSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AMSDB.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Debug\Asset_Management_System.exe" />
@@ -402,8 +409,19 @@
     <Content Include="obj\Debug\TempPE\AMSDB.designer.vb.dll" />
     <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
     <Content Include="obj\Release\Asset_Management_System.vbproj.FileListAbsolute.txt" />
+    <None Include="Resources\Y23E 2 Bar Garment Rack - Grey.jpg" />
+    <None Include="Resources\Xiaomi Redmi 8A %282GB + 32GB%29 Global Versionr.jpg" />
     <None Include="Resources\istockphoto-1143434145-612x612.jpg" />
     <None Include="Resources\pngtree-white-background-with-blue-smoke-on-sides-image_312167.jpg" />
+    <None Include="Resources\HP Pavilion x360 Laptop - 14-dh0041tx.jpg" />
+    <None Include="Resources\HP-DeskJet-Ink-Advantage-Ultra-2529-500x500.jpg" />
+    <None Include="Resources\Logitech Z623 Speaker System %28980-000403%29.jpg" />
+    <None Include="Resources\BenQ SVGA Projector 3600lm MS550.jpg" />
+    <None Include="Resources\3 Tier Multipurpose Rack.jpg" />
+    <None Include="Resources\ODOSO Adjustable Swivel Med-Back Mesh Mix &amp; match Office Chai.jpg" />
+    <None Include="Resources\AY Office System L Shape Office Table with J Metal Leg.jpg" />
+    <None Include="Resources\2 Seater Atom Foldable Sofa Bed .png" />
+    <None Include="Resources\Picture_50px.png" />
     <Content Include="Resources\search.JPG" />
     <Content Include="Resources\search.png" />
     <None Include="obj\Debug\Asset_Management_System.vbproj.CoreCompileInputs.cache" />

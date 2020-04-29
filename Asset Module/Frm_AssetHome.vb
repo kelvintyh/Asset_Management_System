@@ -8,7 +8,7 @@ Public Class Frm_AssetHome
     Dim db As New AMSDBDataContext()
 
     Private Sub Frm_AssetHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        initiateData()
         frm_LoginAdmin.Visible = False
         Frm_LoginStaff.Visible = False
         grpLocal.Visible = False
@@ -21,7 +21,8 @@ Public Class Frm_AssetHome
                     For Each i As ToolStripMenuItem In item.DropDownItems
                         If i.Name = "mnuViewActionHistory" Then
                             i.Visible = False
-                        ElseIf i.Name = "mnuViewProfileList" Then
+                        End If
+                        If i.Name = "mnuViewProfileList" Then
                             i.Visible = False
                         End If
                     Next
@@ -33,6 +34,14 @@ Public Class Frm_AssetHome
                         If i.Name = "mnuRegister" Then
                             i.Visible = False
                         End If
+                        If i.Name = "mnuFileGenerateReport" Then
+                            For Each j As ToolStripMenuItem In i.DropDownItems
+                                If j.Name = "mnuLoginHistorySummaryReport" Then
+                                    j.Visible = False
+                                End If
+                            Next
+                        End If
+
                     Next
                 End If
             Next
@@ -91,8 +100,6 @@ Public Class Frm_AssetHome
         Dim db As New AMSDBDataContext()
         If dgv.SelectedRows.Count > 0 Then
             'validation
-
-            Dim empty As Byte()
             Try
                 Dim i As Integer
                 i = dgv.CurrentRow.Index
@@ -113,10 +120,8 @@ Public Class Frm_AssetHome
                 For Each a In db.Assets
                     If a.Id.Equals(dgv.Item(0, i).Value) Then
                         picAsset.Image = GetImage(a.Image.ToArray)
-                        '
-                        If lblId.Text = "" Then
-                            picAsset.Image = GetImage(empty.ToArray)
-                        End If
+                    Else
+                        'picAsset.Image = My.Resources.Picture_50px
                     End If
                 Next
                 dtpDateOfAcquisition.Value = dgv.Item(10, i).Value
@@ -136,35 +141,39 @@ Public Class Frm_AssetHome
             Dim rs_2 = From o In db.Assets
                        Where o.Id = lblId.Text
 
-            If rs_2.First.TransactionId <> "" Then
-                Dim rs_3 = From o In db.Transactions
-                           Where o.Id.Equals(rs_2.First.TransactionId)
-                If rs.First.Check_Out_Type = "Local" Then
-                    grpLocal.Visible = True
-                    grpThirdParty.Visible = False
-                    txtId.Text = rs.First.Check_Out_To
-                    Dim rs_4 = From o In db.Users
-                               Where o.Id.Equals(rs.First.Check_Out_To)
-                    Try
-                        picCOT.Image = GetImage(rs_2.First.Image.ToArray)
-                    Catch ex As Exception
+            Console.WriteLine(rs_2.Count)
+            If rs_2.Count <> 0 Then
+                If rs_2.First.TransactionId <> "" Then
+                    Dim rs_3 = From o In db.Transactions
+                               Where o.Id.Equals(rs_2.First.TransactionId)
+                    If rs.First.Check_Out_Type = "Local" Then
+                        grpLocal.Visible = True
+                        grpThirdParty.Visible = False
+                        txtId.Text = rs.First.Check_Out_To
+                        Dim rs_4 = From o In db.Users
+                                   Where o.Id.Equals(rs.First.Check_Out_To)
+                        Try
+                            picCOT.Image = GetImage(rs_2.First.Image.ToArray)
+                        Catch ex As Exception
 
-                    End Try
+                        End Try
 
-                    lblName.Text = rs_4.First.Name
-                    lblContact.Text = rs_4.First.Contact_number
+                        lblName.Text = rs_4.First.Name
+                        lblContact.Text = rs_4.First.Contact_number
+                    Else
+                        grpThirdParty.Visible = True
+                        grpLocal.Visible = False
+
+                        txt3rdDesc.Text = rs.First.Third_Party_Description
+                        txt3rdContact.Text = rs.First.Third_Party_Contact
+                        txt3rdEmail.Text = rs.First.Third_Party_Email
+                    End If
                 Else
-                    grpThirdParty.Visible = True
                     grpLocal.Visible = False
-
-                    txt3rdDesc.Text = rs.First.Third_Party_Description
-                    txt3rdContact.Text = rs.First.Third_Party_Contact
-                    txt3rdEmail.Text = rs.First.Third_Party_Email
+                    grpThirdParty.Visible = False
                 End If
-            Else
-                grpLocal.Visible = False
-                grpThirdParty.Visible = False
             End If
+
 
         End If
     End Function
@@ -215,7 +224,7 @@ Public Class Frm_AssetHome
         Frm_TransactionSummaryReport.ShowDialog()
     End Sub
 
-    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginHistorySummaryReportToolStripMenuItem.Click
+    Private Sub LoginHistorySummaryReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuLoginHistorySummaryReport.Click
         Frm_Date.ShowDialog()
 
     End Sub
@@ -230,6 +239,16 @@ Public Class Frm_AssetHome
 
     Private Sub MnuRegister_Click(sender As Object, e As EventArgs) Handles mnuRegister.Click
         Frm_Register.ShowDialog()
+    End Sub
+
+    Private Sub MnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
+        Dim result As DialogResult = MessageBox.Show("Are u sure to logout ?", "Logout Confirmation", MessageBoxButtons.YesNoCancel)
+        If result = DialogResult.Yes Then
+            currentUser = Nothing
+            Me.Visible = False
+            Frm_RoleChoose.Visible = True
+        End If
+
     End Sub
 End Class
 

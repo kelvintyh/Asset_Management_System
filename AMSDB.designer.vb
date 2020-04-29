@@ -782,8 +782,10 @@ Partial Public Class AssetType
 	Private _Id As String
 	
 	Private _Description As String
-	
-    #Region "Extensibility Method Definitions"
+    Private v1 As String
+    Private v2 As String
+
+#Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -804,8 +806,9 @@ Partial Public Class AssetType
 		MyBase.New
 		OnCreated
 	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+
+
+    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
 	Public Property Id() As String
 		Get
 			Return Me._Id

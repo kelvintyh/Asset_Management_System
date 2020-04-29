@@ -16,8 +16,9 @@ Public Class Frm_WarrantyUpdate
 
     End Sub
 
-    Private Sub Frm_WarrantyAdd_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub Frm_WarrantyAdd_Shown(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim i = Frm_WarrantyHome.dgv.CurrentRow.Index
+        ResetForm()
 
         For Each w In db.Warranties
             If w.Warranty_Id = Frm_WarrantyHome.dgv.Item(0, i).Value Then
@@ -77,7 +78,6 @@ Public Class Frm_WarrantyUpdate
         End If
 
         Dim w As Warranty = db.Warranties.FirstOrDefault(Function(o) o.Warranty_Id = ItemID.Text)
-        Dim id As String = ItemID.Text
         Dim name As String = tbName.Text
         Dim type As String = cboxType.Text
         Dim status As String = cboxStatus.Text
@@ -88,7 +88,6 @@ Public Class Frm_WarrantyUpdate
             type = "Pending"
         End If
 
-        w.Warranty_Id = id
         w.Warranty_Name = name
         w.Warranty_Type = type
         w.Warranty_Status = status
@@ -100,10 +99,9 @@ Public Class Frm_WarrantyUpdate
 
         If r = DialogResult.Yes Then
             db.SubmitChanges()
-            MessageBox.Show("Record Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Frm_WarrantyHome.UpdateTable()
+            MessageBox.Show("Record Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             createActionHistory("UpdateW", currentUser.Id, w.Warranty_Id)
-            ResetForm()
             Me.Close()
         End If
 
