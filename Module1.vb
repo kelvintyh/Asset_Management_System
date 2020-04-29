@@ -260,5 +260,4 @@ Module Module1
         Dim nics() As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()
         Return nics(1).GetPhysicalAddress.ToString
     End Function
-
 End Module
