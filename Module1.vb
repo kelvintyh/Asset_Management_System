@@ -16,7 +16,10 @@ Module Module1
     Public assetType_List As New List(Of AssetType)
     Public location_List As New List(Of InventoryLocation)
     Public Transaction_List As New List(Of Transaction)
-
+    Public user_list As New List(Of User)
+    Public login_history As New List(Of LoginHistory)
+    Public actionHistory As New List(Of ActionHistory)
+    Public Warranty_List As New List(Of Warranty)
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         Dim ms As New System.IO.MemoryStream
@@ -34,7 +37,7 @@ Module Module1
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = image.FromStream(ms)
+        Dim image As Image = Image.FromStream(ms)
         Return image
     End Function
 
@@ -344,6 +347,51 @@ Module Module1
         Transaction_List.Add(New Transaction("T100009", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
         Transaction_List.Add(New Transaction("T100010", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
 
+        user_list.Add(New User("AD0001", "Gregg Chan", "Gregg", "12345678", "Male", "012-3456789", "chan@gmail.com", GetBinary(My.Resources.login, Nothing), "Admin"))
+        user_list.Add(New User("AD0002", "Kelvin Tham", "Kelvin", "12345678", "Male", "011-3456789", "kelvin@gmail.com", GetBinary(My.Resources.login, Nothing), "Admin"))
+        user_list.Add(New User("S0003", "Brian Ooi", "Brian", "12345678", "Male", "016-3456789", "brian@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0004", "Jeremy Yong", "Jeremy", "12345678", "Male", "012-2242245", "jeremy@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0005", "Benz Fong", "Benz", "12345678", "Male", "012-1212454", "benz@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0006", "Jacky Chan", "Jacky", "12345678", "Male", "016-3476854", "jacky@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0007", "Harley Cheah", "Harley", "12345678", "Male", "012-4368984", "harley@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0008", "Jaren Yeap", "Jaren", "12345678", "Male", "012-9875699", "jaren@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0009", "Joseph Yeak", "Joseph", "12345678", "Male", "012-9874322", "joseph@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+        user_list.Add(New User("S0010", "Jun Yan", "JY", "12345678", "Male", "018-2867444", "koh@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
+
+        login_history.Add(New LoginHistory("L0001", "AD0001", "Gregg", "Admin", "2020-04-27 19:42:31"))
+        login_history.Add(New LoginHistory("L0002", "AD0001", "Gregg", "Admin", "2020-04-27 19:43:33"))
+        login_history.Add(New LoginHistory("L0003", "AD0001", "Gregg", "Admin", "2020-04-27 19:44:35"))
+        login_history.Add(New LoginHistory("L0004", "AD0001", "Gregg", "Admin", "2020-04-27 19:45:36"))
+        login_history.Add(New LoginHistory("L0005", "AD0001", "Gregg", "Admin", "2020-04-27 20:46:35"))
+        login_history.Add(New LoginHistory("L0006", "AD0001", "Gregg", "Admin", "2020-04-27 20:48:31"))
+        login_history.Add(New LoginHistory("L0007", "AD0001", "Gregg", "Admin", "2020-04-27 22:50:30"))
+        login_history.Add(New LoginHistory("L0008", "AD0001", "Gregg", "Admin", "2020-04-27 23:10:40"))
+        login_history.Add(New LoginHistory("L0009", "AD0001", "Gregg", "Admin", "2020-04-27 23:30:50"))
+        login_history.Add(New LoginHistory("L0010", "AD0001", "Gregg", "Admin", "2020-04-27 23:35:55"))
+
+        actionHistory.Add(New ActionHistory("AH100001", "Create", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100002", "Update", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100003", "Create", "User S0002", "26/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100004", "Update", "User S0002", "27/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100005", "Delete", "Asset A100003", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100006", "Create", "Warranty W100001", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100007", "Create", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100008", "Update", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+
+        Warranty_List.Add(New Warranty("W100001", "HP", "Silver       (3 month)", "29/04/2020", "29/07/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100002", "Lenovo", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100003", "MSI", "Pending", "29/04/2020", "29/04/2020", "Pending"))
+        Warranty_List.Add(New Warranty("W100004", "XiaoMI M5", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100005", "Sumsung S1", "Bronze     (1 month)", "29/04/2020", "29/07/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100006", "Huawei Mate 20X", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+        Warranty_List.Add(New Warranty("W100007", "Huawei Nova 2i", "Gold         (6 month)", "29/04/2020", "29/10/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100008", "Printer Z001", "Bronze     (1 month)", "29/04/2020", "29/05/2020", "Active"))
+        Warranty_List.Add(New Warranty("W100009", "Monitor K2A1", "Pending", "29/04/2020", "29/04/2020", "Pending"))
+        Warranty_List.Add(New Warranty("W100010", "Asus", "Platinum (12 month)", "29/04/2020", "29/04/2021", "Active"))
+
+
         'Load the item in list into database
         Try
             For Each i In asset_List
@@ -370,6 +418,27 @@ Module Module1
                 db.Transactions.InsertOnSubmit(i)
                 db.SubmitChanges()
             Next
+
+            For Each i In user_list
+                db.Users.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In login_history
+                db.LoginHistories.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In actionHistory
+                db.ActionHistories.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In Warranty_List
+                db.Warranties.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
         Catch ex As Exception
 
         End Try
