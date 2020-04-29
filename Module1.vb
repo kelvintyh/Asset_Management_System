@@ -16,6 +16,7 @@ Module Module1
     Public assetType_List As New List(Of AssetType)
     Public location_List As New List(Of InventoryLocation)
     Public Transaction_List As New List(Of Transaction)
+    Public actionHistory As New List(Of ActionHistory)
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         Dim ms As New System.IO.MemoryStream
@@ -33,7 +34,7 @@ Module Module1
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = image.FromStream(ms)
+        Dim image As Image = Image.FromStream(ms)
         Return image
     End Function
 
@@ -343,6 +344,17 @@ Module Module1
         Transaction_List.Add(New Transaction("T100009", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
         Transaction_List.Add(New Transaction("T100010", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
 
+        actionHistory.Add(New ActionHistory("AH100001", "Create", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100002", "Update", "Transaction T100001", "26/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100003", "Create", "User S0002", "26/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100004", "Update", "User S0002", "27/4/2020", "S0002", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100005", "Delete", "Asset A100003", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100006", "Create", "Warranty W100001", "27/4/2020", "S0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100007", "Create", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100008", "Update", "Warranty W100002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100009", "Update", "Warranty W100001", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+        actionHistory.Add(New ActionHistory("AH100010", "Delete", "User S0002", "28/4/2020", "AD0001", "DESKTOP-UGMHK9F", "1A00E300D457", "192.168.1.6"))
+
         'Load the item in list into database
         Try
             For Each i In asset_List
@@ -367,6 +379,11 @@ Module Module1
 
             For Each i In Transaction_List
                 db.Transactions.InsertOnSubmit(i)
+                db.SubmitChanges()
+            Next
+
+            For Each i In actionHistory
+                db.ActionHistories.InsertOnSubmit(i)
                 db.SubmitChanges()
             Next
         Catch ex As Exception
