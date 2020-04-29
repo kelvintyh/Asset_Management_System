@@ -91,6 +91,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionHistory.vb" />
     <Compile Include="AMSDB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -245,6 +246,7 @@
     <Compile Include="User_Module\UserDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Warranty.vb" />
     <Compile Include="Warranty_Module\Frm_WarrantyAdd.Designer.vb">
       <DependentUpon>Frm_WarrantyAdd.vb</DependentUpon>
     </Compile>

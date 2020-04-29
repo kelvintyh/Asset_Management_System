@@ -19,6 +19,7 @@ Public Class UserDetails
                  Where o.UserId.Contains(id) And
                      (type = "Type" Or o.Type.StartsWith(type))
                  Order By o.Date Descending
+                 Order By o.Id Descending
                  Select New With
                      {
                      .ID = o.Id,

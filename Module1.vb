@@ -16,8 +16,7 @@ Module Module1
     Public assetType_List As New List(Of AssetType)
     Public location_List As New List(Of InventoryLocation)
     Public Transaction_List As New List(Of Transaction)
-    Public user_list As New List(Of User)
-    Public login_history As New List(Of LoginHistory)
+
 
     Public Function GetBinary(ByVal image As Image, ByVal format As ImageFormat) As Byte()
         Dim ms As New System.IO.MemoryStream
@@ -35,7 +34,7 @@ Module Module1
     Public Function GetImage(ByVal byteArray As Byte()) As Image
         Dim ms As New System.IO.MemoryStream
         ms = New MemoryStream(byteArray)
-        Dim image As Image = Image.FromStream(ms)
+        Dim image As Image = image.FromStream(ms)
         Return image
     End Function
 
@@ -108,20 +107,20 @@ Module Module1
 
         If table.Equals("Transaction") Then
 
-                Dim rs = From a In db.Transactions
-                         Order By a.Id Descending
+            Dim rs = From a In db.Transactions
+                     Order By a.Id Descending
 
-                ' If the table is empty
-                If rs.Count = 0 Then
-                    Return "T100001"
-                Else
-                    Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
-                    Return (newid + 1).ToString("T100000")
-                End If
+            ' If the table is empty
+            If rs.Count = 0 Then
+                Return "T100001"
+            Else
+                Dim newid As Integer = Integer.Parse(rs.First.Id.Substring(2, 5))
+                Return (newid + 1).ToString("T100000")
+            End If
 
-            ElseIf table.Equals("ActionHistory") Then
+        ElseIf table.Equals("ActionHistory") Then
 
-                Dim rs = From a In db.ActionHistories
+            Dim rs = From a In db.ActionHistories
                      Order By a.Id Descending
 
             ' If the table is empty
@@ -345,27 +344,6 @@ Module Module1
         Transaction_List.Add(New Transaction("T100009", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
         Transaction_List.Add(New Transaction("T100010", "Checked out", "2020-04-28 14:47:23", "A100001", "S0001", "S0001", "Local", "Local", "2020-04-28", "2020-04-28", "", "", "", "", "In"))
 
-        user_list.Add(New User("AD0001", "Gregg Chan", "Gregg", "12345678", "Male", "012-3456789", "chan@gmail.com", GetBinary(My.Resources.login, Nothing), "Admin"))
-        user_list.Add(New User("AD0002", "Kelvin Tham", "Kelvin", "12345678", "Male", "011-3456789", "kelvin@gmail.com", GetBinary(My.Resources.login, Nothing), "Admin"))
-        user_list.Add(New User("S0003", "Brian Ooi", "Brian", "12345678", "Male", "016-3456789", "brian@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0004", "Jeremy Yong", "Jeremy", "12345678", "Male", "012-2242245", "jeremy@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0005", "Benz Fong", "Benz", "12345678", "Male", "012-1212454", "benz@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0006", "Jacky Chan", "Jacky", "12345678", "Male", "016-3476854", "jacky@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0007", "Harley Cheah", "Harley", "12345678", "Male", "012-4368984", "harley@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0008", "Jaren Yeap", "Jaren", "12345678", "Male", "012-9875699", "jaren@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0009", "Joseph Yeak", "Joseph", "12345678", "Male", "012-9874322", "joseph@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-        user_list.Add(New User("S0010", "Jun Yan", "JY", "12345678", "Male", "018-2867444", "koh@gmail.com", GetBinary(My.Resources.login, Nothing), "Staff"))
-
-        login_history.Add(New LoginHistory("L0001", "AD0001", "Gregg", "Admin", "2020-04-27 19:42:31"))
-        login_history.Add(New LoginHistory("L0002", "AD0001", "Gregg", "Admin", "2020-04-27 19:43:33"))
-        login_history.Add(New LoginHistory("L0003", "AD0001", "Gregg", "Admin", "2020-04-27 19:44:35"))
-        login_history.Add(New LoginHistory("L0004", "AD0001", "Gregg", "Admin", "2020-04-27 19:45:36"))
-        login_history.Add(New LoginHistory("L0005", "AD0001", "Gregg", "Admin", "2020-04-27 20:46:35"))
-        login_history.Add(New LoginHistory("L0006", "AD0001", "Gregg", "Admin", "2020-04-27 20:48:31"))
-        login_history.Add(New LoginHistory("L0007", "AD0001", "Gregg", "Admin", "2020-04-27 22:50:30"))
-        login_history.Add(New LoginHistory("L0008", "AD0001", "Gregg", "Admin", "2020-04-27 23:10:40"))
-        login_history.Add(New LoginHistory("L0009", "AD0001", "Gregg", "Admin", "2020-04-27 23:30:50"))
-        login_history.Add(New LoginHistory("L0010", "AD0001", "Gregg", "Admin", "2020-04-27 23:35:55"))
         'Load the item in list into database
         Try
             For Each i In asset_List
@@ -390,16 +368,6 @@ Module Module1
 
             For Each i In Transaction_List
                 db.Transactions.InsertOnSubmit(i)
-                db.SubmitChanges()
-            Next
-
-            For Each i In user_list
-                db.Users.InsertOnSubmit(i)
-                db.SubmitChanges()
-            Next
-
-            For Each i In login_history
-                db.LoginHistories.InsertOnSubmit(i)
                 db.SubmitChanges()
             Next
         Catch ex As Exception
