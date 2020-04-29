@@ -75,14 +75,16 @@ Public Class Frm_AssetHome
         If dgv.SelectedRows.Count > 0 Then
 
 
-            Dim result As DialogResult = MessageBox.Show("Are you sure to delete selected record?", "", MessageBoxButtons.YesNoCancel)
-            If result = DialogResult.Yes Then
-                Dim a As Asset = db.Assets.FirstOrDefault(Function(o) o.Id = dgv.Item(0, dgv.CurrentRow.Index).Value.ToString)
-                db.Assets.DeleteOnSubmit(a)
-                db.SubmitChanges()
-                UpdateTable()
-                UpdateInfo()
-                MessageBox.Show("Asset Record Removed Successful !", "Information")
+            Dim a As Asset = db.Assets.FirstOrDefault(Function(o) o.Id = dgv.Item(0, dgv.CurrentRow.Index).Value.ToString)
+            If a.Id <> "" Then
+                Dim result As DialogResult = MessageBox.Show("Are you sure to delete " & a.Id & " ?", "", MessageBoxButtons.YesNoCancel)
+                If result = DialogResult.Yes Then
+                    db.Assets.DeleteOnSubmit(a)
+                    db.SubmitChanges()
+                    UpdateTable()
+                    UpdateInfo()
+                    MessageBox.Show("Asset Record Removed Successful !", "Information")
+                End If
             End If
         Else
             MessageBox.Show("Please select a record to proceed !", "Information")
@@ -248,6 +250,10 @@ Public Class Frm_AssetHome
             Me.Visible = False
             Frm_RoleChoose.Visible = True
         End If
+
+    End Sub
+
+    Private Sub TabControl3_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class
